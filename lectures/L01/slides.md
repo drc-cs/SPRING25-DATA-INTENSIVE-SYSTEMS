@@ -18,7 +18,7 @@ revealOptions:
   </div>
   <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 80%; padding-top: 30%">
 
-  <iframe src="https://lottie.host/embed/e7eb235d-f490-4ce1-877a-99114b96ff60/OFTqzm1m09.json" height = "100%" width = "100%"></iframe>
+  <iframe src="https://lottie.host/embed/216f7dd1-8085-4fd6-8511-8538a27cfb4a/PghzHsvgN5.lottie" height = "100%" width = "100%"></iframe>
   </div>
 </div>
 
