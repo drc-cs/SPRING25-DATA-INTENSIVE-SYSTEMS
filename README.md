@@ -10,6 +10,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | Week | Date  | Lecture Title  | Topics  | Homework |
 |------|-------|---------|-----|--------------------|
 | 1    | --- | Introduction  | Course Overview; Environment Setup. | ---  |
+| 6    | ---  | Containerization | Creating and Managing Containers; Environments, Deployments, and Registries. | ---  |
 | 1    | ---  | Environments  | Cloud Services; Creating Accounts; CLI Commands, SSH, Secure Access and IAM Permission Fundamentals. | ---  |
 | 2    | --- | Version Control | Version Control Workflows, Issue Tracking, Unit Testing, and CI/CD. | --- |
 | 2    | --- | Data Architecture | Principles of Data Modeling, Governance, Quality, and Security. | Developer Environments   |
@@ -19,7 +20,6 @@ Assessments include two exams covering all material covered in the lectures and 
 | 4    | --- | Data Processing I | Distributed Data Processing, Data Pipelines, Data Preprocessing. | --- |
 | 5    | ---  | Data Processing II | Creating Custom Data Pipelines, Scheduling, Monitoring, and Error Detection / Handling. | ---  |
 | 5    | ---  | Exam Part I  | Assessment. | Data Processing |
-| 6    | ---  | Containerization        | Creating and Managing Containers; Environments, Deployments, and Registries. | ---  |
 | 6    | --- | Machine Learning I | Regression and Classification Modeling. | ---  |
 | 7    | --- | Machine Learning II | Decision Trees, XGBoost. | ---  |
 | 7    | --- | Machine Learning III | Time Series Modeling (SARIMAX, TiDE). | --- |
