@@ -9,25 +9,25 @@ Assessments include two exams covering all material covered in the lectures and 
 
 | Week | Date  | Lecture Title  | Topics  | Homework |
 |------|-------|---------|-----|--------------------|
-| 1    | --- | Introduction  | Course Overview; Environment Setup. | ---  |
-| 6    | ---  | Containerization | Creating and Managing Containers; Environments, Deployments, and Registries. | ---  |
-| 1    | ---  | Environments  | Cloud Services; Creating Accounts; CLI Commands, SSH, Secure Access and IAM Permission Fundamentals. | ---  |
-| 2    | --- | Version Control | Version Control Workflows, Issue Tracking, Unit Testing, and CI/CD. | --- |
-| 2    | --- | Data Architecture | Principles of Data Modeling, Governance, Quality, and Security. | Developer Environments   |
-| 3    |--- | Data Storage | Cloud-based Object Storage, Versioning, Advanced Bucket Operations. | ---  |
-| 3    | --- | Data Warehousing (OLTP) | Data Loading, Querying, and Management; Working with Tables, Views, and Schemas.  | ---      |
-| 4    | --- | Data Warehousing (OLAP) | Data Manipulation and Exploration, Using SQL, Integrating with Python Workflows.     | Storage Handling  |
-| 4    | --- | Data Processing I | Distributed Data Processing, Data Pipelines, Data Preprocessing. | --- |
-| 5    | ---  | Data Processing II | Creating Custom Data Pipelines, Scheduling, Monitoring, and Error Detection / Handling. | ---  |
-| 5    | ---  | Exam Part I  | Assessment. | Data Processing |
-| 6    | --- | Machine Learning I | Regression and Classification Modeling. | ---  |
-| 7    | --- | Machine Learning II | Decision Trees, XGBoost. | ---  |
-| 7    | --- | Machine Learning III | Time Series Modeling (SARIMAX, TiDE). | --- |
-| 8    |--- | Machine Learning Operations I | Hyperparameter Tuning, Distributed Training Strategies, Batch Processing. | Model Training  |
-| 8    | ---  | Machine Learning Operations II | Model Serving, Load Balancing for Real-time Inference. | ---  |
-| 9    | --- | Unsupervised Machine Learning | Clustering Methods, Dimensionality Reduction. | ---  |
-| 9    | --- | Course Review & Guest Speaker | Review of Key Concepts from the Course, Q&A Session with Industry Expert. | ---  |
-| 10   | ---  | Exam Part II   | Assessment.      | Model Serving  |
+| ---    | --- | Introduction  | Course Overview; Environment Setup. | ---  |
+| ---    | ---  | Containerization | Creating and Managing Containers; Environments, Deployments, and Registries. | ---  |
+| ---    | ---  | Environments  | Cloud Services; Creating Accounts; CLI Commands, SSH, Secure Access and IAM Permission Fundamentals. | ---  |
+| ---    | --- | Version Control | Version Control Workflows, Issue Tracking, Unit Testing, and CI/CD. | --- |
+| ---    | --- | Data Architecture | Principles of Data Modeling, Governance, Quality, and Security. | Developer Environments   |
+| ---    |--- | Data Storage | Cloud-based Object Storage, Versioning, Advanced Bucket Operations. | ---  |
+| ---    | --- | Data Warehousing (OLTP) | Data Loading, Querying, and Management; Working with Tables, Views, and Schemas.  | ---      |
+| ---    | --- | Data Warehousing (OLAP) | Data Manipulation and Exploration, Using SQL, Integrating with Python Workflows.     | Storage Handling  |
+| ---    | --- | Data Processing I | Distributed Data Processing, Data Pipelines, Data Preprocessing. | --- |
+| ---    | ---  | Data Processing II | Creating Custom Data Pipelines, Scheduling, Monitoring, and Error Detection / Handling. | ---  |
+| ---    | ---  | Exam Part I  | Assessment. | Data Processing |
+| ---    | --- | Machine Learning I | Regression and Classification Modeling. | ---  |
+| ---    | --- | Machine Learning II | Decision Trees, XGBoost. | ---  |
+| ---    | --- | Machine Learning III | Time Series Modeling (SARIMAX, TiDE). | --- |
+| ---    |--- | Machine Learning Operations I | Hyperparameter Tuning, Distributed Training Strategies, Batch Processing. | Model Training  |
+| ---    | ---  | Machine Learning Operations II | Model Serving, Load Balancing for Real-time Inference. | ---  |
+| ---    | --- | Unsupervised Machine Learning | Clustering Methods, Dimensionality Reduction. | ---  |
+| ---    | --- | Course Review & Guest Speaker | Review of Key Concepts from the Course, Q&A Session with Industry Expert. | ---  |
+| ---   | ---  | Exam Part II   | Assessment.      | Model Serving  |
 
 ## Grading
 
