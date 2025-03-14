@@ -1,0 +1,479 @@
+---
+title: MBAI
+separator: <!--s-->
+verticalSeparator: <!--v-->
+theme: serif
+revealOptions:
+  transition: 'none'
+---
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+  <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
+
+  # Data Intensive Systems
+  ## L.02 | Accessing Databases, Permissions, and Security
+
+  </div>
+  </div>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 100%; padding-top: 10%">
+
+  <iframe src="https://lottie.host/embed/216f7dd1-8085-4fd6-8511-8538a27cfb4a/PghzHsvgN5.lottie" height = "100%" width = "100%"></iframe>
+  </div>
+</div>
+
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+  <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Welcome to Data Intensive Systems.
+  ## Please check in by creating an account and entering the code on the chalkboard.
+
+  </div>
+  </div>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
+    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Check In" width = "100%" height = "100%"></iframe>
+  </div>
+</div>
+
+<!--s-->
+
+## Announcements
+
+- 
+
+<!--s-->
+
+## Business Scenario: Enhancing Data Security and Access Management
+
+You are the Chief Technology Officer (CTO) of a rapidly growing tech startup that specializes in providing cloud-based solutions to various clients. Your company has recently secured a major contract with a large financial institution, which requires efficient data management and access protocols to handle sensitive financial data. To meet the client's requirements and ensure smooth operations, you need to implement robust database management practices. This includes setting up reliable connections to your databases, defining user roles and permissions, and following best practices for data management such as regular backups, access control, monitoring, and auditing.
+
+Your team of database administrators and developers will need to:
+
+1. **Access Databases**: Establish connections to your databases using CLI tools, database drivers, and REST APIs.
+
+2. **Define User Roles and Permissions**: Create and manage user roles to control access to the database. This will involve granting and revoking permissions to ensure that only authorized users can access and modify the data.
+
+3. **Implement Security Practices**: Follow essential security practices to protect your databases from unauthorized access and data breaches. This includes encrypting data at rest and in transit, performing regular backups, monitoring database activities, and maintaining audit logs.
+
+By leveraging the knowledge and techniques presented in these slides, your team will be well-equipped to enhance the security and access management of your databases, ensuring that your client's sensitive financial data is protected and compliant with industry standards.
+
+<!--s-->
+
+## Agenda
+
+1. **Accessing Databases**
+    - Connecting to databases
+    - Querying databases
+    - SQL Example: Connecting to a PostgreSQL database through CLI (psql)
+    - REST API Example: Connecting to a pinecone database through Python (pinecone)
+
+2. **Permissions**
+    - User roles and permissions
+    - Granting and revoking access
+    - Example: Setting up user roles in PostgreSQL
+
+3. **Security**
+    - Essential security practices
+
+<!--s-->
+
+<div class="header-slide">
+
+# Accessing Databases
+
+</div>
+
+<!--s-->
+
+## Connecting to Databases
+
+Recall that a database is a collection of data that is organized in a way that allows for efficient retrieval and manipulation. At it's core, a database is simply a structured way to **store** and **manage** data on a computer. A database can be as simple as a text file or a spreadsheet, or as complex as a distributed system that spans multiple servers and locations. But at it's core, all databases run on computers / servers that you can connect to.
+
+<div style="text-align: center;">
+    <img src="https://guide-images.cdn.ifixit.com/igi/BCU4AgbFicGvFcZA.large" width="40%" style="border-radius: 10px;" />
+    <p style="text-align: center; font-size: 0.6em; color: grey;">iFixit</p>
+</div>
+
+<!--s-->
+
+## Connecting to Databases
+
+To access a database from a client application, you need to establish a connection to the database server. Applications exist in a variety of programming languages and frameworks, and each has its own way of connecting to databases. Here are some common ways to connect to databases:
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### Command Line Interface (CLI)
+A text-based interface for interacting with databases. Examples include <span class="code-span">psql</span> for PostgreSQL and <span class="code-span">mysql</span> for MySQL.
+
+### Database Drivers
+Libraries that allow you to connect to databases from your application code. Examples include <span class="code-span">psycopg2</span> for PostgreSQL and <span class="code-span">mysql-connector-python</span> for MySQL.
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### REST APIs
+Web-based interfaces that allow you to interact with databases over HTTP. Examples include the Pinecone API for vector databases and the Firebase API for NoSQL databases.
+
+</div>
+</div>
+
+
+<!--s-->
+
+## Connecting to Databases | CLI
+
+One common way to connect to databases is through the Command Line Interface (CLI). The CLI allows you to interact with the database using text-based commands.
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### Logging In
+
+Here's an example of connecting to a PostgreSQL database hosted on a remote server using the <span class="code-span">psql</span> CLI. 
+
+```bash
+$ psql -h mydatabase.com -u myuser -d mydatabase
+```
+
+Where <span class="code-span">-h</span> specifies the hostname of the database server, <span class="code-span">-u</span> specifies the username, and <span class="code-span">-d</span> specifies the name of the database.
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Executing SQL Queries
+
+After logging in, you can execute SQL queries and commands directly from the CLI.
+
+```sql
+mydatabase=> SELECT * FROM users;
+```
+
+</div>
+</div>
+
+
+<!--s-->
+
+## Connecting to Databases | Database Drivers
+
+Another common way to connect to databases is through database drivers. Database drivers are libraries that allow you to connect to databases from your application code. Below is an example of connecting to a PostgreSQL database using the `psycopg2` library in Python.
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### PostgreSQL
+
+```python
+import psycopg2
+
+# Connect to an existing database
+conn = psycopg2.connect(
+    dbname="mydatabase",
+    host="mydatabase.com",
+    user="myuser",
+    password="mypassword"
+)
+
+# Open a cursor to perform database operations
+cur = conn.cursor()
+
+# Execute a SQL query
+cur.execute("SELECT * FROM users;")
+rows = cur.fetchall()
+
+# Close communication with the database
+cur.close()
+conn.close()
+
+```
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### PostgreSQL & Pandas
+
+```python
+import pandas as pd
+
+# Connect to an existing database
+conn = psycopg2.connect(
+    dbname="mydatabase",
+    host="mydatabase.com",
+    user="myuser",
+    password="mypassword"
+)
+
+# Read data from the database
+df = pd.read_sql_query("SELECT * FROM users;", conn)
+
+# Close the connection
+conn.close()
+
+```
+
+</div>
+</div>
+
+<!--s-->
+
+## Connecting to Databases | REST APIs
+
+REST APIs are web-based interfaces that allow you to interact with databases over HTTP. Below is an example of connecting to a Pinecone vector database using the Pinecone API in Python, and a Firebase NoSQL database using the Firebase API in Python.
+
+<div class = "col-wrapper">
+
+<div class="c1" style = "width: 50%">
+
+### Pinecone (Vector DB)
+
+```python
+import pinecone
+
+# Connect to the Pinecone service
+pinecone.init(
+    api_key="my_api_key",
+    environment="us-west1-gcp"
+)
+
+# Query the database
+results = pinecone.query(
+    index_name="my_index",
+    query_vector=[0.1, 0.2, 0.3]
+)
+
+```
+
+</div>
+
+<div class="c2" style = "width: 50%">
+
+### Firebase (NoSQL DB)
+
+```python
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+# Initialize the Firebase Admin SDK
+cred = credentials.Certificate("path/to/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
+# Get a reference to the Firestore database
+db = firestore.client()
+
+# Query the database
+docs = db.collection("users").get()
+
+```
+
+</div>
+
+</div>
+
+<!--s-->
+
+<div class="header-slide">
+
+# Permissions
+
+</div>
+
+<!--s-->
+
+## User Roles and Permissions
+
+In a database management system, user roles and permissions are used to control access to the database and its objects. User roles define the privileges that a user has, while permissions specify the actions that a user can perform on the database objects.
+
+This is a critical aspect of database security, as it ensures that only authorized users can access and modify the data in the database.
+
+<!--s-->
+
+## User Roles and Permissions
+
+Here are some common user roles and permissions that are typically defined in a database management system:
+
+| Role | Description |
+|---------------|------------- |
+| Admin     | Full access to all database objects and operations. |
+| User      | Limited access to specific database objects and operations.       |
+| Read-only | Read-only access to the database, with no ability to modify data. |
+| Write-only| Write-only access to the database, with no ability to read data.  |
+| Backup    | Access to backup and restore operations.        |
+| DBA       | Database Administrator role with full control over the database.  |
+| Developer | Access to development tools and operations.     |
+| Auditor   | Access to audit logs and monitoring tools.      |
+| Security  | Access to security settings and configurations. |
+| Guest     | Limited access for temporary or guest users.    |
+| Public    | Public access for anonymous users.     |
+| Custom    | Custom roles and permissions defined by the database administrator. |
+
+<!--s-->
+
+## Granting and Revoking Access
+
+In a database management system, access to database objects is granted or revoked using the <span class="code-span">GRANT</span> and <span class="code-span">REVOKE</span> commands. These commands are used to assign or remove specific privileges to users or roles.
+
+Here is an example of granting read-only access to a specific user (myuser) on a PostgreSQL database:
+
+```sql
+-- Grant SELECT privilege on the houses table to the user myuser.
+GRANT SELECT ON houses TO myuser;
+```
+
+Here is an example of revoking read-only access from a specific user (myuser) on a PostgreSQL database:
+
+```sql
+-- Revoke SELECT privilege on the houses table from the user myuser.
+REVOKE SELECT ON houses FROM myuser;
+```
+
+<!--s-->
+
+## Granting and Revoking Access
+
+Here is a cheatsheet for granting and revoking access in a PostgreSQL database:
+
+| Command | Description |
+|---------------|------------- |
+| GRANT SELECT | Grants read-only access to a table. |
+| GRANT INSERT | Grants permission to insert rows into a table. |
+| GRANT UPDATE | Grants permission to update rows in a table. |
+| GRANT DELETE | Grants permission to delete rows from a table. |
+| GRANT ALL    | Grants all privileges on a table. |
+| REVOKE SELECT | Revokes read-only access to a table. |
+| REVOKE INSERT | Revokes permission to insert rows into a table. |
+| REVOKE UPDATE | Revokes permission to update rows in a table. |
+
+<!--s-->
+
+## Granting and Revoking Access | User Roles
+
+Often, we don't want to grant permissions to individual users, but rather to groups of users. This is where roles come in. Roles are a way to group users together and assign permissions to the group as a whole.
+
+Here is an example of creating a custom role (myrole) in a PostgreSQL database and granting read-only access to the houses table to that role:
+
+```sql
+-- Create a custom role myrole.
+CREATE ROLE myrole;
+
+-- Grant SELECT privilege on the houses table to the role myrole.
+GRANT SELECT ON houses TO myrole;
+```
+
+Then, you can assign users to the role using the <span class="code-span">GRANT</span> command:
+
+```sql
+-- Assign the user myuser to the role myrole.
+GRANT myrole TO myuser;
+```
+
+<!--s-->
+
+<div class="header-slide">
+
+# Security
+
+</div>
+
+<!--s-->
+
+## Essential Security Practices
+
+Security is a critical aspect of database management. Here are some essential security practices that you should follow to protect your databases and data:
+
+1. **Encryption**: Encrypt data at rest and in transit to protect it from unauthorized access.
+
+2. **Backups**: Regularly backup your databases to prevent data loss in case of hardware failure or other disasters.
+
+3. **Access Control**: Implement access controls to restrict access to sensitive data and operations.
+
+4. **Monitoring**: Monitor your databases for suspicious activities and unauthorized access.
+
+5. **Auditing**: Keep audit logs of database activities to track changes and identify security incidents.
+
+<!--s-->
+
+## Essential Security Practices | Encryption
+
+Encryption is the process of encoding data so that only authorized users can access it. There are two main types of encryption used in database management:
+
+1. **Data Encryption**: Encrypting data at rest to protect it from unauthorized access. This can be done using encryption algorithms and keys.
+
+2. **Transport Encryption**: Encrypting data in transit to protect it as it travels between the client and the server. This can be done using SSL/TLS protocols.
+
+<!--s-->
+
+## Essential Security Practices | Backups
+
+Backups are copies of your database that you can use to restore your data in case of hardware failure, data corruption, or other disasters. Here are some best practices for database backups:
+
+1. **Regular Backups**: Schedule regular backups of your databases to ensure that you have up-to-date copies of your data.
+
+2. **Offsite Backups**: Store backups in a secure offsite location to protect them from local disasters.
+
+3. **Automated Backups**: Use automated backup tools to simplify the backup process and ensure that backups are performed consistently.
+
+4. **Testing Backups**: Regularly test your backups to ensure that they are valid and can be restored successfully.
+
+<!--s-->
+
+## Essential Security Practices | Access Control
+
+Access control is the process of restricting access to sensitive data and operations in your database. Here are some best practices for access control:
+
+1. **Role-Based Access Control**: Use roles to group users together and assign permissions to the group as a whole.
+
+2. **Least Privilege Principle**: Grant users the minimum level of access required to perform their tasks.
+
+3. **Strong Passwords**: Enforce strong password policies to prevent unauthorized access.
+
+4. **Multi-Factor Authentication**: Use multi-factor authentication to add an extra layer of security to user accounts.
+
+<!--s-->
+
+## Essential Security Practices | Monitoring
+
+Monitoring is the process of tracking and analyzing database activities to detect suspicious behavior and unauthorized access. Here are some best practices for monitoring your databases:
+
+1. **Real-Time Monitoring**: Monitor your databases in real-time to detect and respond to security incidents quickly.
+
+2. **Alerting**: Set up alerts for unusual activities, such as failed login attempts or unauthorized access.
+
+3. **Log Management**: Keep audit logs of database activities to track changes and identify security incidents.
+
+4. **Incident Response**: Have an incident response plan in place to respond to security incidents effectively.
+
+<!--s-->
+
+## Essential Security Practices | Auditing
+
+Auditing is the process of tracking and recording database activities to ensure compliance with security policies and regulations. Here are some best practices for auditing your databases:
+
+1. **Audit Logs**: Keep detailed audit logs of database activities, including user logins, queries, and modifications.
+
+2. **Log Retention**: Retain audit logs for a specified period to comply with security policies and regulations. This may include GDPR, HIPAA, or other regulations.
+
+3. **Log Analysis**: Regularly analyze audit logs to identify security incidents and compliance issues.
+
+4. **Reporting**: Generate reports on database activities and security incidents to track trends and improve security practices.
+
+<!--s-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
