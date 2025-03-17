@@ -1,6 +1,14 @@
-import snowflake.connector
+"""Snowflake connection module.
+
+Written by Joshua D'Arcy, 2025.
+"""
+
+from snowflake import connector
 from dotenv import load_dotenv
 import os
+import pandas as pd
+import warnings
+warnings.simplefilter(action='ignore', category=UserWarning)
 
 load_dotenv()
 
@@ -28,7 +36,7 @@ def connect_to_snowflake(
         object: Snowflake connection object.
     """
 
-    conn = snowflake.connector.connect(
+    conn = connector.connect(
         user=user,
         password=password,
         account=account,
@@ -37,3 +45,15 @@ def connect_to_snowflake(
         schema=schema,
     )
     return conn
+
+def as_dataframe(rows: list, cur: object) -> pd.DataFrame:
+    """
+    Convert the result set to a pandas DataFrame.
+    Args:
+        rows (list): The result set to convert.
+        cur (object): The Snowflake cursor object.
+    Returns:
+        pd.DataFrame: The result set as a pandas DataFrame.
+    """
+    return pd.DataFrame(rows, columns=[col[0] for col in cur.description])
+

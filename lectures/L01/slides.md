@@ -51,7 +51,9 @@ revealOptions:
 
 ## Attendance
 
-Attendance at lectures is **mandatory** and in your best interest. Your Attendance & Comprehension score is worth 20% of your final grade. Lectures will have graded quizzes throughout, and the top 12 scores will be used to calculate your attendance grade. This is designed to reduce the weight of exams and technical homeworks.
+Attendance at lectures is mandatory and in your best interest. 
+
+Your **Attendance & Comprehension** score is worth 40% of your final grade. Lectures will have graded quizzes throughout, and the top 12 scores will be used to calculate your grade.
 
 <!--s-->
 
@@ -89,13 +91,13 @@ There is a high emphasis on the practical application of the concepts covered in
 
 ## Homework 
 
-Homeworks are designed to reinforce the concepts covered in lecture. They will be a mix of theoretical and practical problems, and each will include a programmatic and free response portion. If there is time, we will work on homework at the end of every lecture as a group. For the automated grading server, you get 3 attempts per homework assignment. The highest score will be recorded.
+Homeworks are designed to reinforce the concepts covered in lecture. They will be a mix of theoretical and practical problems, and each will include a programmatic and free response portion. If there is time, we will work on homework at the end of every lecture as a group.
 
 - **Due**: Homework due dates are posted in the syllabus.
 
 - **Late Policy**: Late homeworks will lose 1 out of 10 points per day (1% of your final grade).
 
-- **Platform**: A submission script has been provided to submit your homeworks.
+- **Platform**: A submission script has been provided to submit your homeworks to Canvas, which will be at the end of each notebook.
 
 - **Collaboration**: You are encouraged to work with your peers on homeworks. However, you must submit your own work. Copying and pasting code from other sources will be detected and penalized.
 
@@ -118,7 +120,7 @@ There are two exams in this class. They will cover the theoretical and practical
 ### Homeworks
 
 - Do not exchange code fragments on any assignments.
-- Do not copy solutions from any source, including the web or previous CS 326 students.
+- Do not copy solutions from any source, including the web or previous MBAI students.
 - You cannot upload / sell your assignments to code sharing websites.
 
 <!--s-->
@@ -141,13 +143,13 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 ### **Office Hours**
 
-- Time: TBA
-- Location: TBA
+- Time: By Appointment
+- Location: Mudd 3510
 
 ### **Canvas Discussion**
 
 - Every homework & project will have a discussion thread on Canvas.
-- Please post your questions there so that everyone can benefit from the answers!
+- Please post your questions there so that everyone can benefit from the answers! I will not respond to homework questions via email.
 
 <!--s-->
 
@@ -157,21 +159,12 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 We are here to help you! Please try contacting us through office hours or the dedicated Canvas discussion threads.
 
-<div class = "col-wrapper" style="font-size: 0.8em;">
-<div class="c1" style = "width: 50%">
-
-**Peer Mentors**:
-
-</div>
-<div class="c2" style = "width: 50%">
-
 **TA**:
 - TBA
 
 **Intructor**:
 - Joshua D'Arcy: joshua.darcy@northwestern.edu
 
-</div>
 
 <!--s-->
 
@@ -179,7 +172,7 @@ We are here to help you! Please try contacting us through office hours or the de
   <div class="c1 col-centered">
   <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
-  # Spring Quarter Plan
+  # Quarter Plan
   ## After looking at the syllabus, is there anything you want me to cover that I'm not?
 
   </div>
@@ -194,9 +187,9 @@ We are here to help you! Please try contacting us through office hours or the de
 <div class="header-slide">
 
 # Homework Assignment
-## H.01 "Hello World!"
+## H.01 | "Hello, World!"
 
-Due: 01.14.2025
+Due: 
 
 </div>
 
@@ -206,7 +199,7 @@ Due: 01.14.2025
 
 The first step in this course is to install Docker. Docker is a platform for developing, shipping, and running applications in containers. We'll go into more detail about what Docker is and how it works in a future lecture.
 
-In the meantime, please install Docker on your machine. You can find the installation instructions [here](https://docs.docker.com/get-docker/).
+In the meantime, please install Docker on your machine if you haven't already done so. You can find the installation instructions [here](https://docs.docker.com/get-docker/).
 
 <!--s-->
 
@@ -215,80 +208,79 @@ In the meantime, please install Docker on your machine. You can find the install
 Once you have Docker installed, you can download the Docker image for this course by running the following command in your terminal:
 
 ```bash
-
 docker pull joshuadarcy/drc-cs-9a3f6:latest
-
 ```
 
 Once the image is downloaded, you can run it using the following command:
 
 ```bash
-
 docker run -p 8888:8888 joshuadarcy/drc-cs-9a3f6:latest
-
 ```
 
 <!--s-->
 
-## H.01 | Docker & Code-Server
+## H.01 | Setting up Docker & Code-Server
 
-The Docker image you just downloaded contains a code-server instance that you can access in your browser. This setup allows you to code in a Jupyter notebook environment without having to install anything (besides Docker) on your local machine. To access the code-server instance, open your browser and navigate to `localhost:8888`. You can bookmark this port for easy access in the future.
+The Docker image you just downloaded contains a [code-server](https://github.com/coder/code-server) instance that you can access in your browser. 
+
+This setup allows you to code in a Jupyter notebook environment without having to install anything (besides Docker) on your local machine. To access the code-server instance, open your browser and navigate to <span class="code-span">http://localhost:8888</span>. 
+
+You can bookmark this page for easy access in the future.
+
+> **Note**: If you restart your computer, you will need to restart the Docker container via the application.
 
 <!--s-->
 
 ## H.01 | Pulling
 
-Before you start working on any homework, make sure you have the latest version of the repository. The following command in the integrated terminal will pull the latest version of the repository and give you access to the most up-to-date homework:
+Before you start working on any homework, make sure you have the latest version of the repository. The following command in the integrated code-server terminal will pull the latest version of the repository and give you access to the most up-to-date homework:
 
 ```bash
 git pull
 ```
 
-If you have any issues with using this git-based system, please reach out to us during office hours or via email.
+<!--s-->
+
+## H.01 | Updating your <span class="code-span">.env</span> file
+
+The <span class="code-span">.env</span> file is a configuration file that contains environment variables for your application. It is used to store sensitive information such as API keys, database credentials, and other configuration settings.
+
+Using the **same username and password that you used for the slides login**, please fill out the .env file located in the "homeworks" folder of your code-server instance. This information will be used to connect your homeworks to Canvas.
+
+```bash
+AG_USERNAME = "your_northwestern_email"
+AG_PASSWORD = "your_password"
+```
 
 <!--s-->
 
-## H.01 | Opening Homework
+## H.01 | Setting up Snowflake
 
-Open the <span class="code-span">homeworks/</span> folder in VSCode. You should see a folder called <span class="code-span">H.01/</span>. Open the folder and you will see three files: 
+Snowflake is a cloud-based data warehousing service that we will be using for this course. You will need to create an account and set up a database to use Snowflake. 
 
-- <span class="code-span">hello_world.py</span>: This file contains placeholders for the methods you will write.
+Please follow the instructions in the [Snowflake Setup Guide](https://signup.snowflake.com/) to create an account. You will also want to do the following once you have access: 
 
-- <span class="code-span">hello_world.ipynb</span>: This is a Jupyter notebook that provides a useful narrative for the homework and methods found in the <span class="code-span">hello_world.py</span> file.
+1. Set a budget limit.
+2. Collect your account identifer  <span class="code-span">Profile > Account > View Account Details > Account Identifier</span>
+3. Collect your username and password. Snowflake requires MFA now, but you will still need to have a password.
 
-- <span class="code-span">hello_world_test.py</span>: This is the file that will be used to test your code. Future homeworks will not include this file, and this is for demonstration purposes only.
+<!--s-->
 
-Let's do the first homework together.
+## H.01 | Updating your <span class="code-span">.env</span> file
+
+Please fill out the following fields in the .env file using the information we just collected from Snowflake (this will allow you to connect to Snowflake from your laptop):
+
+```
+SNOWFLAKE_ACCOUNT = "your_account_identifier"
+SNOWFLAKE_USER = "your_username"
+SNOWFLAKE_PASSWORD = "your_password"
+```
 
 <!--s-->
 
 <div class = "header-slide">
 
- ## Homework Demonstration
-
-</div>
-
-<!--s-->
-
-## H.01 | Submitting Homework
-
-You will submit your homework using the provided submission script. You should use the same username and password you used for the registration process earlier. You will usually receive your score within a few seconds, but this may take longer as the homeworks get more involved.
-
-```bash
-python submit.py --homework H01/hello_world.py --username your_username --password your_password 
-```
-
-<!--s-->
-
-## H.01 | Homework Grading
-
-The highest score will be recorded, so long as it is submitted before the deadline! You have 3 attempts for every homework. Late homeworks will be penalized 10% per day.
-
-<!--s-->
-
-<div class="header-slide">
-
-# Questions?
+ # Homework Demonstration
 
 </div>
 

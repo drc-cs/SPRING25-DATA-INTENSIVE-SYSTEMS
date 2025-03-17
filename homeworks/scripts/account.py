@@ -1,3 +1,8 @@
+"""Interact with the Google Firebase API to create, login, and delete user accounts.
+
+Written by Joshua D'Arcy, 2025.
+"""
+
 import requests
 import argparse
 from getpass import getpass

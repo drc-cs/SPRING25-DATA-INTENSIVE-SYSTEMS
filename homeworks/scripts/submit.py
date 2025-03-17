@@ -1,3 +1,8 @@
+"""Submit homework to the autograder.
+
+Written by Joshua D'Arcy, 2025.
+"""
+
 import requests
 import json
 import argparse
@@ -5,11 +10,16 @@ from datetime import datetime
 from pathlib import Path
 import time
 import os
+import dotenv
+from dotenv import load_dotenv
 
 CONFIG = {"apiKey": "AIzaSyDp0FpJO01nRWeW4ZWZHet8V_Gcvl0xLAc"} # Fine to be public.
 LOGIN_USER_URL = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={CONFIG['apiKey']}"
 DB_URL = "https://drc-cs-9a3f6-default-rtdb.firebaseio.com/"
 COURSE = "MBAI"
+
+# Load the environment variables.
+load_dotenv()
 
 def login(email: str, password: str) -> dict:
     """Login the user."""
@@ -77,7 +87,7 @@ if __name__ == '__main__':
         "username": username,
         "homework": Path(args.homework).name,
         "course_id": COURSE,
-        "python_code": open(args.homework, 'r').read()
+        "notebook_code": open(args.homework, 'r').read()
     }
     response = submit_homework(submission, login_info['idToken'], login_info["localId"])
     document_name = response["name"]
@@ -92,6 +102,5 @@ if __name__ == '__main__':
     if "response" not in response.keys():
         print("Submission failed. Please try again.")
         exit()
-
-    print(response["response"])
         
+    print(response)

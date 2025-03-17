@@ -16,9 +16,6 @@ RUN echo "conda activate mbai-dis" >> ~/.bashrc
 SHELL ["/bin/bash", "-c"]
 RUN source activate mbai-dis
 
-# Install AWS CLI
-RUN apt-get install -y awscli
-
 # Install vscode server.
 RUN curl -fsSL https://code-server.dev/install.sh | bash
 
