@@ -19,3 +19,4 @@ dependencies:
     - matplotlib==3.8.*
     - statsmodels==0.14.*
     - snowflake-connector-python==3.14.*
+    - python-dotenv==1.0.*
