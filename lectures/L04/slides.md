@@ -12,7 +12,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
   # Data Intensive Systems
-  ## L.04 | OLAP
+  ## L.04 | OLAP Systems
 
   </div>
   </div>
