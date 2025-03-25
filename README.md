@@ -10,7 +10,7 @@ Assessments include two exams covering all material covered in the lectures and 
 
 | Week | Date  | Lecture Title  | Topics  | Homework | Why? |
 |------|-------|---------|-----|--------------------|----|
-| ---    | --- | Introduction  | Course Overview; Environment Setup | ---  | ---  |
+| ---    | --- | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/)  | Course Overview; Environment Setup | ---  | ---  |
 | ---    | ---  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
 | ---    | ---  | Databases II | Accessing Databases, Permissions, and Security | ---  | Accessing databases and database security essentials |
 | ---    | --- | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
