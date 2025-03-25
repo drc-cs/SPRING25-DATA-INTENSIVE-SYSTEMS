@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -12,7 +12,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
   # Data Intensive Systems
-  ## L.04
+  ## L.04 | OLAP
 
   </div>
   </div>
@@ -65,7 +65,7 @@ revealOptions:
 
 <div class="header-slide">
 
-# L.10 | Online Analytical Processing (OLAP)
+# L.04 | Online Analytical Processing (OLAP)
 
 </div>
 
@@ -73,28 +73,37 @@ revealOptions:
 
 ## Scenario: Upgrading from PostgreSQL to a Columnar Database
 
-#### Background
-Acme Corp, a leading e-commerce company, has been using PostgreSQL as their primary database for transactional operations. The database handles customer orders, inventory management, and other day-to-day operations efficiently. However, as the company grows, the need for advanced analytics and real-time business intelligence has become critical.
+<div style = "overflow: scroll; height: 100%;">
 
-#### Challenge
+### Background
+iCorp has been using PostgreSQL as their primary database for transactional operations. The database handles customer orders, inventory management, and other day-to-day operations efficiently. However, as the company grows, the need for advanced analytics and real-time business intelligence has become critical.
+
+### Challenge
 The current PostgreSQL setup is struggling to keep up with the increasing volume of data and the complexity of analytical queries. Reports that used to take minutes are now taking hours, and the performance of the transactional system is being impacted by the heavy read operations required for analytics.
 
-#### Proposed Solution
-Acme Corp should migrate their analytical workloads to a columnar database such as Amazon Redshift, Google BigQuery, or Snowflake. This will allow them to maintain their PostgreSQL setup for transactional operations while leveraging the power of columnar storage for analytics.
+### Proposed Solution
+iCorp should migrate their analytical workloads to a columnar database such as Amazon Redshift, Google BigQuery, or Snowflake. This will allow them to maintain their PostgreSQL setup for transactional operations while leveraging the power of columnar storage for analytics.
 
-By upgrading to a columnar database, Acme Corp will be well-positioned to meet their growing analytical needs and maintain a competitive edge in the market.
+By upgrading to a columnar database, iCorp will be well-positioned to meet their growing analytical needs and maintain a competitive edge in the market.
+
+</div>
 
 <!--s-->
 
 ## Agenda
 
-1. What is Online Analytical Processing (OLAP)?
+1. ### What is Online Analytical Processing (OLAP)?
     - Online Transactional Processing (OLTP) Recap
     - OLTP vs OLAP
     - OLAP Solutions
-2. Rise and Fall of the OLAP Cube
-3. Columnar Databases
-4. Modern Data Science
+2. ### Rise and Fall of the OLAP Cube
+    - OLAP Cube Definition
+    - OLAP Cube Operations
+3. ### Columnar Databases
+    - Why Column-Based Databases?
+    - Advances that make Columnar DBs feasible
+4. ### Modern Data Science
+    - Cloud-based Columnar Data Warehouse Services
 
 <!--s-->
 
@@ -102,7 +111,7 @@ By upgrading to a columnar database, Acme Corp will be well-positioned to meet t
 
 **Online Transaction Processing (OLTP)** is a class of software applications capable of supporting transaction-oriented programs. OLTP systems are designed to manage a large number of short online transactions (INSERT, UPDATE, DELETE).
 
-JOIN operations are common in OLTP systems, however, they are expensive.
+JOIN operations are common in OLTP systems, however, they are **expensive** operations.
 
 <div class = "col-wrapper">
   <div class="c1">
@@ -120,6 +129,24 @@ JOIN operations are common in OLTP systems, however, they are expensive.
 <p style="text-align: center; font-size: 0.6em; color: grey;">Ramos 2022</p>
 
   </div>
+</div>
+
+<!--s-->
+
+## L.04 | Q.01
+
+What is **normalized** data in the context of OLTP systems?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%; margin-top: 10%;'>
+
+A. Data that is stored in a way that **minimizes** redundancy.<br><br>
+B. Data that is stored in a way that **maximizes** redundancy.
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.01' width = '100%' height = '100%'></iframe>
+</div>
 </div>
 
 <!--s-->
@@ -183,22 +210,61 @@ OLAP is an approach to answer multi-dimensional analytical queries swiftly. OLAP
 
 ## Database Schemas
 
-A database schema is the skeleton structure that represents the logical view of the entire database. It defines how data is organized and how relationships between data are handled. Importantly, the schema of a database has consequences for performance in different workloads.
 
-For example, a schema optimized for OLTP (e.g. normalized) will not perform well for OLAP workloads which are read-heavy. Normalized schemas are designed to minimize redundancy and ensure data integrity, but they can lead to complex queries that require multiple joins, which can be slow for analytical workloads.
+A database schema is the skeleton structure that represents the logical view of the entire database. It defines how data is organized and how relationships between data are handled. 
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+A schema optimized for OLTP (e.g. normalized) will not perform well for OLAP workloads which are read-heavy. 
+
+Normalized schemas are designed to minimize redundancy and ensure data integrity, but they can lead to complex queries that require multiple joins, which can be slow for analytical workloads.
+
+</div>
+<div class="c2" style = "width: 50%">
 
 <img src = "https://cdn-ajfbi.nitrocdn.com/GuYcnotRkcKfJXshTEEKnCZTOtUwxDnm/assets/images/optimized/rev-c2378d8/www.astera.com/wp-content/uploads/2024/05/Database-schema.png" style="border-radius: 10px"/>
 <p style="text-align: center; font-size: 0.6em; color: grey;">Asteria 2024</p>
+
+</div>
+</div>
+
+
 
 <!--s-->
 
 ## Database Schemas
 
-The Star Schema is a type of database schema that is optimized for data warehousing and OLAP applications. It consists of a central fact table surrounded by dimension tables. Star Schemas are typically denormalized, meaning that they contain redundant data to optimize read performance.
+The **Star Schema** is a type of database schema that is optimized for data warehousing and OLAP applications. It consists of a central fact table surrounded by dimension tables. Star Schemas are typically denormalized, meaning they contain redundant data to optimize read performance.
 
 <div class="col-wrapper col-centered">
   <img src="https://cdn.prod.website-files.com/5e6f9b297ef3941db2593ba1/614df58a1f10f92b88f95709_Screenshot%202021-09-24%20at%2017.46.51.png" style="border-radius: 10px; height: 60%;" />
   <p style="text-align: center; font-size: 0.6em; color: grey;">Asteria 2024</p>
+</div>
+
+<!--s-->
+
+## L.04 | Q.02
+
+Consider the following database schemas. Which is better suited for OLAP?
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+A.
+
+<img style="border-radius: 10px; height: 30%;" src="https://planetscale.com/assets/blog/content/schema-design-101-relational-databases/db72cc3ac506bec544588454972113c4dc3abe50-1953x1576.png" />
+
+B.
+
+<img src="https://cdn.prod.website-files.com/5e6f9b297ef3941db2593ba1/614df58a1f10f92b88f95709_Screenshot%202021-09-24%20at%2017.46.51.png" style="border-radius: 10px; height: 30%;" />
+
+</div>
+<div class="c2" style = "width: 50%">
+
+<iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.02" width = "100%" height = "100%"></iframe>
+
+</div>
 </div>
 
 <!--s-->
@@ -384,11 +450,11 @@ Column-based databases provide faster data retrieval and more effective data com
 
 ## Advances that make Columnar DBs feasible
 
-1. **Data Compression**: Columnar DBs use techniques such as Run Length Encoding (essentially storing the number of times a value is repeated) and Dictionary Encoding (storing a dictionary of unique values and their corresponding indices) to reduce storage space and improve query performance.
+1. **Data Compression**: Columnar databases employ techniques such as Run Length Encoding (where repetitions of a value are condensed into a single entry with a count) and Dictionary Encoding (which uses a dictionary of unique values and indices) to conserve storage space and boost query efficiency.
 
-2. **Vectorized Execution**: Utilizes CPU vector registers to process multiple data elements with a single instruction, enhancing performance. CPU vector registers are small, fast storage locations within the CPU that can hold multiple data points simultaneously.
+2. **Vectorized Execution**: This programming approach leverages CPU vector registers to process entire arrays of data with a single instruction, improving performance by utilizing parallel data processing. The use of vectorized execution efficiently harnesses SIMD capabilities in software.
 
-3. **SIMD (Single Instruction, Multiple Data)**: SIMD architectures allow the same operation to simultaneously occur on multiple data points, crucial for achieving high performance on columnar storage through parallel processing.
+3. **SIMD (Single Instruction, Multiple Data)**: SIMD refers to the hardware architecture that allows for the simultaneous execution of a single operation on multiple data points. This capability is essential for parallel processing in columnar storage, enabling high performance and efficiency.
 
 <!--s-->
 
@@ -418,11 +484,14 @@ Provides a unique architecture with a separation of compute and storage layers, 
 
 ## Summary
 
-**Online Analytical Processing (OLAP)** is a powerful approach to data analysis that enables users to interactively explore and analyze large datasets. 
+### Online Analytical Processing (OLAP)
+OLAP is a powerful approach to data analysis that enables users to interactively explore and analyze large datasets. 
 
-**OLAP cubes**, while once the gold standard for OLAP, have seen a decline in popularity due to their complexity and the rise of more flexible data architectures. 
+### OLAP cubes
+While once the gold standard for OLAP, have seen a decline in popularity due to their complexity and the rise of more flexible data architectures. 
 
-**Columnar databases** have emerged as a key technology for OLAP, providing faster query performance and better compression.
+### Columnar databases
+Columnar databases have emerged as a key technology for OLAP, providing faster query performance and better compression.
 
 <!--s-->
 
@@ -438,6 +507,14 @@ Provides a unique architecture with a separation of compute and storage layers, 
   <div class="c2" style="width: 50%; height: 100%;">
   <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
   </div>
+
+</div>
+
+<!--s-->
+
+<div class="header-slide">
+
+# H.02 | OLAP Demo
 
 </div>
 

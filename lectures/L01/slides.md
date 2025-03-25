@@ -1,5 +1,5 @@
 ---
-title: MBAI XXX
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -186,7 +186,7 @@ We are here to help you! Please try contacting us through office hours or the de
 
 <div class="header-slide">
 
-# Homework Assignment
+# Homework Onboarding
 ## H.01 | "Hello, World!"
 
 Due: 
@@ -208,13 +208,13 @@ In the meantime, please install Docker on your machine if you haven't already do
 Once you have Docker installed, you can download the Docker image for this course by running the following command in your terminal:
 
 ```bash
-docker pull joshuadarcy/drc-cs-9a3f6:latest
+docker pull joshuadrc/mbai:latest
 ```
 
 Once the image is downloaded, you can run it using the following command:
 
 ```bash
-docker run -p 8888:8888 joshuadarcy/drc-cs-9a3f6:latest
+docker run -p 8888:8888 joshuadrc/mbai:latest
 ```
 
 <!--s-->
@@ -270,7 +270,7 @@ Please follow the instructions in the [Snowflake Setup Guide](https://signup.sno
 
 Please fill out the following fields in the .env file using the information we just collected from Snowflake (this will allow you to connect to Snowflake from your laptop):
 
-```
+```bash
 SNOWFLAKE_ACCOUNT = "your_account_identifier"
 SNOWFLAKE_USER = "your_username"
 SNOWFLAKE_PASSWORD = "your_password"
@@ -280,7 +280,7 @@ SNOWFLAKE_PASSWORD = "your_password"
 
 <div class = "header-slide">
 
- # Homework Demonstration
+ # H.01 Demonstration
 
 </div>
 

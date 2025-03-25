@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -44,6 +44,22 @@ revealOptions:
 
 - 
 
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Intro Poll
+  ## On a scale of 1-5, how confident are you with navigating database options & basic SQL?
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Intro Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
 <!--s-->
 
 ## Agenda
@@ -394,6 +410,18 @@ WHERE column1 BETWEEN (SELECT min_value FROM bounds) AND (SELECT max_value FROM 
 
 <!--s-->
 
+## SQL Aliases
+
+Aliases are temporary names assigned to columns or tables in a SQL query. They are used to make the query more readable and concise, especially when dealing with complex queries or when joining multiple tables. Aliases are defined using the <span class="code-span">AS</span> keyword.
+
+```sql
+SELECT column1 AS alias1, column2 AS alias2
+FROM table_name AS alias_table
+```
+
+<!--s-->
+
+
 ## L.02 | Q.01
 
 Let's say you have a table called <span class="code-span">employees</span> with the following columns: <span class="code-span">id</span>, <span class="code-span">name</span>, <span class="code-span">department</span>, and <span class="code-span">salary</span>. 
@@ -402,6 +430,13 @@ Let's say you have a table called <span class="code-span">employees</span> with 
 <div class="c1" style = "width: 50%">
 
 Write a SQL query to get the sum of the salaries of all employees in the <span class="code-span">Engineering</span> department.
+
+| id | name | department | salary |
+| --- | --- | --- | --- |
+| 1 | Alice | Engineering | 50000 |
+| 2 | Bob | Sales | 60000 |
+| 3 | Charlie | Engineering | 70000 |
+| 4 | David | Engineering | 80000 |
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -895,9 +930,26 @@ Popular embedded databases include SQLite and Realm.
 
 <!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Exit Poll
+  ## On a scale of 1-5, how confident are you with navigating database options & basic SQL?
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
+<!--s-->
+
 <div class="header-slide">
 
-# Homework 1
+# H.01
 
 </div>
 
