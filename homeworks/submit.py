@@ -47,7 +47,7 @@ def get_username(args: argparse.Namespace) -> str:
     elif os.environ.get("AG_USERNAME"):
         return os.environ.get("AG_USERNAME")
     else:
-        raise "Please provide a username with the --username flag or set the AG_USERNAME environment variable."
+        raise ValueError("Please provide a username with the --username flag or set the AG_USERNAME environment variable.")
     
 def get_password(args: argparse.Namespace) -> str:
     """Get the password."""
@@ -56,7 +56,7 @@ def get_password(args: argparse.Namespace) -> str:
     elif os.environ.get("AG_PASSWORD"):
         return os.environ.get("AG_PASSWORD")
     else:
-        raise "Please provide a password with the --password flag or set the AG_PASSWORD environment variable."
+        raise ValueError("Please provide a password with the --password flag or set the AG_PASSWORD environment variable.")
     
 def get_course(args: argparse.Namespace) -> str:
     """Get the course."""
@@ -65,7 +65,7 @@ def get_course(args: argparse.Namespace) -> str:
     elif os.environ.get("AG_COURSE"):
         return os.environ.get("AG_COURSE")
     else:
-        raise "Please provide a course with the --course flag or set the AG_COURSE environment variable."
+        raise ValueError("Please provide a course with the --course flag or set the AG_COURSE environment variable.")
     
 def send_notebook(homework: str, username: str = None, password: str = None):
     """Main function to submit homework."""
