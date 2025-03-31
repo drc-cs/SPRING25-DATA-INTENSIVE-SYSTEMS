@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 import os
 import pandas as pd
 import warnings
+
 warnings.simplefilter(action='ignore', category=UserWarning)
 
 load_dotenv()
@@ -56,4 +57,3 @@ def as_dataframe(rows: list, cur: object) -> pd.DataFrame:
         pd.DataFrame: The result set as a pandas DataFrame.
     """
     return pd.DataFrame(rows, columns=[col[0] for col in cur.description])
-

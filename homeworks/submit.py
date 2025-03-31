@@ -10,7 +10,6 @@ from datetime import datetime
 from pathlib import Path
 import time
 import os
-import dotenv
 from dotenv import load_dotenv
 
 CONFIG = {"apiKey": "AIzaSyDp0FpJO01nRWeW4ZWZHet8V_Gcvl0xLAc"} # Fine to be public.
@@ -68,26 +67,21 @@ def get_course(args: argparse.Namespace) -> str:
     else:
         raise "Please provide a course with the --course flag or set the AG_COURSE environment variable."
     
-if __name__ == '__main__':
-    # Parse the arguments.
-    parser = argparse.ArgumentParser(description='Submit homework to autograder')
-    parser.add_argument('--homework', type=str, required=True, help='Local path to the python file you want to submit.')
-    parser.add_argument("--username", type=str, help="Your Northwestern email address (JaneDoe2024@u.northwestern.edu).")
-    parser.add_argument("--password", type=str, help="Your unique password, please don't use your NetID password.")
-    args = parser.parse_args()
-
+def send_notebook(homework: str, username: str = None, password: str = None):
+    """Main function to submit homework."""
+    
     # Get the username and password.
-    username = get_username(args)
-    password = get_password(args)
+    username = username or get_username(argparse.Namespace(username=username, password=password))
+    password = password or get_password(argparse.Namespace(username=username, password=password))
     login_info = login(username, password)
 
     # Submit the homework.
     submission = {
         "datetime": datetime.now().isoformat(),
         "username": username,
-        "homework": Path(args.homework).name,
+        "homework": Path(homework).name,
         "course_id": COURSE,
-        "notebook_code": open(args.homework, 'r').read()
+        "code": open(homework, 'r').read()
     }
     response = submit_homework(submission, login_info['idToken'], login_info["localId"])
     document_name = response["name"]
@@ -101,6 +95,6 @@ if __name__ == '__main__':
 
     if "response" not in response.keys():
         print("Submission failed. Please try again.")
-        exit()
-        
-    print(response)
+        return None
+
+    return response

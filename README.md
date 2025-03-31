@@ -35,10 +35,11 @@ Assessments include two exams covering all material covered in the lectures and 
 
 | Assignment | Due Date | Description | Details |
 | --- | --- | --- | --- |
-| H.01 | -- | SQL Basics | Building familiarity with SQL |
-| H.02 | -- | Distributed Preprocessing | Building an ML-ready dataset |
-| H.03 | -- | Supervised Machine Learning | Training and evaluating models |
-| H.04 | -- | R.A.G. | Implementing a R.A.G. model using SQL syntax |
+| H.01 | -- | Environment Setup | Setting up your environment for the course |
+| H.02 | -- | SQL Basics | Building familiarity with SQL |
+| H.03 | -- | Distributed Preprocessing | Building an ML-ready dataset |
+| H.04 | -- | Supervised Machine Learning | Training and evaluating models |
+| H.05 | -- | R.A.G. | Implementing a R.A.G. model using SQL syntax |
 
 ## Required Software
 

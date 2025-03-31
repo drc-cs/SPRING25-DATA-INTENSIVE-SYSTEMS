@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -647,19 +647,21 @@ X_new = SelectFromModel(RandomForestClassifier()).fit_transform(X, y)
 
 ## Distributed Data Processing
 
+> Update to use Stored Procedures. Maybe something named "create-dataset-v1" that takes in a raw dataset and outputs a ML-ready dataset.
+
 Often, your dataset is too large to fit into memory. In this case, you can use distributed data processing methods to handle the data. Since this process can require a lot of resources, you often want a checkpoint dataset to save your progress. Here is a reasonable best-practice workflow:
 
-Step 1: Collect raw data sources in to a cloud storage bucket. Or, if compatible, a columnar database like SnowFlake.
+Step 1: Collect raw data sources in to a cloud storage bucket. Or, if compatible, a columnar database like Snowflake.
 
-Step 2: Using a distributed data processing framework (like SnowFlake, Spark, or Dask), create a dataset from the raw data sources.
+Step 2: Using a distributed data processing framework (like Snowflake, Spark, or Dask), create a dataset from the raw data sources.
 
-Step 3: Save the dataset to a cloud storage bucket. Or, if compatible, a columnar database like SnowFlake. Saving the dataset has a couple of purposes. 1. It's a system of version control. 2. It allows you to share with others.
+Step 3: Save the dataset to a cloud storage bucket. Or, if compatible, a columnar database like Snowflake. Saving the dataset has a couple of purposes. 1. It's a system of version control. 2. It allows you to share with others.
 
 <!--s-->
 
-## Distributed Data Processing | SnowFlake Homework
+## Distributed Data Processing | Snowflake Homework
 
-We're going to create a Dataset in SnowFlake that illistrates some of the methods covered in this lecture.
+We're going to create a Dataset in Snowflake that illistrates some of the methods covered in this lecture.
 
 <!--s-->
 

@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -43,6 +43,27 @@ revealOptions:
 ## Announcements
 
 - 
+
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Intro Poll
+  ## On a scale of 1-5, how confident are you with **EDA** & **OLAP** concepts such as:
+
+- Variance, Covariance, and Correlation
+- Hypothesis Testing
+- Stored Procedures in OLAP Systems
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Intro Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
 
 <!--s-->
 
@@ -177,7 +198,7 @@ Covariance will be different in these cases, but the relationship is the same!
 
 ## Correlation | Pearson Correlation Coefficient
 
-Pearson correlation coefficient, denoted by \(r\), is a measure of the linear correlation between two variables. It ranges from -1 to 1, and so it is a **standardized** measure of the strength of the relationship.
+Pearson correlation coefficient, denoted by $\(r\)$, is a measure of the linear correlation between two variables. It ranges from -1 to 1, and so it is a **standardized** measure of the strength of the relationship.
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
@@ -282,6 +303,56 @@ FROM
 ```
 <!--s-->
 
+## L.06 | Q.01
+
+You're working on a real estate prediction model. You want to know if there is a positive correlation between sq. feet in a house and it's sale price, specifically a linear relationship. Below is a plot of the relationship between the two variables, what correlation coefficient should you use to measure the strength of the relationship?
+
+<div style = "max-height: 2vh;">
+A. Pearson's <br>
+B. Spearman's <br>
+</div>
+
+<div class = "col-wrapper" style = "align-items: top; justify-content: top;">
+<div class="c1 col-centered" style = "width: 50%">
+
+<img src="https://miro.medium.com/v2/resize:fit:1194/1*opIGrHAATX4NmdI6uzCSGA.png" style="border-radius: 10px; width: 100%; padding: 0px; margin: 0px;">
+<p style="text-align: center; font-size: 0.6em; color: grey;"> Arshad (2024) </p>
+
+</div>
+<div class="c2 col-centered" style = "width: 50%">
+
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.06 | Q.01" width="100%" height="100%" style="border-radius: 10px"></iframe>
+
+</div>
+</div>
+
+<!--s-->
+
+## L.06 | Q.02
+
+You're working in pharmaceuticals and want to know if there is a relationship between the dosage of a drug and binding affinity to a receptor. The relationship is non-linear, but you want to demonstrate that it is always increasing (i.e. higher dose == higher binding affinity). What correlation coefficient should you use to measure the strength of the relationship?
+
+<div style = "max-height: 2.5vh;">
+A. Pearson's <br>
+B. Spearman's <br>
+</div>
+
+<div class = "col-wrapper" style = "align-items: top; justify-content: top;">
+<div class="c1 col-centered" style = "width: 50%">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Monotonicity_example1.svg/1920px-Monotonicity_example1.svg.png" style="border-radius: 10px; width: 80%; padding: 5px; margin: 5px;">
+<p style="text-align: center; font-size: 0.6em; color: grey;"> Wikipedia (2025) </p>
+
+</div>
+<div class="c2 col-centered" style = "width: 50%">
+
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.06 | Q.02" width="100%" height="100%" style="border-radius: 10px"></iframe>
+
+</div>
+</div>
+
+<!--s-->
+
 <div class="header-slide">
 
 # Hypothesis Testing
@@ -366,7 +437,7 @@ $$ df = n_1 + n_2 - 2 $$
 2. If the computed t-value is above the critical t-value, reject the null hypothesis.
 
 <div class="col-centered">
-<img src="https://www.researchgate.net/publication/12025083/figure/fig1/AS:352960891637763@1461163842564/Extract-of-the-t-table-The-first-column-lists-the-degrees-of-freedom-n-1-The.png" style="border-radius: 10px; height: 50%; width: 50%;">
+<img src="https://storage.googleapis.com/slide_assets/t-table.png" style="border-radius: 10px; height: 50%; width: 50%;">
 </div>
 
 <!--s-->
@@ -414,28 +485,26 @@ Degrees of freedom can be calculated with $df = n - 1$.
 2. If the computed t-value falls within the critical range, reject the null hypothesis.
 
 <div class="col-centered">
-<img src="https://www.researchgate.net/publication/12025083/figure/fig1/AS:352960891637763@1461163842564/Extract-of-the-t-table-The-first-column-lists-the-degrees-of-freedom-n-1-The.png" style="border-radius: 10px; height: 50%; width: 50%;">
+<img src="https://storage.googleapis.com/slide_assets/paired-t-table.png" style="border-radius: 10px; height: 50%; width: 50%;">
 </div>
 
 
 <!--s-->
 
 ## Common Hypothesis Tests | Chi-Square Test Setup
-
 ### Scenario
 
-You have two penguin species, Adelie and Chinstrap. They are observed in the wild, and the following data is collected from two islands (A and B):
+You are conducting an A/B test to evaluate the effectiveness of two website designs (A and B) in driving user engagement. The following data is collected:
 
-| Species | Island A | Island B |
-|---------|----------|----------|
-| Adelie  | 15       | 5       |
-| Chinstrap | 5     | 15       |
-
+| Outcome       | Design A | Design B |
+|---------------|----------|----------|
+| Engaged Users | 15      | 5      |
+| Non-Engaged Users | 5   | 15      |
 
 ### Hypotheses
 
-- H0: The species distribution is independent of the island.
-- H1: The species distribution is dependent on the island.
+- H0: The engagement rate is independent of the website design.
+- H1: The engagement rate is dependent on the website design.
 
 ### Assumptions
 
@@ -444,25 +513,25 @@ You have two penguin species, Adelie and Chinstrap. They are observed in the wil
 
 <!--s-->
 
-## Q.01 | Chi-Square Expectation Calculation
+## L.06 | Q.03
 
 **Question:** Calculate the expected frequency for Adelie penguins on Island A. Assuming the null hypothesis is true, what is the expected frequency?
 
 <div class='col-wrapper' style = "max-height: 50vh;">
 <div class='c1' style = 'width: 50%;'>
 
-| Species | Island A | Island B |
-|---------|----------|----------|
-| Adelie  | 15       | 5       |
-| Chinstrap | 5     | 15       |
+| Outcome       | Design A | Design B |
+|---------------|----------|----------|
+| Engaged Users | 15      | 5      |
+| Non-Engaged Users | 5   | 15      |
 
 &emsp;A. 10<br>
 &emsp;B. 5<br>
 &emsp;C. 7.5<br>
 &emsp;D. 12.5<br>
 </div>
-<div class='c2 col-centered' style = 'width: 50%;'>
-<iframe src = "https://drc-cs-9a3f6.firebaseapp.com?label=L.06|Q.01" height = "100%"></iframe>
+<div class='c2 col-centered' style = 'width: 100%;'>
+<iframe src = "https://drc-cs-9a3f6.firebaseapp.com?label=L.06 | Q.03" width = "80%" height = "100%"></iframe>
 </div>
 </div>
 
@@ -520,13 +589,13 @@ $$ df = (2 - 1) \times (2 - 1) = 1 $$
 
 ### Scenario
 
-Testing if there's a difference in the mean test scores across three teaching methods used across different groups.
+You are a manager at a consulting firm evaluating the effectiveness of three different training programs designed to improve employee performance. Each program was implemented with a separate group of employees, and their performance scores were measured after completing the training.
 
 ### Hypotheses
 
+- H0: $ \mu_1 = \mu_2 = \mu_3 $ (no difference among the mean performance scores)
+- H1: At least one training program leads to a different mean performance score.
 
-- H0: $ \mu_1 = \mu_2 = \mu_3 $ (no difference among the group means)
-- H1: At least one group mean is different.
 
 ### Assumptions
 
@@ -535,9 +604,11 @@ Testing if there's a difference in the mean test scores across three teaching me
 - Variances across groups are approximately equal.
     - A good rule of thumb is a ratio of the largest to the smallest variance less than 4.
 
+
 <!--s-->
 
 ## Common Hypothesis Tests | One-Way ANOVA Calculation
+
 
 ### F-Statistic
 
@@ -607,7 +678,7 @@ These tests are distribution-free and do not require the data to be normally dis
 
 ## OLAP | Snowflake
 
-Snowflake does not have built-in functions for hypothesis testing. But, you can use SnowPark. This example uses remote resources for the filtering, and local resources for the calculation.
+Snowflake does not have built-in functions for hypothesis testing. But, you can use SnowPark. This simple example uses remote resources for the filtering, and local resources for the calculation. It can be run in a notebook running locally.
 
 ```python
 
@@ -625,4 +696,90 @@ df = session.table('your_table')
 result = t_test(df, 'column1', 'column2')
 ```
 
+<!--s-->
 
+## OLAP | SnowPark
+
+You can also run python scripts in a Snowflake stored procedure. This example uses a stored procedure to calculate the t-test, comparing the means of two groups (column A and column B). This example is nice because it can be run directly in Snowflake and using their scalable resources.
+
+```python
+
+CREATE OR REPLACE PROCEDURE compare_columns_t_test()
+RETURNS VARIANT
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.8'
+PACKAGES = ('snowflake-snowpark-python', 'scipy')
+HANDLER = 'run'
+AS
+$$
+def run(session):
+    from snowflake.snowpark import functions as F
+    from scipy import stats
+
+    # Load the data
+    df = session.table('your_table')
+
+    # Extract the two groups
+    group_a = df.filter(F.col('group') == 'A').select('column1').to_pandas()['COLUMN1']
+    group_b = df.filter(F.col('group') == 'B').select('column2').to_pandas()['COLUMN2']
+
+    # Perform the t-test
+    t_stat, p_value = stats.ttest_ind(group_a, group_b)
+
+    # Return the results
+    return {"t_statistic": t_stat, "p_value": p_value}
+$$;
+```
+
+```sql
+CALL compare_columns_t_test();
+```
+
+<!--s-->
+
+<div class="header-slide">
+
+# Summary
+
+</div>
+
+<!--s-->
+
+## Summary
+
+- **Variance, Covariance, and Correlation**
+    - Variance is the average of the squared differences from the mean.
+    - Covariance is a measure of how much two random variables vary together.
+    - Pearson's correlation coefficient is a standardized measure of the strength of the relationship.
+    - Spearman's rank correlation coefficient is better for non-linear relationships.
+    - OLAP systems (like Snowflake) have built-in functions for calculating correlation coefficients.
+
+- **Hypothesis Testing**
+    - T-Test: Compares the means of two groups.
+    - Paired T-Test: Compares the means of two groups with paired data.
+    - Chi-Square Test: Compares proportions across categories.
+    - One-Way ANOVA: Compares the means of three or more groups.
+    - Stored procedures in OLAP systems can be used to run hypothesis tests.
+
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Exit Poll
+  ## On a scale of 1-5, how confident are you with **EDA** & **OLAP** concepts such as:
+
+- Variance, Covariance, and Correlation
+- Hypothesis Testing
+- Stored Procedures in OLAP Systems
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
+<!--s-->

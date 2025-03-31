@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -46,6 +46,27 @@ revealOptions:
 
 <!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Intro Poll
+  ## On a scale of 1-5, how confident are you with **Text Mining** concepts such as:
+
+  - Regular Expressions
+  - Semantic Search
+  - Visualizing Embeddings
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Intro Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
+<!--s-->
+
 <div class="header-slide">
 
 # OLAP + EDA III
@@ -57,11 +78,15 @@ revealOptions:
 
 ## Agenda
 
-- Regular Expressions
-- Byte-Pair Tokenization
-- Word Embeddings
-    - Traditional (word2vec)
-    - Modern (LLMs)
+- Regular Expressions (Searching for text patterns)
+  - Syntax
+  - Practice
+  - Regex search in SnowFlake
+- Word Embeddings (Searching for semantic meaning)
+  - Traditional (word2vec)
+  - Modern (LLMs)
+  - Plotting embeddings
+  - Semantic search in SnowFlake
 
 <!--s-->
 
@@ -77,7 +102,7 @@ revealOptions:
 
 Regular expressions (regex) are a powerful tool for working with text data. They allow us to search, match, and manipulate text using a concise and expressive syntax.
 
-You may feel compelled to do basic sting manipulation with Python's built-in string methods. However, regular expressions are much more powerful and flexible. Consider the following example:
+One may feel compelled to do basic sting manipulation with Python's built-in string methods. However, regular expressions are much more powerful and flexible. Consider the following example:
 
 > "My phone number is (810) 555-1234."
 
@@ -133,176 +158,111 @@ Regular expressions are a sequence of characters that define a search pattern. T
 | <span class='code-span'>\\</span>    | Escapes a special character |
 
 </div>
+
+<!--s-->
+
+## Regular Expressions | Simple
+
+| Pattern  | Description   | Example     | Matches   |
+|----------|-----------|-------------|--------|
+| <span class='code-span'>^abc</span>   | Matches string starting with <span class='code-span'>abc</span>     | <span class='code-span'>abcdef</span>    | <span class='code-span'>abc</span>          |
+| <span class='code-span'>def$</span>   | Matches string ending with <span class='code-span'>def</span>       | <span class='code-span'>abcdef</span>    | <span class='code-span'>def</span>|
+| <span class='code-span'>a.c</span>    | Matches <span class='code-span'>a</span> and <span class='code-span'>c</span> with any char between | <span class='code-span'>abc</span>, <span class='code-span'>a-c</span> | <span class='code-span'>abc</span>, <span class='code-span'>a-c</span>   |
+| <span class='code-span'>a+</span>     | Matches one or more occurrences of <span class='code-span'>a</span> | <span class='code-span'>aaab</span>      | <span class='code-span'>aaa</span>    |
+| <span class='code-span'>colou?r</span>| Matches <span class='code-span'>color</span> or <span class='code-span'>colour</span>   | <span class='code-span'>color</span>, <span class='code-span'>colour</span> | <span class='code-span'>color</span>, <span class='code-span'>colour</span>   |
+| <span class='code-span'>[0-9]</span>  | Matches any digit   | <span class='code-span'>a1b2c3</span>    | <span class='code-span'>1</span>, <span class='code-span'>2</span>, <span class='code-span'>3</span>  |
+| <span class='code-span'>[a-z]</span>  | Matches any lowercase letter  | <span class='code-span'>ABCabc</span>    | <span class='code-span'>a</span>, <span class='code-span'>b</span>, <span class='code-span'>c</span>  |
+| <span class='code-span'>[^a-z]</span> | Matches any char not in set <span class='code-span'>a-z</span>       | <span class='code-span'>ABCabc123</span> | <span class='code-span'>A</span>, <span class='code-span'>B</span>, <span class='code-span'>C</span>, <span class='code-span'>1</span>, <span class='code-span'>2</span>, <span class='code-span'>3</span> |
+| <span class='code-span'>\d</span>     | Matches any digit   | <span class='code-span'>123abc</span>    | <span class='code-span'>1</span>, <span class='code-span'>2</span>, <span class='code-span'>3</span>  |
+| <span class='code-span'>\w+</span>    | Matches one or more word characters     | <span class='code-span'>Hello, world!</span> | <span class='code-span'>Hello</span>, <span class='code-span'>world</span>      |
+
+<!--s-->
+
+## Regular Expressions | Complex
+
+| Pattern      | Description     | Example Input | Matches       |
+|--------------|-------------------------------------------------|-----------------------|---------------|
+| <span class='code-span'>(\d{3}-\d{2}-\d{4})</span> | Matches a Social Security number format | <span class='code-span'>123-45-6789</span> | <span class='code-span'>123-45-6789</span> |
+| <span class='code-span'>(\b\w{4}\b)</span> | Matches any four-letter word    | <span class='code-span'>This is a test</span>      | <span class='code-span'>This</span>, <span class='code-span'>test</span>|
+| <span class='code-span'>(?<=\$)\d+</span> | Matches numbers following a <span class='code-span'>$</span> | <span class='code-span'>Cost: $100</span>  | <span class='code-span'>100</span> |
+| <span class='code-span'>(abc\|def)</span>  | Matches either <span class='code-span'>abc</span> or <span class='code-span'>def</span>   | <span class='code-span'>abcdef</span>      | <span class='code-span'>abc</span>, <span class='code-span'>def</span>  |
+| <span class='code-span'>(?i)regex</span>  | Case-insensitive match for <span class='code-span'>regex</span>      | <span class='code-span'>Regex is fun!</span>       | <span class='code-span'>Regex</span>       |
+
 <!--s-->
 
 ## Regular Expressions
 
-Want to practice or make sure your expression works? 
+Want to practice or make sure your expression works before deploying it? Use an online regex tester!
 
 Live regular expression practice: https://regex101.com/
 
 <!--s-->
 
-## Snowflake
+## L.07 | Q.01
 
-Here is an example of searching for phone numbers in a column of a Snowflake table.
+Which regular expression would match any word that starts with "con" (e.g. captures "conman" but not "icon")?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%'>
+
+A. <span class='code-span'> con\w+ </span><br><br>
+B. <span class='code-span'> \bcon\w+ </span><br><br>
+C. <span class='code-span'> \bcon\w{3} </span>
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.01' width = '100%' height = '100%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## L.07 | Q.02
+
+Which regular expression would match any word that ends with "ing" (e.g. captures "running" but not "ring")?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%'>
+
+A. <span class='code-span'> ing\b </span><br><br>
+B. <span class='code-span'> \w+ing\b </span><br><br>
+C. <span class='code-span'> \w+ing </span>
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.02' width = '100%' height = '100%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## Regex & OLAP
+
+Regular expressions can be used in OLAP queries to search for text patterns in your data. This is a simple and easy form of text mining that can be done directly in your database.
+
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### Snowflake
 
 ```sql
-
 SELECT *
 FROM my_table
 WHERE REGEXP_LIKE(phone_number, '\\(\\d{3}\\)\\d{3}-\\d{4}');
 ```
 
-<!--s-->
-
-<div class="header-slide">
-
-# Tokenization
-
 </div>
+<div class="c2" style = "width: 50%">
 
-<!--s-->
+### BigQuery
 
-## Tokenize
-
-Tokenization is the process of breaking text into smaller units called tokens. Tokens can be words, subwords, or characters. Tokenization is a crucial step in NLP because it allows us to work with text data in a structured way.
-
-Some traditional tokenization strategies include:
-
-- **Word Tokenization**. E.g. <span class="code-span">"Hello, world!" -> ["Hello", ",", "world", "!"] -> [12, 4, 56, 3]</span>
-- **Subword Tokenization**. E.g. <span class="code-span">"unbelievable" -> ["un", "believable"] -> [34, 56]</span>
-- **Character Tokenization**. E.g. <span class="code-span">"Hello!" -> ["H", "e", "l", "l", "o", "!"] -> [92, 34, 56, 56, 12, 4]</span>
-
-These simple tokenization strategies are often not sufficient for modern NLP tasks. For example, word tokenization can lead to a large vocabulary size, which can be computationally expensive. Subword tokenization can help reduce the vocabulary size, but it can still lead to out-of-vocabulary words. Character tokenization can handle out-of-vocabulary words, but it can lead to a loss of semantic meaning. One common, modern tokenization strategy is **Byte Pair Encoding(BPE)**, which is used by many large language models.
-
-<!--s-->
-
-## Tokenize | Byte Pair Encoding (BPE)
-
-BPE is a subword tokenization algorithm that builds a vocabulary of subwords by iteratively merging the most frequent pairs of characters.
-
-BPE is a powerful tokenization algorithm because it can handle rare words and out-of-vocabulary words. It is used by many large language models, including GPT-4. The algorithm is as follows:
-
-```text
-1. Initialize the vocabulary with all characters in the text.
-2. While the vocabulary size is less than the desired size:
-    a. Compute the frequency of all character pairs.
-    b. Merge the most frequent pair.
-    c. Update the vocabulary with the merged pair.
+```sql
+SELECT *
+FROM my_table
+WHERE REGEXP_CONTAINS(phone_number, r'\(\d{3}\)\d{3}-\d{4}');
 ```
 
-<!--s-->
-
-## Tokenize | Byte Pair Encoding (BPE) with TikToken
-
-One BPE implementation can be found in the `tiktoken` library, which is an open-source library from OpenAI.
-
-```python
-
-import tiktoken
-enc = tiktoken.get_encoding("cl100k_base") # Get specific encoding used by GPT-4.
-enc.encode("Hello, world!") # Returns the tokenized text.
-
->> [9906, 11, 1917, 0]
-
-```
-
-<!--s-->
-
-## Chunking
-
-<div style = "font-size: 0.8em;">
-
-Chunking is the process of creating windows of text that can be indexed and searched. Chunking is essential for information retrieval systems because it allows us to break down large documents into smaller, searchable units. It differs from tokenization in that it is not concerned with the individual tokens, but rather with the larger units of text.
-
-<div class = "col-wrapper">
-
-<div class="c1" style = "width: 50%; height: 100%;">
-
-
-### Sentence Chunking
-
-Sentence chunking is the process of breaking text into sentences.
-
-E.g. <span class="code-span">"Hello, world! How are you?" -> ["Hello, world!", "How are you?"]</span>
-
-### Paragraph Chunking
-
-Paragraph chunking is the process of breaking text into paragraphs.
-
-E.g. <span class="code-span">"Hello, world! \n Nice to meet you." -> ["Hello, world!", "Nice to meet you."]</span>
-
-### Agent Chunking
-
-Agent chunking is the process of breaking text down using an LLM.
-
-</div>
-
-<div class="c2" style = "width: 50%; height: 100%;">
-
-### Sliding Word / Token Window Chunking
-
-Sliding window chunking is a simple chunking strategy that creates windows of text by sliding a window of a fixed size over the text.
-
-E.g. <span class="code-span">"The cat in the hat" -> ["The cat in", "cat in the", "in the hat"]</span>
-
-### Semantic Chunking
-
-Semantic chunking is the process of breaking text into semantically meaningful units.
-
-E.g. <span class="code-span">"The cat in the hat. One of my favorite books." -> ["The cat in the hat.", "One of my favorite books."]</span>
-
-</div>
-</div>
-
-<!--s-->
-
-## Chunk | NLTK Sentence Chunking
-
-NLTK is a powerful library for natural language processing that provides many tools for text processing. NLTK provides a sentence tokenizer that can be used to chunk text into sentences.
-
-### Chunking with NLTK
-
-```python
-from nltk import sent_tokenize
-
-# Load Academic Integrity document.
-doc = open('/Users/joshua/Desktop/academic_integrity.md').read()
-
-# Split the document into sentences.
-chunked_data = sent_tokenize(doc)
-```
-
-<div class = "col-wrapper">
-<div class="c1" style = "width: 50%; height: 100%;">
-
-### Input: Original Text
-
-```text
-The purpose of this guide is to set forth the terms under which academic work is pursued at Northwestern and
-throughout the larger intellectual community of which we are members. Please read this booklet carefully,
-as you will be held responsible for its contents. It describes the ways in which common sense and decency apply
-to academic conduct. When you applied to Northwestern, you agreed to abide by our principles of academic integrity;
-these are spelled out on the first three pages. The balance of the booklet provides information that will help you avoid
-violations, describes procedures followed in cases of alleged violations of the guidelines, and identifies people who 
-can give you further information and counseling within the undergraduate schools.
-```
-
-</div>
-<div class="c2" style = "width: 50%; height: 100%;">
-
-### Output: Chunked Text (by Sentence)
-```text
-[
-    "The purpose of this guide is to set forth the terms under which academic work is pursued at Northwestern and throughout the larger intellectual community of which we are members."
-    "Please read this booklet carefully, as you will be held responsible for its contents."
-    "It describes the ways in which common sense and decency apply to academic conduct."
-    "When you applied to Northwestern, you agreed to abide by our principles of academic integrity; these are spelled out on the first three pages."
-    "The balance of the booklet provides information that will help you avoid violations, describes procedures followed in cases of alleged violations of the guidelines, and identifies people who can give you further information and counseling within the undergraduate schools."
-]
-
-```
 </div>
 </div>
 
@@ -313,6 +273,14 @@ can give you further information and counseling within the undergraduate schools
 # Word Embeddings
 
 </div>
+
+<!--s-->
+
+## Regex vs. Embed
+
+Regular expressions are great for searching for text patterns, but they are limited to the syntax and structure of the text. Word embeddings, on the other hand, allow us to search for the *meaning* of words in a document.
+
+For example, what if you wanted to search for "the sport David Beckham played" in a document that only mentions "soccer" and "Manchester United"? No regex pattern would match this query, but a word embedding search would.
 
 <!--s-->
 
@@ -343,6 +311,31 @@ Word2Vec is trained on large text corpora and produces dense word vectors that c
 
 <!--s-->
 
+## Embed | Traditional Word Embeddings
+
+Traditional word embeddings are static and pre-trained on large text corpora. Some of the most popular traditional word embeddings include Word2Vec, GloVe, and FastText.
+
+The static embeddings they generated were very useful, but they have limitations. They do not capture the context in which a word appears, and they do not adapt to the specific language of a document. This is where contextual embeddings come in.
+
+<!--s-->
+
+## L.07 | Q.03
+
+Which of the following statements is true?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%'>
+
+A. CBOW models predict the context given a word, Skip-gram models predict a word given its context.<br><br>
+B. Skip-gram models predict the context given a word, CBOW models predict a word given its context.<br><br>
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.03' width = '100%' height = '100%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
 ## Embed | Contextual Word Embeddings
 
 Contextual word embeddings are word embeddings that are dependent on the context in which the word appears. Contextual word embeddings are essential for many NLP tasks because they capture the *contextual* meaning of words in a sentence.
@@ -359,36 +352,83 @@ For example, the word "bank" can have different meanings depending on the contex
 
 <!--s-->
 
+## Embed | LLM Overview
+
+Transformers are a type of neural network architecture that has revolutionized NLP. Transformers are powerful because they can capture long-range dependencies in text and are highly parallelizable. You can use embeddings from any of these architectures as "contextual embeddings."
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%; font-size: 0.8em;">
+
+**Encoder-Decoder Models**: T5, BART.
+
+Encoder-decoder models generate text by encoding the input text into a fixed-size vector and then decoding the vector into text. Used in machine translation and text summarization.
+
+**Encoder-Only**: BERT
+
+Encoder-only models encode the input text into a fixed-size vector. These models are powerful for text classification tasks but are not typically used for text generation.
+
+**Decoder-Only**: GPT-4, GPT-3, Gemini 
+
+Autoregressive models generate text one token at a time by conditioning on the previous tokens. Used in text generation, language modeling, and summarization.
+
+</div>
+<div class="c2 col-centered" style = "width: 50%">
+
+<div>
+<img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F81c2aa73-dd8c-46bf-85b0-90e01145b0ed_1422x1460.png" style="margin: 0; padding: 0; ">
+<span style="font-size: 0.6em; padding-top: 0.5em; text-align: center; display: block; color: grey;">Vaswani, 2017</span>
+</div>
+</div>
+</div>
+
+<!--s-->
+
+## L.07 | Q.04
+
+Which of the following architectures is the output a word embedding?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%'>
+
+A. Encoder-Decoder<br><br>
+B. Encoder-Only<br><br>
+C. Decoder-Only<br><br>
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.04' width = '100%' height = '100%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
 ## OLAP | Embed
 
-Similar to the previous examples, we can use Snowflake to embed text data.
+Similar to the previous examples, we can use Snowflake to embed text data. Snowflake's <span class="code-span">SNOWFLAKE.CORTEX.EMBED_TEXT_768</span> model will take a string of text and return a 768-dimensional vector representation of the text.
 
 ```sql
-
--- Create embedding vectors for wiki articles (only do once)
 ALTER TABLE wiki ADD COLUMN vec VECTOR(FLOAT, 768);
 UPDATE wiki SET vec = SNOWFLAKE.CORTEX.EMBED_TEXT_768('snowflake-arctic-embed-m', content);
-
 ```
 
 <!--s-->
 
 ## OLAP | Embed
 
-We can even create RAG pipelines in Snowflake.
+Here is an example of how you can use Snowflake to embed a query and then perform a semantic search to find the most relevant wiki article for the query. We'll use this technique later in the course when we build a RAG model / chatbot.
 
 ```sql
 
--- Create embedding vectors for wiki articles (only do once)
+-- Create embedding vectors for wiki articles.
 ALTER TABLE wiki ADD COLUMN vec VECTOR(FLOAT, 768);
 UPDATE wiki SET vec = SNOWFLAKE.CORTEX.EMBED_TEXT_768('snowflake-arctic-embed-m', content);
 
--- Embed incoming query
+-- Embed incoming query.
 SET query = 'in which year was Snowflake Computing founded?';
 CREATE OR REPLACE TABLE query_table (query_vec VECTOR(FLOAT, 768));
 INSERT INTO query_table SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_768('snowflake-arctic-embed-m', $query);
 
--- Do a semantic search to find the relevant wiki for the query
+-- Do a semantic search to find the relevant wiki for the query.
 WITH result AS (
     SELECT
         w.content,
@@ -399,9 +439,95 @@ WITH result AS (
     LIMIT 1
 )
 
--- Pass to large language model as context
-SELECT SNOWFLAKE.CORTEX.COMPLETE('mistral-7b',
-    CONCAT('Answer this question: ', query_text, ' using this text: ', content)) FROM result;
-
 ```
+
+<!--s-->
+
+<div class="header-slide">
+
+# Embedding Visualization
+
+</div>
+
+<!--s-->
+
+## Visualization
+
+Let's say you retrieve the word embeddings for a set of words. How can you visualize these embeddings in a way that captures the semantic relationships between the words?
+
+There are two popular approaches to plotting high-dimensional embeddings in 2D space:
+
+- **t-SNE**. t-Distributed Stochastic Neighbor Embedding is a dimensionality reduction technique that captures the local structure of the data.
+
+- **PCA**. Principal Component Analysis is a linear dimensionality reduction technique that captures the global structure of the data.
+
+We'll talk more about PCA later, but for now, let's focus on t-SNE.
+
+<!--s-->
+
+## t-SNE + Visualization
+
+t-SNE is a powerful technique for visualizing high-dimensional data in 2D space. t-SNE works by modeling the similarity between data points in high-dimensional space and then projecting them into 2D space while preserving the local structure of the data.
+
+Here is an example of how you can use t-SNE to visualize word embeddings in Python:
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+```python
+from sklearn.manifold import TSNE
+import plotly.express as px
+
+# Generate word embeddings.
+# ---
+
+# Fit t-SNE model.
+tsne = TSNE(n_components=2, random_state=0, perplexity=30)
+embeddings_2d = tsne.fit_transform(embeddings)
+
+# Plot embeddings.
+px.scatter(x=embeddings_2d[:, 0], y=embeddings_2d[:, 1])
+```
+
+</div>
+<div class="c2" style = "width: 50%">
+
+<div style='text-align: center;'>
+   <img src='https://miro.medium.com/v2/resize:fit:4800/format:webp/0*OFEG6lda-nRTLVYs' style='border-radius: 10px;'>
+   <p style='font-size: 0.6em; color: grey;'>Smetanin 2018</p>
+</div>
+
+</div>
+</div>
+
+<!--s-->
+
+## t-SNE | Results
+
+<div style='text-align: center;'>
+   <img src='https://miro.medium.com/v2/resize:fit:4800/format:webp/0*quUwP6EqEhFmNAqX' style='border-radius: 10px;'>
+   <p style='font-size: 0.6em; color: grey;'>Smetanin 2018</p>
+</div>
+
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Exit Poll
+  ## On a scale of 1-5, how confident are you with **Text Mining** concepts such as:
+
+  - Regular Expressions
+  - Semantic Search
+  - Visualizing Embeddings
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
 <!--s-->

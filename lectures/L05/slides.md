@@ -1,5 +1,5 @@
 ---
-title: MBAI
+title: MBAI 417
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: serif
@@ -46,6 +46,27 @@ revealOptions:
 
 <!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Intro Poll
+  ## On a scale of 1-5, how confident are you with **EDA** & **OLAP** concepts such as: 
+
+  1. Handling incompatible data
+  2. Database imputation
+  3. Anomaly detection
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Intro Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
+<!--s-->
+
 <div class="header-slide">
 
 # OLAP + EDA I
@@ -55,6 +76,9 @@ revealOptions:
 <!--s-->
 
 ## Agenda
+
+<div class = "col-wrapper" style="font-size: 0.9em;">
+<div class="c1" style = "width: 48%">
 
 ### Handling Incompatible Data
 
@@ -71,6 +95,9 @@ revealOptions:
 - Why do we care about imputation?
 - How do we impute missing data?
 
+</div>
+<div class="c2" style = "width: 50%">
+
 ### Anomaly Detection
 
 **Scenario**: You work at a small e-commerce company. Your team is tasked with analyzing customer purchase data to identify any unusual spending patterns that may indicate fraudulent activity.
@@ -78,6 +105,10 @@ revealOptions:
 - What is an outlier?
 - Why do we care about outliers?
 - How do we automatically detect outliers?
+
+</div>
+</div>
+
 
 <!--s-->
 
@@ -97,7 +128,7 @@ Remember the age-old adage:
 
 > Garbage in, garbage out.
 
- Data cleaning is the process of converting source data into target data without errors, duplicates, or inconsistencies. You will often need to structure data in a way that is useful for your analysis, so learning some basic data manipulation is **essential**.
+ Data cleaning is the process of converting source data into target data without errors, duplicates, or inconsistencies. You will often need to structure data in a way that is useful for analysis, so learning some basic data manipulation is **essential**.
 
 <!--s-->
 
@@ -105,11 +136,19 @@ Remember the age-old adage:
 
 1. Incompatible data
 2. Missing values
-3. Extreme Outliers
+3. Outliers
 
 <!--s-->
 
-## Data Cleaning | Handling Incompatible Data
+<div class="header-slide">
+
+# Incompatible Data
+
+</div>
+
+<!--s-->
+
+## Handling Incompatible Data
 
 <div style = "font-size: 0.85em;">
 
@@ -125,7 +164,27 @@ Remember the age-old adage:
 
 <!--s-->
 
-## Data Cleaning | Handling Missing Values
+## Incompatible Data in OLAP Systems
+
+Fortunately, OLAP systems often require data to be in a structured and consistent format (e.g. columns are usually type-specific). This means that you can often avoid many of the common data issues that arise in other types of data analysis. However, you may still encounter some issues, such as:
+
+- Different date formats
+- Different time zones
+- Different character encodings
+
+These issues can be handled using standard libraries **before** loading the data into the OLAP system.
+
+<!--s-->
+
+<div class="header-slide">
+
+# Missing Values
+
+</div>
+
+<!--s-->
+
+## Handling Missing Values
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
@@ -153,7 +212,7 @@ Remember the age-old adage:
 
 <!--s-->
 
-## Data Cleaning | Missing at Random Assumption
+## Missing at Random Assumption
 
 <div class = "col-wrapper">
 
@@ -174,10 +233,10 @@ Remember the age-old adage:
 
 <!--s-->
 
-## Data Cleaning | Handling Missing Values with Substitution
+## Handling Missing Values with Substitution
 
 <div class = "col-wrapper"> 
-<div class = "c1" style = "width: 70%; font-size: 0.85em;">
+<div class = "c1" style = "width: 55%; font-size: 0.7em;">
 
 
 | Method | Description | When to Use |
@@ -189,10 +248,11 @@ Remember the age-old adage:
 | Random imputation | Sample random values from a column. | Random missing values | 
 | KNN imputation | Use K-nearest neighbors to fill missing values. | Random missing values |
 | Multiple Imputation | Uses many regression models and other variables to fill missing values. | Random missing values |
+| Random Forest Imputation | Uses random forest to fill missing values. | Random missing values |
 
 </div>
 
-<div class = "c2 col-centered" style = "width: 40%">
+<div class = "c2 col-centered" style = "width: 45%">
 
 ```python
 import pandas as pd
@@ -233,34 +293,57 @@ df_mi = imputer.fit_transform(df)
 
 <!--s-->
 
-## Data Cleaning | Q.01
+## L.05 | Q.01
 
 You have streaming data that is occasionally dropping values. Which of the following methods would be appropriate to fill missing values when signal fails to update? 
 
 *Please note, in this scenario, you can't use the future to predict the past.*
 
 <div class="col-wrapper">
-<div class="c1 col-centered" style = "width: 60%; padding-bottom: 20%;">
+<div class="c1 col-centered" style = "width: 50%;">
 
 <div style = "line-height: 2em;">
 &emsp;A. Forward fill <br>
 &emsp;B. Imputation by interpolation <br>
-&emsp;C. Mean value imputation <br>
+&emsp;C. Multiple imputation <br>
 &emsp;D. Backward fill <br>
 </div>
 
 </div>
 
-<div class="c2 col-centered" style = "width: 40%; padding-bottom: 20%">
-<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Q.01" width = "100%" height = "100%"></iframe>
+<div class="c2 col-centered" style = "width: 50%;">
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.05 | Q.01" width = "100%" height = "100%"></iframe>
 </div>
 </div>
 
 <!--s-->
 
-## OLAP Imputation
+## L.05 | Q.02
 
-Typically, multiple imputation is the best method for imputation. Let's say you have a table in Snowflake with 1 million rows and 100 columns. You can use the snowflake.ml.modeling.impute.IterativeImputer method in Snowflake to impute missing values, all while taking advantage of Snowflake's distributed architecture.
+You have a dataset with missing at random values (MAR). The dataset has a is not time series data. Which of the following methods would be appropriate to fill missing values?
+
+<div class="col-wrapper">
+<div class="c1 col-centered" style = "width: 50%;">
+
+<div style = "line-height: 2em;">
+&emsp;A. Forward fill <br>
+&emsp;B. Imputation by interpolation <br>
+&emsp;C. Multiple imputation <br>
+&emsp;D. Backward fill <br>
+</div>
+
+</div>
+
+<div class="c2 col-centered" style = "width: 50%;">
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.05 | Q.02" width = "100%" height = "100%"></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## OLAP Imputation | Snowflake
+
+Typically, multiple imputation is the best method for imputation. Let's say you have a table in Snowflake with 1 million rows and 100 columns. You can use the <span class="code-span">snowflake.ml.modeling.impute.IterativeImputer</span> method in Snowflake to impute missing values, all while taking advantage of Snowflake's distributed architecture.
 
 ```sql
 SELECT *
@@ -271,11 +354,33 @@ FROM snowflake.ml.modeling.impute.IterativeImputer(
 );
 ```
 
-By default, this method uses Bayesian Ridge regression to impute missing values. You can also use other regression models, such as Random Forest or Gradient Boosting.
+By default, this method uses Bayesian ridge regression to impute missing values. You can also use other models, such as Random Forest or Gradient Boosting.
 
 <!--s-->
 
-## Data Cleaning | Anomaly Detection
+## OLAP Imputation | BigQuery
+
+BigQuery has a similar method for imputing missing values. You can use the <span class="code-span">ML.IMPUTER</span> function to impute missing values in your data. BigQuery (as of 03.2025) does not have support for more advanced imputation methods.
+
+```sql
+
+SELECT f, ML.IMPUTER(f, 'mean') OVER () AS output
+FROM
+  UNNEST([NULL, -3, -3, -3, 1, 2, 3, 4, 5]) AS f
+ORDER BY f;
+```
+
+<!--s-->
+
+<div class="header-slide">
+
+# Anomaly Detection
+
+</div>
+
+<!--s-->
+
+## Anomaly Detection
 
 Outliers are extreme values that deviate from other observations on data. They can be caused by measurement error, data entry error, or they can be legitimate values. Outlier detection is, at its core, an anomaly detection problem. Here are some common methods for anomaly detection:
 
@@ -285,7 +390,7 @@ Outliers are extreme values that deviate from other observations on data. They c
 
 <!--s-->
 
-## Data Cleaning | Identifying Anomalies with Z-Score
+## Identifying Anomalies with Z-Score
 
 A z-score is a measure of how many standard deviations a data point is from the mean. A z-score of 0 indicates that the data point is exactly at the mean, while a z-score of 1.0 indicates that the data point is one standard deviation above the mean.
 
@@ -298,11 +403,11 @@ Where:
 - $\mu$ is the mean of the data
 - $\sigma$ is the standard deviation of the data
 
-A z-score of 3 or -3 is often used as a threshold for identifying outliers.
+A z-score of 3 or -3 is often used as a threshold for identifying outliers. Please note, z-score is best used when the data is normally distributed.
 
 <!--s-->
 
-## Data Cleaning | Identifying Anomalies with IQR
+## Identifying Anomalies with IQR
 
 The interquartile range (IQR) is a measure of statistical dispersion, or how spread out the data is. It is calculated as the difference between the 75th percentile (Q3) and the 25th percentile (Q1) of the data.
 
@@ -318,36 +423,20 @@ The IQR is often used to identify outliers. A common rule of thumb is that any d
 
 <!--s-->
 
-## Data Cleaning | Identifying Anomalies with Isolation Forest
+## Identifying Anomalies with Isolation Forest
 
 An Isolation Forest is an unsupervised machine learning algorithm that is used for anomaly detection. It works by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature. This process is repeated recursively until all data points are isolated. The number of splits required to isolate a data point is called the path length. Anomalies are points that have shorter path lengths, as they are easier to isolate.
 
-<img src = "https://spotintelligence.com/wp-content/uploads/2024/05/illustration-isolation-forest.jpg" width = "100%">
+<div style="text-align: center;">
+<img src = "https://spotintelligence.com/wp-content/uploads/2024/05/illustration-isolation-forest.jpg" width = "70%" style="border-radius: 10px;">
 <p style="text-align: center; font-size: 0.6em; color: grey;">Spot Intelligence 2024</p>
-
-<!--s-->
-
-## Data Cleaning | Identifying Anomalies with One-Class SVM
-
-A One-Class SVM is a supervised machine learning algorithm that is used for anomaly detection. It works by finding a hyperplane that separates the data points from the origin. The distance from the hyperplane to the origin is called the decision function. Anomalies are points that have a decision function value less than a certain threshold.
-
-<img src = "https://pub.mdpi-res.com/applsci/applsci-13-01734/article_deploy/html/images/applsci-13-01734-g001.png?1675319625" width = "100%">
-<p style="text-align: center; font-size: 0.6em; color: grey;">MDPI 2023</p>
-
-<!--s-->
-
-## Data Cleaning | Identifying Anomalies with Visualization
-
-Often, the best way to identify anomalies is through visualization. This is commonly done through boxplots.
-
-<img src = "https://miro.medium.com/v2/resize:fit:1400/1*0MPDTLn8KoLApoFvI0P2vQ.png" width = "100%">
-<p style="text-align: center; font-size: 0.6em; color: grey;">Agarwal 2019</p>
+</div>
 
 <!--s-->
 
 ## OLAP Anomaly Detection
 
-You can use the snowflake.ml.modeling.anomaly_detection.IsolationForest method in Snowflake to detect anomalies in your data. This method uses the Isolation Forest algorithm to identify anomalies.
+You can use the <span class="code-span">snowflake.ml.modeling.anomaly_detection.IsolationForest</span> method in Snowflake to detect anomalies in your data. This method uses the Isolation Forest algorithm to identify anomalies.
 
 ```sql
 
@@ -362,6 +451,39 @@ By default, this method uses the Isolation Forest algorithm to identify anomalie
 
 <!--s-->
 
+## Identifying Anomalies with Visualization
+
+Often, the best way to identify anomalies is through visualization. This is commonly done through boxplots.
+
+<img src = "https://miro.medium.com/v2/resize:fit:1400/1*0MPDTLn8KoLApoFvI0P2vQ.png" width = "100%" style="border-radius: 10px;">
+<p style="text-align: center; font-size: 0.6em; color: grey;">Agarwal 2019</p>
+
+<!--s-->
+
+## L.05 | Q.03
+
+You are working for a cybersecurity company tasked with detecting anomalies in network traffic data. The dataset contains hundreds of features, such as packet size, source and destination IPs, protocols, and timestamps. The data is high-dimensional and not normally distributed.
+
+Select the most appropriate method for detecting anomalies in this dataset.
+
+<div class="col-wrapper">
+<div class="c1 col-centered" style = "width: 50%;">
+
+<div style = "line-height: 2em;">
+&emsp;A. IQR <br>
+&emsp;B. Z-Score <br>
+&emsp;C. Isolation Forest <br>
+</div>
+
+</div>
+
+<div class="c2 col-centered" style = "width: 50%;">
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.05 | Q.03" width = "100%" height = "100%"></iframe>
+</div>
+</div>
+
+<!--s-->
+
 ## Summary
 
 - Incompatible data can often be handled with unit conversions, precision representations, character representations, text unification, and time/date unification.
@@ -372,3 +494,23 @@ By default, this method uses the Isolation Forest algorithm to identify anomalie
 
 <!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Exit Poll
+  ## On a scale of 1-5, how confident are you with **EDA** & **OLAP** concepts such as: 
+
+  1. Handling incompatible data
+  2. Database imputation
+  3. Anomaly detection
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+
+<!--s-->

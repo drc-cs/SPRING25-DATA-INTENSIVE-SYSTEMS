@@ -260,7 +260,7 @@ Snowflake is a cloud-based data warehousing service that we will be using for th
 
 Please follow the instructions in the [Snowflake Setup Guide](https://signup.snowflake.com/) to create an account. You will also want to do the following once you have access: 
 
-1. Set a budget limit.
+1. Set a budget limit. You get $400 in free credits for 30 days. Set budget cap to $20, just in case.
 2. Collect your account identifer  <span class="code-span">Profile > Account > View Account Details > Account Identifier</span>
 3. Collect your username and password. Snowflake requires MFA now, but you will still need to have a password.
 
