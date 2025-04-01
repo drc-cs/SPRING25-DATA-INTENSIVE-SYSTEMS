@@ -1,4 +1,5 @@
 # MBAI 417 : Data Intensive Systems
+[[github link](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS/tree/main)]
 
 Welcome to Data Intensive Systems! This course provides a comprehensive introduction to distributed data processing and modeling.  These areas are essential to roles such as Data Engineers, Machine Learning Engineers, and Data Architects. The first half covers data-intensive operations including handling cloud storage, online analytical processing, and distributed data preprocessing. Building on this foundation, we transition towards data-intensive machine learning operations, including scalable machine learning algorithms (e.g. linear regression, XGBoost), distributed training, hyperparameter tuning, and model serving with real-time inference. These skills are essential for Machine Learning Engineers, Machine Learning Operations Engineers, and Technical Product Managers.
 
