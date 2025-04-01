@@ -29,7 +29,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
   # Welcome to Data Intensive Systems.
-  ## Please check in by creating an account and entering the code on the chalkboard.
+  ## Please check in by creating an account and entering the code on the whiteboard.
 
   </div>
   </div>
@@ -44,7 +44,45 @@ revealOptions:
 
 <div style="overflow-y: scroll; height: 80%; font-size: 0.8em;">
 
+| Week | Date  | Lecture Title  | Topics  | Homework Due | Context for DIS |
+|------|-------|---------|-----|--------------------|----|
+| 1    | 04.04.2025 | Introduction | Course Overview; Environment Setup | ---  | ---  |
+| 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
+| 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials |
+| 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
+| 3   | 04.16.2025 | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data using SQL syntax. |
+| 3   | 04.17.2025 | OLAP + EDA II | Covariance, Correlation, Association Analysis | H.02  | Describing numerical patterns with online analytics. |
+| 4   | 04.21.2025 | OLAP + EDA III | Hypothesis Testing, Descriptive Statistics, and Data Visualization | ---  | Describing numerical patterns with online analytics. |
+| 4   | 04.24.2025 | OLAP + EDA IV | Modern text data mining (NLP) | ---  | Describing text patterns with online analytics. |
+| 5   | 04.28.2025 | Distributed Preprocessing I | Distributed Data Processing and Pipelines  | --- | Leveraging cloud resources for data preprocessing. |
+| 5    | 04.30.2025  | Exam Review & Distributed Preprocessing II | Exam Review and Feature Selection | ---  | Leveraging cloud resources for data preprocessing. |
+| 6    | 05.05.2025  | Exam Part I  | Assessment | H.03 | |
+| 6    | 05.08.2025  | Containerization | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. |
+| 7    | 05.12.2025 | Scalable Machine Learning I | Regression and Classification Modeling | ---  | Regression modeling in practice. |
+| 7    | 05.15.2025 | Scalable Machine Learning II | Decision Trees, XGBoost | ---  | Non-linear modeling in practice. |
+| 8    | 05.19.2025 | Scalable Machine Learning III | Time Series Modeling (SARIMAX, TiDE) | H.04 | Generating forecasts from your database. |
+| 8    | 05.21.2025 | MLOps | Hyperparameter Tuning Strategies & Distributed Training | ---  | Training the best possible model. |
+| 8    | 05.22.2025 | Unsupervised Machine Learning | Clustering Methods | ---  | Clustering unlabeled data. |
+| 9    | 05.29.2025 | Modern NLP Applications | RAG Model & Text Generation | ---  | Generating company-specific text with RAG. |
+| 10    | 06.02.2025 | Exam Review & Model Deployment | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. |
+| 10   | 06.05.2025  | Exam Part II   | Assessment      | | |
 
+</div>
+
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+  <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Quarter Plan
+  ## After looking at the syllabus, is there anything you want me to cover that I'm not?
+
+  </div>
+  </div>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
+    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Coverage" width = "100%" height = "100%"></iframe>
+  </div>
 </div>
 
 <!--s-->
@@ -53,30 +91,31 @@ revealOptions:
 
 Attendance at lectures is mandatory and in your best interest. 
 
-Your **Attendance & Comprehension** score is worth 40% of your final grade. Lectures will have graded quizzes throughout, and the top 12 scores will be used to calculate your grade.
+Your **Attendance & Comprehension** score is worth 20% of your final grade. Lectures will have graded quizzes throughout, and the top 12 scores will be used to calculate your final grade.
 
 <!--s-->
 
 ## Grading
 
 There is a high emphasis on the practical application of the concepts covered in this course. 
+
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
 | Component | Weight |
 | --- | --- |
-| Attendance & Comprehension | 40% |
-| Homework | 40% |
-| Exam Part I | 10% |
-| Exam Part II | 10% |
+| Attendance & Comprehension | 20% |
+| Homework | 50% |
+| Exam Part I | 15% |
+| Exam Part II | 15% |
 
 </div>
 <div class="c2" style = "width: 50%">
 
 | Grade | Percentage |
 | --- | --- |
-| A | 94-100 |
-| A- | 90-93 |
+| A | 93-100 |
+| A- | 90-92 |
 | B+ | 87-89 |
 | B | 83-86 |
 | B- | 80-82 |
@@ -143,13 +182,13 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 ### **Office Hours**
 
-- Time: By Appointment
+- Time: TBD
 - Location: Mudd 3510
 
 ### **Canvas Discussion**
 
 - Every homework & project will have a discussion thread on Canvas.
-- Please post your questions there so that everyone can benefit from the answers! I will not respond to homework questions via email.
+- Please post your questions there so that everyone can benefit from the answers! We will not respond to homework questions via email.
 
 <!--s-->
 
@@ -160,7 +199,7 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 We are here to help you! Please try contacting us through office hours or the dedicated Canvas discussion threads.
 
 **TA**:
-- TBA
+- Nathan Mo: Nathan.Mo2026@u.northwestern.edu
 
 **Intructor**:
 - Joshua D'Arcy: joshua.darcy@northwestern.edu
@@ -168,28 +207,11 @@ We are here to help you! Please try contacting us through office hours or the de
 
 <!--s-->
 
-<div class = "col-wrapper">
-  <div class="c1 col-centered">
-  <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
-
-  # Quarter Plan
-  ## After looking at the syllabus, is there anything you want me to cover that I'm not?
-
-  </div>
-  </div>
-  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
-    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Coverage" width = "100%" height = "100%"></iframe>
-  </div>
-</div>
-
-<!--s-->
-
 <div class="header-slide">
 
 # Homework Onboarding
 ## H.01 | "Hello, World!"
-
-Due: 
+### Due: 04.10.2025
 
 </div>
 
@@ -205,7 +227,12 @@ In the meantime, please install Docker on your machine if you haven't already do
 
 ## H.01 | Download Docker Image and Run Locally
 
-Once you have Docker installed, you can download the Docker image for this course by running the following command in your terminal:
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### Using the CLI
+
+you can download the Docker image for this course by running the following command in your terminal:
 
 ```bash
 docker pull joshuadrc/mbai:latest
@@ -214,8 +241,21 @@ docker pull joshuadrc/mbai:latest
 Once the image is downloaded, you can run it using the following command:
 
 ```bash
-docker run -p 8888:8888 joshuadrc/mbai:latest
+docker run -p 8080:8080 joshuadrc/mbai:latest
 ```
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Using the GUI
+
+<div style='text-align: center;'>
+   <img src='https://storage.googleapis.com/slide_assets/docker.gif' style='border-radius: 10px;'>
+</div>
+
+
+</div>
+</div>
 
 <!--s-->
 
@@ -223,9 +263,9 @@ docker run -p 8888:8888 joshuadrc/mbai:latest
 
 The Docker image you just downloaded contains a [code-server](https://github.com/coder/code-server) instance that you can access in your browser. 
 
-This setup allows you to code in a Jupyter notebook environment without having to install anything (besides Docker) on your local machine. To access the code-server instance, open your browser and navigate to <span class="code-span">http://localhost:8888</span>. 
+This setup allows you to code in a Jupyter notebook environment without having to install anything (besides Docker) on your local machine. To access the code-server instance, open your browser and navigate to <span class="code-span">http://localhost:8888</span>. Alternatively, the link is in your Docker application.
 
-You can bookmark this page for easy access in the future.
+You can bookmark this page, or save it as a local application, for easy access in the future.
 
 > **Note**: If you restart your computer, you will need to restart the Docker container via the application.
 
@@ -260,7 +300,7 @@ Snowflake is a cloud-based data warehousing service that we will be using for th
 
 Please follow the instructions in the [Snowflake Setup Guide](https://signup.snowflake.com/) to create an account. You will also want to do the following once you have access: 
 
-1. Set a budget limit. You get $400 in free credits for 30 days. Set budget cap to $20, just in case.
+1. Set a budget limit. You get **$400** in free credits for 30 days. Set a budget cap to **$20**, just in case.
 2. Collect your account identifer  <span class="code-span">Profile > Account > View Account Details > Account Identifier</span>
 3. Collect your username and password. Snowflake requires MFA now, but you will still need to have a password.
 

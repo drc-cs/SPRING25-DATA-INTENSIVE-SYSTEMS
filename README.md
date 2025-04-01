@@ -1,35 +1,33 @@
-> NOTE: This git repo is under construction. Lectures are poorly formatted and incomplete.
-
 # MBAI: Data Intensive Systems
 
-Welcome to Data Intensive Systems! This course provides a comprehensive introduction to distributed data processing and modeling.  These areas are essential to roles such as Data Engineers, Machine Learning Engineers, and Data Architects. The first half covers data-intensive operations including handling cloud storage, online analytical processing, and distributed data preprocessing. Building on this foundation, we transition towards data-intensive machine learning operations, including scalable machine learning algorithms (e.g. linear regression, XGBoost), distributed training, hyperparameter tuning, and model serving with real-time inference - skills essential for Machine Learning Engineers, Machine Learning Operations Engineers, and Technical Product Managers.
+Welcome to Data Intensive Systems! This course provides a comprehensive introduction to distributed data processing and modeling.  These areas are essential to roles such as Data Engineers, Machine Learning Engineers, and Data Architects. The first half covers data-intensive operations including handling cloud storage, online analytical processing, and distributed data preprocessing. Building on this foundation, we transition towards data-intensive machine learning operations, including scalable machine learning algorithms (e.g. linear regression, XGBoost), distributed training, hyperparameter tuning, and model serving with real-time inference. These skills are essential for Machine Learning Engineers, Machine Learning Operations Engineers, and Technical Product Managers.
 
 Assessments include two exams covering all material covered in the lectures and homeworks. Homework assignments focus on practical tasks processing large datasets and training machine learning models in the cloud, reinforcing learned concepts through real-world applications. These hands-on projects mirror the day-to-day work of industry professionals.
 
 ## Schedule
 
-| Week | Date  | Lecture Title  | Topics  | Homework | Why? |
+| Week | Date  | Lecture Title  | Topics  | Homework Due | Why? |
 |------|-------|---------|-----|--------------------|----|
-| ---    | --- | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/)  | Course Overview; Environment Setup | ---  | ---  |
-| ---    | ---  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
-| ---    | ---  | Databases II | Accessing Databases, Permissions, and Security | ---  | Accessing databases and database security essentials |
-| ---    | --- | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
-| ---   | --- | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data using SQL syntax. |
-| ---   | --- | OLAP + EDA II | Covariance, Correlation, Association Analysis | ---  | Describing numerical patterns with online analytics. |
-| ---   | --- | OLAP + EDA III | Hypothesis Testing, Descriptive Statistics, and Data Visualization | ---  | Describing numerical patterns with online analytics. |
-| ---   | --- | OLAP + EDA IV | Modern text data mining (NLP) | ---  | Describing text patterns with online analytics. |
-| ---    | --- | Distributed Preprocessing I | Distributed Data Processing and Pipelines w/ methods including category management, scaling, feature selection, building a dataset with snowflake  | --- | Leveraging cloud resources for data preprocessing. |
-| ---    | ---  | Exam Review & Distributed Preprocessing II | Dimensionality Reduction w/ PCA and TSNE | ---  | Leveraging cloud resources for data preprocessing. |
-| ---    | ---  | Exam Part I  | Assessment | | |
-| ---    | ---  | Containerization | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. |
-| ---    | --- | Scalable Machine Learning I | Regression and Classification Modeling | ---  | Regression modeling in practice. |
-| ---    | --- | Scalable Machine Learning II | Decision Trees, XGBoost | ---  | Non-linear modeling in practice. |
-| ---    | --- | Scalable Machine Learning III | Time Series Modeling (SARIMAX, TiDE) | --- | Generating forecasts from your database. |
-| ---    | --- | Modern NLP Applications | RAG Model & Text Generation | ---  | Generating company-specific text with RAG. |
-| ---    |--- | MLOps | Hyperparameter Tuning Strategies & Distributed Training | ---  | Training the best possible model. |
-| ---    | --- | Unsupervised Machine Learning | Clustering Methods with Text Data | ---  | Clustering unlabeled data. |
-| ---    | --- | Exam Review & Model Deployment | Model Serving & Real-Time Inference | ---  | Deploying your model to production. |
-| ---   | ---  | Exam Part II   | Assessment      | | |
+| 1    | 04.04.2025 | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/)  | Course Overview; Environment Setup | ---  | ---  |
+| 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
+| 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials |
+| 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
+| 3   | 04.16.2025 | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data using SQL syntax. |
+| 3   | 04.17.2025 | OLAP + EDA II | Covariance, Correlation, Association Analysis | H.02  | Describing numerical patterns with online analytics. |
+| 4   | 04.21.2025 | OLAP + EDA III | Hypothesis Testing, Descriptive Statistics, and Data Visualization | ---  | Describing numerical patterns with online analytics. |
+| 4   | 04.24.2025 | OLAP + EDA IV | Modern text data mining (NLP) | ---  | Describing text patterns with online analytics. |
+| 5   | 04.28.2025 | Distributed Preprocessing I | Distributed Data Processing and Pipelines  | --- | Leveraging cloud resources for data preprocessing. |
+| 5    | 04.30.2025  | Exam Review & Distributed Preprocessing II | Exam Review and Feature Selection | ---  | Leveraging cloud resources for data preprocessing. |
+| 6    | 05.05.2025  | Exam Part I  | Assessment | H.03 | |
+| 6    | 05.08.2025  | Containerization | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. |
+| 7    | 05.12.2025 | Scalable Machine Learning I | Regression and Classification Modeling | ---  | Regression modeling in practice. |
+| 7    | 05.15.2025 | Scalable Machine Learning II | Decision Trees, XGBoost | ---  | Non-linear modeling in practice. |
+| 8    | 05.19.2025 | Scalable Machine Learning III | Time Series Modeling (SARIMAX, TiDE) | H.04 | Generating forecasts from your database. |
+| 8    | 05.21.2025 | MLOps | Hyperparameter Tuning Strategies & Distributed Training | ---  | Training the best possible model. |
+| 8    | 05.22.2025 | Unsupervised Machine Learning | Clustering Methods | ---  | Clustering unlabeled data. |
+| 9    | 05.29.2025 | Modern NLP Applications | RAG Model & Text Generation | ---  | Generating company-specific text with RAG. |
+| 10    | 06.02.2025 | Exam Review & Model Deployment | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. |
+| 10   | 06.05.2025  | Exam Part II   | Assessment      | | |
 
 ## Homework Assignments
 
@@ -38,8 +36,8 @@ Assessments include two exams covering all material covered in the lectures and 
 | H.01 | -- | Environment Setup | Setting up your environment for the course |
 | H.02 | -- | SQL Basics | Building familiarity with SQL |
 | H.03 | -- | Distributed Preprocessing | Building an ML-ready dataset |
-| H.04 | -- | Supervised Machine Learning | Training and evaluating models |
-| H.05 | -- | R.A.G. | Implementing a R.A.G. model using SQL syntax |
+| H.04 | -- | Machine Learning I | Training and evaluating models |
+| H.05 | -- | Machine Learning II | Training models at scale |
 
 ## Required Software
 
@@ -55,10 +53,10 @@ Please have the latest version of Chrome installed on your computer. We will be 
  
 | Component | Weight |
 | --- | --- |
-| Attendance & Comprehension | 10% | 
+| Attendance & Comprehension | 20% | 
 | Homework Assignments | 50% |
-| Exam Part I | 20% |
-| Exam Part II | 20% |
+| Exam Part I | 15% |
+| Exam Part II | 15% |
 ------
 
 ## Grading Scale
@@ -78,13 +76,12 @@ Please have the latest version of Chrome installed on your computer. We will be 
 
 ## Lecture Breakdown
 
-Lectures will be broken down into theory and applicatipon time. Every lecture will have online polling for live Q/A and comprehension checks. 
+Lectures will be broken down into theory and application time. Every lecture will have online polling for live Q/A and comprehension checks. 
 
 | Component | Duration | Description |
 | --- | --- | --- |
 | Lecture | 60 minutes | Theoretical Foundations |
 | Demonstration Time | 20 minutes | Application and Practice |
-
 
 ------
 
@@ -109,5 +106,7 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 -----
 
 ## Contact Information
+
+Nathan Mo (Peer Mentor): Nathan.Mo2026@u.northwestern.edu
 
 Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu
