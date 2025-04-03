@@ -40,6 +40,22 @@ revealOptions:
 
 <!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Intro Poll
+  ## On a scale of 1-5, how confident are you with expectations for MBAI 417 & completing homework assignments?
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Intro Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
+<!--s-->
+
 # Syllabus
 
 <div style="overflow-y: scroll; height: 80%; font-size: 0.8em;">
@@ -324,4 +340,20 @@ SNOWFLAKE_PASSWORD = "your_password"
 
 </div>
 
+<!--s-->
+
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+    <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+
+  # Exit Poll
+  ## On a scale of 1-5, how confident are you with expectations for MBAI 417 & completing homework assignments?
+
+  </div>
+  </div>
+  <div class="c2" style="width: 50%; height: 100%;">
+  <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=Exit Poll" width="100%" height="100%" style="border-radius: 10px"></iframe>
+  </div>
+
+</div>
 <!--s-->
