@@ -9,7 +9,7 @@ Assessments include two exams covering all material covered in the lectures and 
 
 | Week | Date  | Lecture Title  | Topics  | Homework Due | Why? |
 |------|-------|---------|-----|--------------------|----|
-| 1    | 04.04.2025 | Introduction  | Course Overview; Environment Setup | ---  | ---  |
+| 1    | 04.04.2025 | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/)  | Course Overview; Environment Setup | ---  | ---  |
 | 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
 | 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials |
 | 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
@@ -75,6 +75,14 @@ Please have the latest version of Chrome installed on your computer. We will be 
 
 ------
 
+## Attendance
+
+Attendance at lectures is mandatory and in your best interest. 
+
+Your **Attendance & Comprehension** score is worth 20% of your final grade. Lectures will have graded quizzes throughout, and the top 16 scores will be used to calculate your final grade.
+
+------
+
 ## Lecture Breakdown
 
 Lectures will be broken down into theory and application time. Every lecture will have online polling for live Q/A and comprehension checks. 
@@ -108,6 +116,5 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 ## Contact Information
 
-Nathan Mo (Peer Mentor): Nathan.Mo2026@u.northwestern.edu
-
+Nathan Mo (Peer Mentor): Nathan.Mo2026@u.northwestern.edu<br>
 Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu

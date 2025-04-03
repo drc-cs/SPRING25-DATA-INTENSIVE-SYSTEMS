@@ -62,9 +62,9 @@ revealOptions:
 
 | Week | Date  | Lecture Title  | Topics  | Homework Due | Context for DIS |
 |------|-------|---------|-----|--------------------|----|
-| 1    | 04.04.2025 | Introduction | Course Overview; Environment Setup | ---  | ---  |
+| 1    | 04.04.2025 | Introduction | [Course Overview; Environment Setup](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | ---  | ---  |
 | 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
-| 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials |
+| 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | [H.01](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS/tree/main/homeworks/H01)  | Accessing databases and database security essentials |
 | 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
 | 3   | 04.16.2025 | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data using SQL syntax. |
 | 3   | 04.17.2025 | OLAP + EDA II | Covariance, Correlation, Association Analysis | H.02  | Describing numerical patterns with online analytics. |
@@ -107,7 +107,7 @@ revealOptions:
 
 Attendance at lectures is mandatory and in your best interest. 
 
-Your **Attendance & Comprehension** score is worth 20% of your final grade. Lectures will have graded quizzes throughout, and the top 12 scores will be used to calculate your final grade.
+Your **Attendance & Comprehension** score is worth 20% of your final grade. Lectures will have graded quizzes throughout, and the top 16 scores will be used to calculate your final grade.
 
 <!--s-->
 
@@ -191,6 +191,8 @@ All information will remain confidential.
 ## Mental Health
 
 If you are feeling distressed or overwhelmed, please reach out for help. Students can access confidential resources through the Counseling and Psychological Services (CAPS), Religious and Spiritual Life (RSL) and the Center for Awareness, Response and Education (CARE).
+
+Kellogg offers several [Health & Wellness](https://www.kellogg.northwestern.edu/serial/student-life/health-wellness/) services if you're not already familiar with them.
 
 <!--s-->
 
