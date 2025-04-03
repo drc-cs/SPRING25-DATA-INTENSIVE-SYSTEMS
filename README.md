@@ -9,7 +9,7 @@ Assessments include two exams covering all material covered in the lectures and 
 
 | Week | Date  | Lecture Title  | Topics  | Homework Due | Context for DIS |
 |------|-------|---------|-----|--------------------|----|
-| 1    | 04.04.2025 | Introduction | [Course Overview; Environment Setup](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | ---  | ---  |
+| 1    | 04.04.2025 | [Introduction](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | Course Overview; Environment Setup | ---  | ---  |
 | 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |
 | 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | [H.01](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS/tree/main/homeworks/H01)  | Accessing databases and database security essentials |
 | 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |
