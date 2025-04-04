@@ -22,6 +22,10 @@ RUN curl -fsSL https://code-server.dev/install.sh | bash
 # Add code-server to PATH
 ENV PATH="/root/.local/bin:${PATH}"
 
+# Install the Jupyter / python extensions for code-server.
+RUN code-server --force --install-extension ms-toolsai.jupyter
+RUN code-server --force --install-extension ms-python.python
+
 # Expose the port that the server is running on.
 EXPOSE 8080
 
