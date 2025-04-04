@@ -116,5 +116,5 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 ## Contact Information
 
-Nathan Mo (Peer Mentor): Nathan.Mo2026@u.northwestern.edu<br>
+Nathan Mo (Peer Mentor): NathanMo2026@u.northwestern.edu<br>
 Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu

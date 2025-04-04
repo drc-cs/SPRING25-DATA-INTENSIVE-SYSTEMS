@@ -72,7 +72,7 @@ revealOptions:
 | 4   | 04.24.2025 | OLAP + EDA IV | Modern text data mining (NLP) | ---  | Describing text patterns with online analytics. |Ford ITW Auditorium 1350 |
 | 5   | 04.28.2025 | Distributed Preprocessing I | Distributed Data Processing and Pipelines  | --- | Leveraging cloud resources for data preprocessing. |Ford ITW Auditorium 1350 |
 | 5    | 04.30.2025  | Exam Review & Distributed Preprocessing II | Exam Review and Feature Selection | ---  | Leveraging cloud resources for data preprocessing. |Ford ITW Auditorium 1350 |
-| 6    | 05.05.2025  | Exam Part I  | Assessment | H.03 | |Ford ITW Auditorium 1350 |
+| 6    | 05.05.2025  | Exam Part I  | Assessment | H.03 | --- |Ford ITW Auditorium 1350 |
 | 6    | 05.08.2025  | Containerization | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. |Ford ITW Auditorium 1350 |
 | 7    | 05.12.2025 | Scalable Machine Learning I | Regression and Classification Modeling | ---  | Regression modeling in practice. |Ford ITW Auditorium 1350 |
 | 7    | 05.15.2025 | Scalable Machine Learning II | Decision Trees, XGBoost | ---  | Non-linear modeling in practice. |Ford ITW Auditorium 1350 |
@@ -81,7 +81,7 @@ revealOptions:
 | 8    | 05.22.2025 | Unsupervised Machine Learning | Clustering Methods | ---  | Clustering unlabeled data. |Ford ITW Auditorium 1350 |
 | 9    | 05.29.2025 | Modern NLP Applications | RAG Model & Text Generation | ---  | Generating company-specific text with RAG. |Ford ITW Auditorium 1350 |
 | 10    | 06.02.2025 | Exam Review & Model Deployment | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. |Ford ITW Auditorium 1350 |
-| 10   | 06.05.2025  | Exam Part II   | Assessment      | | |Ford ITW Auditorium 1350 |
+| 10   | 06.05.2025  | Exam Part II   | Assessment      |  ---  |  ---  |Ford ITW Auditorium 1350 |
 
 </div>
 
@@ -241,7 +241,7 @@ Kellogg offers several [Health & Wellness](https://www.kellogg.northwestern.edu/
 We are here to help you! Please try contacting us through office hours or the dedicated Canvas discussion threads.
 
 **TA**:
-- Nathan Mo: Nathan.Mo2026@u.northwestern.edu
+- Nathan Mo: NathanMo2026@u.northwestern.edu
 
 **Intructor**:
 - Joshua D'Arcy: joshua.darcy@northwestern.edu
