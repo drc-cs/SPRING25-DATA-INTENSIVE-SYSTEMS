@@ -18,7 +18,7 @@ revealOptions:
   </div>
   <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 100%; padding-top: 10%">
 
-  <iframe src="https://lottie.host/embed/216f7dd1-8085-4fd6-8511-8538a27cfb4a/PghzHsvgN5.lottie"></iframe>
+  <iframe src="https://lottie.host/embed/216f7dd1-8085-4fd6-8511-8538a27cfb4a/PghzHsvgN5.lottie" width = "100%" height = "100%"></iframe>
   </div>
 </div>
 
@@ -29,11 +29,11 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
   # Welcome to Data Intensive Systems.
-  ## Please log in and enter the code on the chalkboard.
+  ## Please log in and enter the code on the whiteboard.
 
   </div>
   </div>
-  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 50%; padding-top: 0%">
     <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Check In" width = "100%" height = "100%"></iframe>
   </div>
 </div>
@@ -42,7 +42,50 @@ revealOptions:
 
 ## Announcements
 
-- 
+89% of you have submitted the first assignment!  🎉
+  - Please make sure to submit it by **Thursday 11:59 PM**.
+  - If you're still having trouble, use the [Codespaces setup](https://canvas.northwestern.edu/courses/231041/discussion_topics/1641663)
+
+
+<!--s-->
+
+## De-Identified Responses to Coverage Poll
+
+```python
+
+'NO',
+'I THINK THERE IS PLENTY ON THE SYLLABUS',
+'NO THANKS',
+'N/A - LOOK FORWARD TO THE CURRENT PLAN',
+'VECTOR DATABASE, MCP', #We'll cover both of these in Modern NLP Applications.
+'N/A. LOOKS GOOD!',
+'I WOULD SUGGEST TO TAKE IT STEP BY STEP AND GRADUALLY RAMP UP', # Will do!
+'NONE',
+"YOU'RE COVERING EVERYTHING!",
+'STRUCTURING EFFICIENT DATABASES / LEVERAGING LARGE AMOUNTS OF DATA EFFICIENTLY', # OLAP & Distributed Preprocessing will cover this.
+'NA',
+'PLEASE COVER IT ALL! THERE ARE DIFFERENT LEVELS OF EXPERIENCE IN THIS CLASS, AND WHILE IT MAY BE REDUNDANT FOR SOME, A GOOD NUMBER OF US WOULD ALSO BENEFIT FROM REFRESHES AND A SLIGHTLY SLOWER PACE', # Will do!
+'HOW TO EFFICIENTLY STORE IMAGES, VIDEOS? ', # Added to Today's lecture!
+"I DON'T KNOW WHAT I DON'T KNOW :)", # Fair enough. :)
+'ONLINE LEARNING SOURCES - BLOGS, PODCASTS ETC', # I'll cite sources as we go.
+'ANYTHING!',
+'NA',
+'MORE RAG!', # Two lectures will cover related topics to RAG. 
+'NO, ALL LOOKS GOOD!',
+'LDAP AND USER PERMISSIONS, DATA COMPUTE ON THE EDGE', # User permissions and basic security will be covered on Thursday, I don't have any plans for edge computing though.
+'NONE, LOOKING FORWARD TO IT!',
+'TEST', # Did it work ?
+'LOOKS GREAT TO ME!',
+'NOPE!',
+'VERY EXCITED FOR THE EMPHASIS ON GUI! NOTHING OTHERWISE', # Love a good GUI!
+'NO NOTES - LOOKS GOOD!',
+'NOPE',
+'FEEDING DATA INTO AI, DATA PREPARATION', # 2-3 lectures will cover this!
+'AUTHENTICATION DATABASES', # Will be covered Thursday. 
+'NOT THAT I CAN THINK OF',
+'NOPE!',
+'WOULD LIKE TO LEARN ABOUT KUBERNETES AND DATACENTER OPS' # We do learn about containerization, and I'll make sure to give a couple of examples on orchestration.
+```
 
 <!--s-->
 
@@ -133,6 +176,10 @@ How do we ensure data integrity?
 ## Databases | Access
 
 Data access refers to the methods and mechanisms used to retrieve and manipulate data in a database. A good database should provide efficient and flexible data access methods to meet the needs of different applications and users.
+
+Some methods of access include SQL, APIs, GraphQL, and NoSQL queries.
+
+We'll talk more about access in L.03.
 
 <!--s-->
 
@@ -245,7 +292,7 @@ Relational databases are a type of database management system (DBMS) that store 
 
 ## Relational Databases
 
-Relational databases are the most common type of database, and they use a structured schema to organize data into tables with rows and columns. Each table represents an entity, and relationships between entities are established through foreign keys.
+Relational databases are extremely common. Examples of relational databases include **MySQL** and **PostgreSQL**.
 
 Relational Databases use SQL (Structured Query Language) to query and manipulate their contained data. SQL is a powerful language that allows for complex queries, joins, and aggregations.
 
@@ -393,7 +440,7 @@ df = pd.read_sql(query, conn)
 
 Common Table Expressions are temporary result sets that can be referenced within a <span class="code-span">SELECT</span>, <span class="code-span">INSERT</span>, <span class="code-span">UPDATE</span>, or <span class="code-span">DELETE</span> statement. They are defined using the <span class="code-span">WITH</span> keyword and can be used to simplify complex queries by breaking them down into smaller, more manageable parts. CTEs can also be recursive, allowing for hierarchical data retrieval.
 
-Below is an example that first defines a CTE (which essentially saves a variable upper_bound) and then uses it to filter the results of a query.
+Below is an example that first defines a CTE (which essentially creates a temporary table) and then uses it in a query.
 
 ```sql
 
@@ -463,7 +510,7 @@ Key-value stores are a type of NoSQL database that store data as simple key-valu
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular key-value stores include Redis and Amazon DynamoDB.
+Popular key-value stores include **Redis** and **Amazon DynamoDB**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -488,10 +535,12 @@ Popular key-value stores include Redis and Amazon DynamoDB.
 
 Document stores are another type of NoSQL database that store data in semi-structured documents, typically in JSON or BSON format. Each document can have a different structure, allowing for flexibility in data representation. Document stores are well-suited for content management systems, e-commerce applications, and any use case where data can vary in structure.
 
+Some popular document stores include **MongoDB** and **Firestore**. They provide a flexible schema and support for complex queries.
+
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Some popular document stores include MongoDB and Firestore. They provide a flexible schema and support for complex queries.
+> The key difference between key-value stores and document stores is that while key-value stores map a single key to a single value, document stores allow for more complex data structures by storing entire documents as values.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -519,7 +568,7 @@ Graph databases are designed to store and query data with complex relationships.
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-One of the most popular graph databases is Neo4j.
+One of the most popular graph databases is **Neo4j**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -566,12 +615,12 @@ C. Graph Database
 
 ## Wide-Column Stores
 
-Wide-column stores are a type of NoSQL database that store data in columns rather than rows. This allows for efficient storage and retrieval of large volumes of data, making wide-column stores suitable for big data analytics and applications that require high write and read throughput.
+Wide-column stores are a type of database that store data in columns rather than rows. This allows for efficient storage and retrieval of large volumes of data, making wide-column stores suitable for big data analytics and applications that require high write and read throughput.
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular wide-column stores include Apache Cassandra and Google Bigtable.
+Popular wide-column stores include **Apache Cassandra** and **Google Bigtable**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -599,7 +648,7 @@ In-memory databases store data in the main memory (RAM) rather than on disk, all
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular in-memory databases include Redis and Memcached.
+Popular in-memory databases include **Redis** and **Memcached**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -627,7 +676,7 @@ Time-series databases are designed to store and query time-stamped data, and pro
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular time-series databases include InfluxDB and TimescaleDB.
+Time-series databases include **InfluxDB** and **TimescaleDB**.
 
 </div>
 <div class="c2" style = "width: 40%">
@@ -682,7 +731,7 @@ Object-oriented databases store data as objects. An object is a data structure t
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular object-oriented databases include db4o and ObjectDB.
+Popular object-oriented databases include **db4o** and **ObjectDB**.
 
 </div>
 <div class="c2" style = "width: 40%">
@@ -710,7 +759,7 @@ Spatial databases are designed to store and query geospatial data, such as maps,
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular spatial databases include PostGIS (an extension of PostgreSQL) and Oracle Spatial.
+Popular spatial databases include **PostGIS** (an extension of PostgreSQL) and **Oracle Spatial**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -733,18 +782,74 @@ Popular spatial databases include PostGIS (an extension of PostgreSQL) and Oracl
 
 ## Blob Datastore
 
-Blob datastores are designed to store unstructured data, such as images, videos, and documents. They provide a simple interface for uploading, retrieving, and managing large binary objects (blobs). Blob datastores are often used in applications that require large-scale storage of media files and backups.
+Blob datastores are designed to store unstructured data, such as images, videos, and documents. They provide a simple interface for uploading, retrieving, and managing large binary objects (blobs). Blob datastores are often used in applications that require large-scale storage of media files (like images and videos) as well as backups.
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular blob datastores include Amazon S3 and Google Cloud Storage.
+Popular blob datastores include **Amazon S3** and **Google Cloud Storage**.
 
 </div>
 <div class="c2" style = "width: 50%">
 
 <img src="https://stensul.com/wp-content/uploads/2021/07/amazon-s3.png" width="100%" style="border-radius: 10px;">
 <p style="text-align: center; font-size: 0.6em; color: grey;">AWS</p>
+
+</div>
+</div>
+
+<!--s-->
+
+## Blob Datastore Application: Image / Video Datasets
+
+<div class = "col-wrapper"  style="font-size: 0.9em;">
+<div class="c1" style = "width: 50%;">
+
+### Chunking
+
+Break large datasets into smaller chunks to allow for parallel processing and efficient loading. 
+
+### Compression
+
+Use compression techniques to reduce the size of the datasets stored in the blob datastore.
+
+### Metadata Management
+Store metadata about the datasets, such as file size, format, and creation date, to facilitate efficient querying and retrieval.
+
+</div>
+<div class="c2" style = "width: 50%">
+
+
+### Versioning
+Implement versioning for datasets to keep track of changes and updates. 
+
+### Compute Resources
+Distribute compute resources to process the datasets in parallel. This can be done using cloud services like AWS Lambda or Google Cloud Functions.
+
+</div>
+</div>
+
+<!--s-->
+
+## Blob Datastore Application: Efficiently Streaming Videos
+
+<div class = "col-wrapper" style="font-size: 0.9em;">
+<div class="c1" style = "width: 50%; margin-right: 5%">
+
+### Chunking
+Break the video into smaller chunks to allow for progressive loading and reduce latency. One common format for chunking is **HLS (HTTP Live Streaming)**.
+
+### Adaptive Bitrate Streaming
+Use adaptive bitrate streaming to adjust the video quality based on the user's network conditions. This ensures a smooth playback experience without buffering.
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Content Delivery Network (CDN)
+Use a CDN to cache and deliver the video content closer to the user. This reduces latency and improves the streaming experience.
+
+### Caching
+Implement caching strategies to store frequently accessed video chunks in memory or on disk.
 
 </div>
 </div>
@@ -792,7 +897,7 @@ Ledger databases are designed to store immutable, tamper-proof data, making them
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular ledger databases include Amazon Quantum Ledger Database and Hyperledger Fabric.
+Popular ledger databases include **Amazon Quantum Ledger Database** and **Hyperledger Fabric**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -821,7 +926,7 @@ Hierarchical databases store data in a tree-like structure, where each record ha
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular hierarchical databases include IBM Information Management System (IMS) and Windows Registry.
+Popular hierarchical databases include **IBM Information Management System (IMS)** and **Windows Registry**.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -849,7 +954,7 @@ Vector databases are designed to store and query high-dimensional data, such as 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular vector databases include Pinecone and pgvector (an extension of PostgreSQL).
+Popular vector databases include **Pinecone** and **pgvector** (an extension of PostgreSQL).
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -877,7 +982,7 @@ Embedded databases are lightweight databases that are integrated into applicatio
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-Popular embedded databases include SQLite and Realm.
+Popular embedded databases include **SQLite** and **Realm**.
 
 </div>
 <div class="c2" style = "width: 40%">
@@ -944,14 +1049,3 @@ Popular embedded databases include SQLite and Realm.
   </div>
 
 </div>
-
-<!--s-->
-
-<div class="header-slide">
-
-# H.01
-
-</div>
-
-<!--s-->
-

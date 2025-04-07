@@ -10,7 +10,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | Week | Date  | Lecture Title  | Topics  | Homework Due | Context for DIS | Location |
 |------|-------|---------|-----|--------------------|----| ----|
 | 1    | 04.04.2025 | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/) | Course Overview; Environment Setup | ---  | ---  |Ford ITW Auditorium 1350 |
-| 2    | 04.07.2025  | Databases | Modern Database Landscape | ---  | Introduction to databases and their use cases. |Ford ITW Auditorium 1350 |
+| 2    | 04.07.2025  | [Databases](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L02/#/)  | Modern Database Landscape | ---  | Introduction to databases and their use cases. |Ford ITW Auditorium 1350 |
 | 2    | 04.10.2025  | Databases II | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials |Ford ITW Auditorium 1350 |
 | 3    | 04.14.2025 | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. |Ford ITW Auditorium 1350 |
 | 3   | 04.16.2025 | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data using SQL syntax. |Kellogg Global Hub L110 |
