@@ -52,7 +52,6 @@ revealOptions:
 ## De-Identified Responses to Coverage Poll
 
 ```python
-
 'NO',
 'I THINK THERE IS PLENTY ON THE SYLLABUS',
 'NO THANKS',
@@ -65,7 +64,7 @@ revealOptions:
 'STRUCTURING EFFICIENT DATABASES / LEVERAGING LARGE AMOUNTS OF DATA EFFICIENTLY', # OLAP & Distributed Preprocessing will cover this.
 'NA',
 'PLEASE COVER IT ALL! THERE ARE DIFFERENT LEVELS OF EXPERIENCE IN THIS CLASS, AND WHILE IT MAY BE REDUNDANT FOR SOME, A GOOD NUMBER OF US WOULD ALSO BENEFIT FROM REFRESHES AND A SLIGHTLY SLOWER PACE', # Will do!
-'HOW TO EFFICIENTLY STORE IMAGES, VIDEOS? ', # Added to Today's lecture!
+'HOW TO EFFICIENTLY STORE IMAGES, VIDEOS? ', # Added to today's lecture!
 "I DON'T KNOW WHAT I DON'T KNOW :)", # Fair enough. :)
 'ONLINE LEARNING SOURCES - BLOGS, PODCASTS ETC', # I'll cite sources as we go.
 'ANYTHING!',
@@ -113,7 +112,7 @@ revealOptions:
 
 #### What is a database?
 #### Why do we need databases?
-#### What consitutes a 'good' database?
+#### What makes a 'good' database?
 
 </div>
 
@@ -122,6 +121,14 @@ revealOptions:
 <div style = 'margin-left: 5%'>
 
 #### What are the different types of databases?
+
+<!--s-->
+
+<div class="header-slide">
+
+# Databases
+
+</div>
 
 <!--s-->
 
@@ -138,7 +145,7 @@ A database can be as simple as a text file or a spreadsheet, or as complex as a 
 
 <!--s-->
 
-## Databases | What constitutes a **good** database?
+## Databases | What makes a **good** database?
 
 - ### Model
 - ### Integrity
@@ -153,8 +160,8 @@ A database can be as simple as a text file or a spreadsheet, or as complex as a 
 Databases start with a data **model**. A data model is a conceptual representation of the data and its relationships, and it serves as a blueprint for how the data will be stored, organized, and accessed. Different data models are suited for different types of data and use cases.
 
 <div style='text-align: center;'>
-   <img src='https://www.gooddata.com/img/blog/_2000xauto/pdm-for-e-commerce.png.webp' style='border-radius: 10px;'>
-   <p style='font-size: 0.6em; color: grey;'>Gooddata 2025</p>
+   <img src='https://www.gooddata.com/img/blog/_2000xauto/pdm-for-e-commerce.png.webp' style='border-radius: 10px; width: 80%;'>
+   <p style='font-size: 0.6em; color: grey; margin: 0;'>Gooddata 2025</p>
 </div>
 
 <!--s-->
@@ -163,13 +170,23 @@ Databases start with a data **model**. A data model is a conceptual representati
 
 Data integrity refers to the accuracy and consistency of data over its entire lifecycle. A good database should enforce data integrity constraints to ensure that the data is **valid** and **reliable**.
 
-How do we ensure data integrity?
+<div class = "col-wrapper" style = "font-size: 0.9em;">
+<div class="c1" style = "width: 50%; margin-right: 1em;">
 
-- **Constraints**: Constraints are rules that define the valid values and relationships for data in a database. They help maintain data integrity by preventing invalid data from being entered into the database.
+### Constraints
+Constraints are rules that define the valid values and relationships for data in a database. They help maintain data integrity by preventing invalid data from being entered into the database.
 
-- **Transactions**: A transaction is a sequence of operations that are treated as a single unit of work. Transactions ensure that either all operations are completed successfully or none are, maintaining data integrity in the event of errors or failures.
+### Transactions
+A transaction is a sequence of operations that are treated as a single unit of work. Transactions ensure that either all operations are completed successfully or none are, maintaining data integrity in the event of errors or failures.
 
-- **Normalization**: Normalization is the process of organizing data in a database to minimize redundancy and dependency. It helps maintain data integrity by ensuring that data is stored in a logical and efficient manner.
+</div>
+<div class="c2" style = "width: 50%">
+
+### Normalization
+Normalization is the process of organizing data in a database to minimize redundancy and dependency. It helps maintain data integrity by ensuring that data is stored in a logical and efficient manner.
+
+</div>
+</div>
 
 <!--s-->
 
@@ -187,13 +204,23 @@ We'll talk more about access in L.03.
 
 Data security refers to the measures taken to protect data from unauthorized access, corruption, or loss. A good database should implement robust security measures to safeguard sensitive data and ensure compliance with regulations.
 
-How is that achieved?
+<div class = "col-wrapper" style = "font-size: 0.9em;">
+<div class="c1" style = "width: 50%; margin-right: 1em;">
 
-- **Authentication**: Authentication is the process of verifying the identity of users or applications accessing the database. A good database should support strong authentication mechanisms to ensure that only authorized users can access the data.
+### Authentication
+Authentication is the process of verifying the identity of users or applications accessing the database. Support strong authentication mechanisms to ensure that only authorized users can access the data.
 
-- **Permissions**: Permissions are rules that define what actions users or applications can perform on the data. A good database should provide fine-grained access control to ensure that users can only access the data they are authorized to see.
+### Permissions
+Permissions are rules that define what actions users or applications can perform on the data. Provide fine-grained access control to ensure that users can only access the data they are authorized to see.
 
-- **Encryption**: Encryption is the process of converting data into a secure format that can only be read by authorized users. A good database should support encryption to protect sensitive data both at rest and in transit.
+</div>
+<div class="c2" style = "width: 50%">
+
+### Encryption
+Encryption is the process of converting data into a secure format that can only be read by authorized users. Use encryption to protect sensitive data both at rest and in transit.
+
+</div>
+</div>
 
 <!--s-->
 
@@ -204,9 +231,11 @@ Data scalability refers to the ability of a database to handle increasing amount
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-**Vertically**: Adding more resources to a single server.
+### Vertically
+Adding more resources to a single server.
 
-**Horizontally**: Adding more servers to distribute the load.
+### Horizontally
+Adding more servers to distribute the load.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -232,7 +261,9 @@ Data scalability refers to the ability of a database to handle increasing amount
 
 <!--s-->
 
-<div style='font-size: 0.7em'>
+# Database Landscape
+
+<div style='font-size: 0.65em'>
 
 | Type | Description | Use Cases | Examples |
 | --- | --- | --- | --- |
@@ -803,7 +834,7 @@ Popular blob datastores include **Amazon S3** and **Google Cloud Storage**.
 ## Blob Datastore Application: Image / Video Datasets
 
 <div class = "col-wrapper"  style="font-size: 0.9em;">
-<div class="c1" style = "width: 50%;">
+<div class="c1" style = "width: 50%; margin-right: 3%">
 
 ### Chunking
 
