@@ -12,7 +12,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
   # Data Intensive Systems
-  ## L.02 | Accessing Databases, Permissions, and Security
+  ## L.03 | Accessing Databases, Permissions, and Security
 
   </div>
   </div>
@@ -42,7 +42,9 @@ revealOptions:
 
 ## Announcements
 
-- 
+- Datacamp is active. Click [here](https://www.datacamp.com/groups/shared_links/322df3271c3d066625f90f3390391d038ac896168157a0484980012c7e835a24) to access the classroom.
+- We'll start today by picking up where we left off on [L.02](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L02/#/46)
+- H.02 will be released today and is due in a week (4/17).
 
 <!--s-->
 
@@ -55,7 +57,7 @@ revealOptions:
 
   - Accessing Databases
   - Managing Permissions on Databases
-  - Implementing Security Practices on Databases
+  - Security Best Practices on Databases
 
   </div>
   </div>
@@ -64,17 +66,6 @@ revealOptions:
   </div>
 
 </div>
-<!--s-->
-
-## Enhancing Data Security and Access Management
-
-You are the CTO of a rapidly growing tech startup that specializes in providing cloud-based solutions to clients. Your company has recently secured a contract with a large financial institution, which requires efficient data management and access protocols to handle sensitive data. To meet the client's requirements and ensure smooth operations, you need to implement robust database management practices. Your team of database administrators and developers will need to:
-
-1. **Access Databases**: Establish connections to your databases using CLI tools, database drivers, and REST APIs.
-
-2. **Define User Roles and Permissions**: Create and manage user roles to control access to the database. This will involve granting and revoking permissions to ensure that only authorized users can access and modify the data.
-
-3. **Implement Security Practices**: Follow essential security practices to protect your databases from unauthorized access and data breaches. This includes encrypting data at rest and in transit, performing regular backups, monitoring database activities, and maintaining audit logs.
 
 <!--s-->
 
@@ -350,14 +341,14 @@ Here are some common user roles and permissions that are typically defined in a 
 
 In a database management system, access to database objects is granted or revoked using the <span class="code-span">GRANT</span> and <span class="code-span">REVOKE</span> commands. These commands are used to assign or remove specific privileges to users or roles.
 
-Here is an example of **granting** read-only access to a table in a PostgreSQL database for a user (myuser):
+Here is an example of **granting** read-only access to the "houses" table in a database for a user (myuser):
 
 ```sql
 -- Grant SELECT privilege on the houses table to the user myuser.
 GRANT SELECT ON houses TO myuser;
 ```
 
-Here is an example of **revoking** read-only access to a table in a PostgreSQL database for a user (myuser):
+Here is an example of **revoking** read-only access to the "houses" table in a database for a user (myuser):
 
 ```sql
 -- Revoke SELECT privilege on the houses table from the user myuser.
@@ -368,7 +359,7 @@ REVOKE SELECT ON houses FROM myuser;
 
 ## Granting and Revoking Access
 
-Here is a cheatsheet for granting and revoking access in a PostgreSQL database:
+Here is a cheatsheet for granting and revoking access in a database:
 
 | Command | Description |
 |---------------|------------- |
@@ -387,7 +378,7 @@ Here is a cheatsheet for granting and revoking access in a PostgreSQL database:
 
 Often, we don't want to grant permissions to individual users, but rather to groups of users. This is where roles come in. Roles are a way to group users together and assign permissions to the group as a whole.
 
-Here is an example of creating a custom role (myrole) in a PostgreSQL database and granting read-only access to the houses table to that role:
+Here is an example of creating a custom role (myrole) in a database and granting read-only access to the houses table to that role:
 
 ```sql
 -- Create a custom role myrole.
@@ -529,14 +520,24 @@ Auditing is the process of tracking and recording database activities to ensure 
 
 ## Summary
 
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%; margin-right: 2em;">
+
 ### Accessing Databases
 Establish connections to your databases using CLI tools, database drivers, and REST APIs.
 
 ### Permissions
 Create and manage user roles to control access to the database. This will involve granting and revoking permissions to ensure that only authorized users can access and modify the data.
 
+</div>
+<div class="c2" style = "width: 50%">
+
 ### Security
 Follow essential security practices to protect your databases from unauthorized access and data breaches. This includes encrypting data at rest and in transit, performing regular backups, monitoring database activities, and maintaining audit logs.
+
+</div>
+</div>
+
 
 <!--s-->
 
@@ -549,7 +550,7 @@ Follow essential security practices to protect your databases from unauthorized 
 
   - Accessing Databases
   - Managing Permissions on Databases
-  - Implementing Security Practices on Databases
+  - Security Best Practices on Databases
 
   </div>
   </div>
@@ -559,14 +560,34 @@ Follow essential security practices to protect your databases from unauthorized 
 
 </div>
 
+<!--s-->
 
+<div class = "col-wrapper">
+  <div class="c1 col-centered">
+  <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
+  # H.02 | SQL Practice
+  ## Due: 4/17
 
+  </div>
+  </div>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 100%;">
 
+  <img src="https://docs.snowflake.com/en/_images/sample-data-tpch-schema.png" alt="Snowflake Schema" style = "border-radius: 10px">
+  </div>
+</div>
 
+<!--s-->
 
+## H.02 Instructions
 
+We'll do the first SQL query together to make sure everyone is set up.
 
+1. Navigate to the homework directory in the class repo.
 
+2. If you don't already have <span class="code-span">.env</span> filled out with your credentials, please do so now using the [L.01](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/16) instructions.
+
+3. Run <span class="code-span">git pull</span> in the terminal to get the latest version of the homework.
+4. Open <span class="code-span">homeworks/sql_practice.ipynb</span> to get started.
 
 
