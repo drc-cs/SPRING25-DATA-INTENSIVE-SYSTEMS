@@ -114,6 +114,10 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 -----
 
+**Office Hours**: Thursdays from 2:00 PM to 3:00 PM in Mudd 3510, or by appointment.
+
+-----
+
 ## Contact Information
 
 Nathan Mo (Peer Mentor): NathanMo2026@u.northwestern.edu<br>
