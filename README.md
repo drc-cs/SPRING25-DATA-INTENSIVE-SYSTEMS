@@ -12,7 +12,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | 1    | 04.04.2025 @ 3:30 PM | [Introduction](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L01/#/) | Course Overview; Environment Setup | ---  | ---  | Ford ITW Auditorium 1350 |
 | 2    | 04.07.2025 @ 3:30 PM | [Databases](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L02/#/)  | Modern Database Landscape | ---  | Introduction to databases and their use cases. | Ford ITW Auditorium 1350 |
 | 2    | 04.10.2025 @ 3:30 PM | [Databases II](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L03/#/) | Accessing Databases, Permissions, and Security | H.01  | Accessing databases and database security essentials | Ford ITW Auditorium 1350 |
-| 3    | 04.14.2025 @ 3:30 PM | Online Analytical Processing (OLAP) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. | Ford ITW Auditorium 1350 |
+| 3    | 04.14.2025 @ 3:30 PM | [Online Analytical Processing (OLAP)](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L04/#/) | OLTP vs OLAP, Better Schemas, Cubes, Columnar DBs | ---  | From OLTP to modern OLAP, analytics at scale. | Ford ITW Auditorium 1350 |
 | 3   | 04.16.2025 @ 10:30 AM | OLAP + EDA I | Database Imputation & Outlier Detection Strategies | ---  | Handling and describing imperfect data. | Kellogg Global Hub L110 |
 | 3   | 04.17.2025 @ 3:30 PM | OLAP + EDA II | Covariance, Correlation, Association Analysis | H.02  | Describing numerical patterns with online analytics. | Ford ITW Auditorium 1350 |
 | 4   | 04.21.2025 @ 3:30 PM | OLAP + EDA III | Hypothesis Testing & A/B Testing | ---  | Describing numerical patterns with online analytics. | Ford ITW Auditorium 1350 |
@@ -26,7 +26,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | 8    | 05.19.2025 @ 3:30 PM | Scalable Machine Learning III | Time Series Modeling (SARIMAX, TiDE) | H.04 | Generating forecasts from your database. | Ford ITW Auditorium 1350 |
 | 8    | 05.21.2025 @ 10:30 AM | Modern NLP Applications | RAG Model & Text Generation | ---  | Generating company-specific text with RAG. | Kellogg Global Hub L110 |
 | 8    | 05.22.2025 @ 3:30 PM | Unsupervised Machine Learning | Clustering Methods | ---  | Clustering unlabeled data. | Ford ITW Auditorium 1350 |
-| 9    | 05.29.2025 @ 3:30 PM | MLOps | Hyperparameter Tuning Strategies & Distributed Training (MLOps)  |  ---  | Training the best possible model. | Ford ITW Auditorium 1350 |
+| 9    | 05.29.2025 @ 3:30 PM | MLOps | Hyperparameter Tuning Strategies & Distributed Training |  ---  | Training the best possible model. | Ford ITW Auditorium 1350 |
 | 10    | 06.02.2025 @ 3:30 PM | Exam Review & Model Deployment | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. | Ford ITW Auditorium 1350 |
 | 10   | 06.05.2025 @ 3:30 PM | Exam Part II   | Assessment  |  ---  |  ---  | Ford ITW Auditorium 1350 |
 
@@ -114,7 +114,9 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 -----
 
-**Office Hours**: Thursdays from 2:00 PM to 3:00 PM in Mudd 3510, or by appointment.
+**Office Hours**: 
+- Thursdays (D'Arcy) from 2:00 PM to 3:00 PM in Mudd 3510, or by appointment.
+- Fridays (Mo) from 3:00 PM to 4:00 PM in Mudd First Floor Lobby. 
 
 -----
 

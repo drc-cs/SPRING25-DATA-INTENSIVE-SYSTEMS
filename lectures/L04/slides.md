@@ -42,7 +42,7 @@ revealOptions:
 
 ## Announcements
 
-- We're going to pivot away from the Docker homework setup. :)
+- We're going to pivot away from the Docker homework setup.
   - The first 10 minutes of this lecture will be dedicated to adding this setup and removing Docker from your system.
 
 - ~ 50% of you have already submitted [H.02](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS/blob/main/homeworks/H02/sql_practice.ipynb). 
@@ -50,6 +50,22 @@ revealOptions:
 
 - [Syllabus](https://canvas.northwestern.edu/courses/231041) has been updated with times and locations for make-up lectures.
   - This Wednesday @ 10:30A in Kellogg Global Hub L110.
+
+- Office hours updates
+  - Thursdays (D'Arcy) from 2:15 PM to 3:15 PM in Mudd 3510, or by appointment.
+  - Fridays (Mo) from 3:00 PM to 4:00 PM in Mudd First Floor Lobby. 
+
+<!--s-->
+
+## Announcements | Lecture Efficacy Overview
+
+Thank you everyone for doing the lecture polls!
+
+| Lecture |  Avg. Starting Score (/5) |Avg Delta [25th-75th Percentile] | P-Value  |
+|------------|-----------------|-------|-------|
+| L.01 | 2.54 | <span style="color:#2eba87; font-weight: bold">+ 0.75 [0.0-1.0]</span>  | $7.7 \times 10^{-3}$ | 2.54 |
+| L.02 | 2.66 | <span style="color:#2eba87; font-weight: bold">+ 0.83 [0.0-1.0]</span>  | $1.0 \times 10^{-4}$ | 2.66 |
+| L.03 | 2.24 | <span style="color:#2eba87; font-weight: bold">+ 1.18 [1.0-2.0]</span>  | $1.54 \times 10^{-6}$ |
 
 <!--s-->
 
@@ -63,9 +79,9 @@ revealOptions:
 
 3. Go to the Codespaces tab.
 
-4. Click "Create codespace on main". This will navigate you to a code-server instance with vscode installed.
+4. Click "Create codespace on main". This will navigate you to a codespace instance with vscode installed.
 
-5. Give code-server at least **3 minutes** to load. It should automatically install the requirements for this course. When you see a <span class="code-span">venv/</span> folder appear, you can continue.
+5. Give the codespace at least **3 minutes** to load. It should automatically install the requirements for this course. When you see a <span class="code-span">venv/</span> folder appear, you can continue.
 
 6. Navigate to the <span class="code-span">homeworks/.env/</span> file and add your credentials like we did in class.
 
@@ -81,7 +97,7 @@ revealOptions:
 
 12. Run the cells. This will re-submit your H.01, verifying everything is working as expected. 
 
-</div
+</div>
 
 <!--s-->
 
@@ -90,7 +106,7 @@ revealOptions:
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
   # Intro Poll
-  ## On a scale of 1-5, how confident are you with the **OLAP** concepts?
+  ## On a scale of 1-5, how confident are you with **OLAP** concepts?
 
   </div>
   </div>
@@ -228,15 +244,12 @@ OLAP is an approach to answer multi-dimensional analytical queries swiftly. OLAP
 
 ## Database Schemas
 
-
 A database schema is the skeleton structure that represents the logical view of the entire database. It defines how data is organized and how relationships between data are handled. 
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
 
-A schema optimized for OLTP (e.g. normalized) will not perform well for OLAP workloads which are read-heavy. 
-
-Normalized schemas are designed to minimize redundancy and ensure data integrity, but they can lead to complex queries that require multiple joins, which can be slow for analytical workloads.
+A schema optimized for OLTP (e.g. normalized) will not perform well for OLAP workloads which are read-heavy. This is because OLTP scemas can lead to complex queries that require multiple joins, which can be slow for analytical workloads.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -297,14 +310,19 @@ B.
 
 An **OLAP Cube** is a multi-dimensional array of data used in business intelligence. Instead of storing data in a tabular format, cubes allow for complex calculations, trend analysis, and sophisticated data modeling. This is because OLAP cubes can store data in multiple dimensions, allowing users to analyze data from different perspectives without the need for complex joins.
 
-<div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+<div class = "col-wrapper" style = "margin: 0px; padding: 0px">
+<div class="c1" style = "width: 50%; margin: 0px; padding: 0px">
 
-A common workflow to build OLAP cubes is:
+A common workflow to build OLAP cubes:
 
 1. **Extract**: Data is extracted from various sources, such as databases, spreadsheets, or flat files.
 2. **Transform**: Data is cleaned, transformed, and (often) aggregated.
 3. **Load**: Data is loaded into the OLAP cube.
+
+<div style="font-size: 0.6em; margin: 0; padding: 0;">
+
+> Note: This is often referred to as the ETL process, and is not specific to OLAP / OLAP cubes.
+</div>
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -337,6 +355,31 @@ Where the result (W) is a subset or aggregation of the data based on the specifi
 
 <img style="border-radius: 10px;" src="https://i0.wp.com/olap.com/wp-content/uploads/2019/06/olap-3d-cube.png?fit=2016%2C1890&ssl=1" />
 <p style="text-align: center; font-size: 0.6em; color: grey;">olap.com 2025</p>
+
+</div>
+</div>
+
+<!--s-->
+
+## L.04 | Q.03
+
+What data is highlighted in orange?
+
+<div class = "col-wrapper">
+<div class="c1" style="width: 50%; height: auto; margin-left: 5%;">
+
+A. Laptop sales in USA during Q1.<br><br>
+B. TV sales in Asia during Q1.<br><br>
+C. Laptop sales in Asia during Q1.
+
+<img style="border-radius: 10px;" src="https://i0.wp.com/olap.com/wp-content/uploads/2019/06/olap-3d-cube.png?fit=2016%2C1890&ssl=1" width = "70%"/>
+
+</div>
+
+<div class="c2" style="width: 50%; height: auto;">
+
+<iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.03" width = "100%" height = "100%"></iframe>
+
 
 </div>
 </div>
@@ -466,6 +509,9 @@ Column-based databases provide faster data retrieval and more effective data com
 
 ## Cloud-based Columnar Data Warehouse Services
 
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%; margin-right: 5%;">
+
 ### AWS Redshift
 
 Uses columnar storage, massively parallel processing, and optimized compression to enhance performance.
@@ -474,9 +520,62 @@ Uses columnar storage, massively parallel processing, and optimized compression 
 
 Serverless, highly scalable, and cost-effective multi-cloud data warehouse designed for business agility.
 
+</div>
+<div class="c2" style = "width: 50%">
+
 ### SnowFlake
 
 Provides a unique architecture with a separation of compute and storage layers, allowing for scalable and elastic performance.
+
+</div>
+</div>
+
+
+
+<!--s-->
+
+## Example: Columnar DB Data Preprocessing
+### Standardizing a Column using BigQuery
+
+```python
+from google.cloud import bigquery
+
+# Initialize a BigQuery client
+client = bigquery.Client()
+
+# Define a query to standardize paw_size in a `puppies` table
+query = "SELECT ML.STANDARD_SCALER(paw_size) AS paw_size_scaled FROM `project.dataset.puppies`"
+
+# Load the query results into a Pandas DataFrame
+df = client.query(query).to_dataframe()
+```
+
+<!--s-->
+
+## Example: Columnar DB Data Preprocessing
+### Standardizing a Column with Snowflake
+
+```python
+from connection import connect_to_snowflake
+import pandas as pd
+
+# Connect to Snowflake.
+conn = connect_to_snowflake(database="doggos_db", schema="puppies_schema")
+cursor = conn.cursor()
+
+# Define a query to standardize paw_size in a `puppies` table.
+query = """
+SELECT
+    paw_size,
+    (paw_size - AVG(paw_size) OVER ()) / STDDEV_SAMP(paw_size) OVER () AS standardized_paw_size
+FROM
+    puppies;
+"""
+
+# Use pandas to read the query results into a DataFrame.
+df = pd.read_sql(query, conn)
+
+```
 
 <!--s-->
 
@@ -488,39 +587,13 @@ Provides a unique architecture with a separation of compute and storage layers, 
 
 <!--s-->
 
-## L.04 | Q.03
-
-<div style = "font-size: 0.9em;">
-
-Let's imagine a scenario where you are a technical product manager at an early (Series B) startup in the textiles industry.
-
-You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You do not expect this dataset to grow over time or get more complicated -- in other words, this is a one-off project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
-
-</div>
-
-<div class = 'col-wrapper' style = "height: 100%";>
-<div class='c1' style = 'width: 60%; margin-left: 5%; font-size: 0.9em;'>
-
-
-A. Load the data into an OLAP system and do the regression on scalable infrastructure.<br><br>
-B. Load the data into an OLTP system for storage and do the regression on your laptop.<br><br>
-C. Load the data onto your laptop and just do the regression on your laptop. Save the data in a bucket somewhere.
-
-</div>
-<div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.03' width = '100%' height = '60%'></iframe>
-</div>
-</div>
-
-<!--s-->
-
 ## L.04 | Q.04
 
 <div style = "font-size: 0.9em;">
 
 Let's imagine a scenario where you are a technical product manager at an early (Series B) startup in the textiles industry.
 
-You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You **do** expect this dataset to grow over time and get more complicated -- in other words, this is **not** a one-off analysis project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
+You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You do not expect this dataset to grow over time or get more complicated -- in other words, this is a one-off project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
 
 </div>
 
@@ -544,6 +617,32 @@ C. Load the data onto your laptop and just do the regression on your laptop. Sav
 
 <div style = "font-size: 0.9em;">
 
+Let's imagine a scenario where you are a technical product manager at an early (Series B) startup in the textiles industry.
+
+You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You **do** expect this dataset to grow over time and get more complicated -- in other words, this is **not** a one-off analysis project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
+
+</div>
+
+<div class = 'col-wrapper' style = "height: 100%";>
+<div class='c1' style = 'width: 60%; margin-left: 5%; font-size: 0.9em;'>
+
+
+A. Load the data into an OLAP system and do the regression on scalable infrastructure.<br><br>
+B. Load the data into an OLTP system for storage and do the regression on your laptop.<br><br>
+C. Load the data onto your laptop and just do the regression on your laptop. Save the data in a bucket somewhere.
+
+</div>
+<div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.05' width = '100%' height = '60%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## L.04 | Q.06
+
+<div style = "font-size: 0.9em;">
+
 Let's imagine a scenario where you are a technical product manager at rapidly scaled startup in the textiles industry. You're given an extremely large dataset (~ 5TB) to analyze. It contains data on the ecological impact of your business across the globe.
 
 You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
@@ -560,7 +659,7 @@ C. Load the data onto your laptop and just do the regression on your laptop. Sav
 
 </div>
 <div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.05' width = '100%' height = '60%'></iframe>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.06' width = '100%' height = '60%'></iframe>
 </div>
 </div>
 
@@ -600,7 +699,7 @@ Columnar databases have emerged as a key technology for OLAP, providing faster q
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
   # Exit Poll
-  ## On a scale of 1-5, how confident are you with the **OLAP** concepts?
+  ## On a scale of 1-5, how confident are you with **OLAP** concepts?
 
   </div>
   </div>
