@@ -42,7 +42,46 @@ revealOptions:
 
 ## Announcements
 
-- 
+- We're going to pivot away from the Docker homework setup. :)
+  - The first 10 minutes of this lecture will be dedicated to adding this setup and removing Docker from your system.
+
+- ~ 50% of you have already submitted [H.02](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS/blob/main/homeworks/H02/sql_practice.ipynb). 
+  - Please submit by **Thursday @ 11:59 PM**.
+
+- [Syllabus](https://canvas.northwestern.edu/courses/231041) has been updated with times and locations for make-up lectures.
+  - This Wednesday @ 10:30A in Kellogg Global Hub L110.
+
+<!--s-->
+
+## Homework Setup
+
+<div style="overflow-y: scroll; font-size: 0.8em;">
+
+1. If you don't already have a Github account, [create one](https://github.com/) and log in. Then go to this [public repo](https://github.com/drc-cs/SPRING25-DATA-INTENSIVE-SYSTEMS) for our course.
+
+2. Click on the green button "Code". 
+
+3. Go to the Codespaces tab.
+
+4. Click "Create codespace on main". This will navigate you to a code-server instance with vscode installed.
+
+5. Give code-server at least **3 minutes** to load. It should automatically install the requirements for this course. When you see a <span class="code-span">venv/</span> folder appear, you can continue.
+
+6. Navigate to the <span class="code-span">homeworks/.env/</span> file and add your credentials like we did in class.
+
+7. Navigate to <span class="code-span">homeworks/H01/hello_world.ipynb</span>.
+
+8. Select Kernel in the top right. Install the suggested extensions.
+
+9. Select Kernel again, and this time you should also select "Python Environments"
+
+10. Select <span class="code-span">venv</span>.
+
+11. Update the string in the first cell to equal 'Hello, World!'
+
+12. Run the cells. This will re-submit your H.01, verifying everything is working as expected. 
+
+</div
 
 <!--s-->
 
@@ -71,25 +110,6 @@ revealOptions:
 
 <!--s-->
 
-## Scenario: Upgrading from PostgreSQL to a Columnar Database
-
-<div style = "overflow: scroll; height: 100%;">
-
-### Background
-iCorp has been using PostgreSQL as their primary database for transactional operations. The database handles customer orders, inventory management, and other day-to-day operations efficiently. However, as the company grows, the need for advanced analytics and real-time business intelligence has become critical.
-
-### Challenge
-The current PostgreSQL setup is struggling to keep up with the increasing volume of data and the complexity of analytical queries. Reports that used to take minutes are now taking hours, and the performance of the transactional system is being impacted by the heavy read operations required for analytics.
-
-### Proposed Solution
-iCorp should migrate their analytical workloads to a columnar database such as Amazon Redshift, Google BigQuery, or Snowflake. This will allow them to maintain their PostgreSQL setup for transactional operations while leveraging the power of columnar storage for analytics.
-
-By upgrading to a columnar database, iCorp will be well-positioned to meet their growing analytical needs and maintain a competitive edge in the market.
-
-</div>
-
-<!--s-->
-
 ## Agenda
 
 1. ### What is Online Analytical Processing (OLAP)?
@@ -102,8 +122,6 @@ By upgrading to a columnar database, iCorp will be well-positioned to meet their
 3. ### Columnar Databases
     - Why Column-Based Databases?
     - Advances that make Columnar DBs feasible
-4. ### Modern Data Science
-    - Cloud-based Columnar Data Warehouse Services
 
 <!--s-->
 
@@ -228,8 +246,6 @@ Normalized schemas are designed to minimize redundancy and ensure data integrity
 
 </div>
 </div>
-
-
 
 <!--s-->
 
@@ -448,16 +464,6 @@ Column-based databases provide faster data retrieval and more effective data com
 
 <!--s-->
 
-## Advances that make Columnar DBs feasible
-
-1. **Data Compression**: Columnar databases employ techniques such as Run Length Encoding (where repetitions of a value are condensed into a single entry with a count) and Dictionary Encoding (which uses a dictionary of unique values and indices) to conserve storage space and boost query efficiency.
-
-2. **Vectorized Execution**: This programming approach leverages CPU vector registers to process entire arrays of data with a single instruction, improving performance by utilizing parallel data processing. The use of vectorized execution efficiently harnesses SIMD capabilities in software.
-
-3. **SIMD (Single Instruction, Multiple Data)**: SIMD refers to the hardware architecture that allows for the simultaneous execution of a single operation on multiple data points. This capability is essential for parallel processing in columnar storage, enabling high performance and efficiency.
-
-<!--s-->
-
 ## Cloud-based Columnar Data Warehouse Services
 
 ### AWS Redshift
@@ -471,6 +477,92 @@ Serverless, highly scalable, and cost-effective multi-cloud data warehouse desig
 ### SnowFlake
 
 Provides a unique architecture with a separation of compute and storage layers, allowing for scalable and elastic performance.
+
+<!--s-->
+
+<div class="header-slide">
+
+# DIS Decision Making
+
+</div>
+
+<!--s-->
+
+## L.04 | Q.03
+
+<div style = "font-size: 0.9em;">
+
+Let's imagine a scenario where you are a technical product manager at an early (Series B) startup in the textiles industry.
+
+You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You do not expect this dataset to grow over time or get more complicated -- in other words, this is a one-off project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
+
+</div>
+
+<div class = 'col-wrapper' style = "height: 100%";>
+<div class='c1' style = 'width: 60%; margin-left: 5%; font-size: 0.9em;'>
+
+
+A. Load the data into an OLAP system and do the regression on scalable infrastructure.<br><br>
+B. Load the data into an OLTP system for storage and do the regression on your laptop.<br><br>
+C. Load the data onto your laptop and just do the regression on your laptop. Save the data in a bucket somewhere.
+
+</div>
+<div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.03' width = '100%' height = '60%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## L.04 | Q.04
+
+<div style = "font-size: 0.9em;">
+
+Let's imagine a scenario where you are a technical product manager at an early (Series B) startup in the textiles industry.
+
+You're given a small dataset (~ 5MB) to analyze. It contains data on the ecological impact of your business from a single factory. You **do** expect this dataset to grow over time and get more complicated -- in other words, this is **not** a one-off analysis project. You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
+
+</div>
+
+<div class = 'col-wrapper' style = "height: 100%";>
+<div class='c1' style = 'width: 60%; margin-left: 5%; font-size: 0.9em;'>
+
+
+A. Load the data into an OLAP system and do the regression on scalable infrastructure.<br><br>
+B. Load the data into an OLTP system for storage and do the regression on your laptop.<br><br>
+C. Load the data onto your laptop and just do the regression on your laptop. Save the data in a bucket somewhere.
+
+</div>
+<div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.04' width = '100%' height = '60%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
+## L.04 | Q.05
+
+<div style = "font-size: 0.9em;">
+
+Let's imagine a scenario where you are a technical product manager at rapidly scaled startup in the textiles industry. You're given an extremely large dataset (~ 5TB) to analyze. It contains data on the ecological impact of your business across the globe.
+
+You're asked to run a simple regression analysis on the data. What's is the most reasonable approach?
+
+</div>
+
+<div class = 'col-wrapper' style = "height: 100%";>
+<div class='c1' style = 'width: 60%; margin-left: 5%; font-size: 0.9em;'>
+
+
+A. Load the data into an OLAP system and do the regression on scalable infrastructure.<br><br>
+B. Load the data into an OLTP system for storage and do the regression on your laptop.<br><br>
+C. Load the data onto your laptop and just do the regression on your laptop. Save the data in a bucket somewhere.
+
+</div>
+<div class='c2' style='width: 50%; margin-top: 0px; padding-top: 0px;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.04 | Q.05' width = '100%' height = '60%'></iframe>
+</div>
+</div>
 
 <!--s-->
 
@@ -495,6 +587,14 @@ Columnar databases have emerged as a key technology for OLAP, providing faster q
 
 <!--s-->
 
+<div class="header-slide">
+
+# OLAP Demo
+
+</div>
+
+<!--s-->
+
 <div class = "col-wrapper">
   <div class="c1 col-centered">
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
@@ -514,7 +614,7 @@ Columnar databases have emerged as a key technology for OLAP, providing faster q
 
 <div class="header-slide">
 
-# H.02 | OLAP Demo
+# H.02 | SQL Practice
 
 </div>
 
