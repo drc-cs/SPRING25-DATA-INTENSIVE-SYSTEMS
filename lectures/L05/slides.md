@@ -416,9 +416,9 @@ You can use [Snowflake ML Functions](https://docs.snowflake.com/user-guide/ml-fu
 1. Create a model using the <span class="code-span">SNOWFLAKE.ML.ANOMALY_DETECTION</span> function.
 
 ```sql
-CREATE OR REPLACE SNOWFLAKE.ML.ANOMALY_DETECTION basic_model(
+CREATE OR REPLACE SNOWFLAKE.ML.ANOMALY_DETECTION anomaly_detector(
   INPUT_DATA =>
-    TABLE(SELECT date, sales FROM historical_sales_data WHERE store_id=1 AND item='jacket'),
+    TABLE(SELECT date, sales FROM historical_sales_data),
   TIMESTAMP_COLNAME => 'date',
   TARGET_COLNAME => 'sales',
   LABEL_COLNAME => '');
@@ -427,13 +427,12 @@ CREATE OR REPLACE SNOWFLAKE.ML.ANOMALY_DETECTION basic_model(
 2. Create a view with the data you want to analyze.
 ```sql
 CREATE OR REPLACE VIEW view_with_data_to_analyze
-  AS SELECT date, sales FROM new_sales_data
-    WHERE store_id=1 and item='jacket';
+  AS SELECT date, sales FROM new_sales_data;
 ```
 
 3. Call the model to detect anomalies in the data.
 ```sql
-CALL basic_model!DETECT_ANOMALIES(
+CALL anomaly_detector!DETECT_ANOMALIES(
   INPUT_DATA => TABLE(view_with_data_to_analyze),
   TIMESTAMP_COLNAME =>'date',
   TARGET_COLNAME => 'sales'
