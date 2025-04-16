@@ -409,6 +409,39 @@ This process is repeated recursively until all data points are isolated. The num
 
 <!--s-->
 
+## Identifying Anomalies with Visualization
+
+Often, the best way to identify anomalies is through visualization. This is commonly done with 1D data through boxplots.
+
+<img src = "https://miro.medium.com/v2/resize:fit:1400/1*0MPDTLn8KoLApoFvI0P2vQ.png" width = "100%" style="border-radius: 10px;">
+<p style="text-align: center; font-size: 0.6em; color: grey;">Agarwal 2019</p>
+
+<!--s-->
+
+## L.05 | Q.03
+
+You are working for a cybersecurity company tasked with detecting anomalies in network traffic data. The dataset contains hundreds of features, such as packet size, source and destination IPs, protocols, and timestamps. The data is high-dimensional and not normally distributed.
+
+Select the most appropriate method for detecting anomalies in this dataset.
+
+<div class="col-wrapper">
+<div class="c1 col-centered" style = "width: 50%;">
+
+<div style = "line-height: 2em;">
+&emsp;A. IQR <br>
+&emsp;B. Z-Score <br>
+&emsp;C. Isolation Forest <br>
+</div>
+
+</div>
+
+<div class="c2 col-centered" style = "width: 50%;">
+<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.05 | Q.03" width = "100%" height = "100%"></iframe>
+</div>
+</div>
+
+<!--s-->
+
 ## Anomaly Detection | OLAP Example
 
 You can use [Snowflake ML Functions](https://docs.snowflake.com/user-guide/ml-functions/anomaly-detection) to detect anomalies in your tables. By default, this method will use a [gradient boosting machine](https://docs.snowflake.com/user-guide/ml-functions/anomaly-detection).
@@ -438,39 +471,6 @@ CALL anomaly_detector!DETECT_ANOMALIES(
   TARGET_COLNAME => 'sales'
 );
 ```
-
-<!--s-->
-
-## Identifying Anomalies with Visualization
-
-Often, the best way to identify anomalies is through visualization. This is commonly done through boxplots.
-
-<img src = "https://miro.medium.com/v2/resize:fit:1400/1*0MPDTLn8KoLApoFvI0P2vQ.png" width = "100%" style="border-radius: 10px;">
-<p style="text-align: center; font-size: 0.6em; color: grey;">Agarwal 2019</p>
-
-<!--s-->
-
-## L.05 | Q.03
-
-You are working for a cybersecurity company tasked with detecting anomalies in network traffic data. The dataset contains hundreds of features, such as packet size, source and destination IPs, protocols, and timestamps. The data is high-dimensional and not normally distributed.
-
-Select the most appropriate method for detecting anomalies in this dataset.
-
-<div class="col-wrapper">
-<div class="c1 col-centered" style = "width: 50%;">
-
-<div style = "line-height: 2em;">
-&emsp;A. IQR <br>
-&emsp;B. Z-Score <br>
-&emsp;C. Isolation Forest <br>
-</div>
-
-</div>
-
-<div class="c2 col-centered" style = "width: 50%;">
-<iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.05 | Q.03" width = "100%" height = "100%"></iframe>
-</div>
-</div>
 
 <!--s-->
 
