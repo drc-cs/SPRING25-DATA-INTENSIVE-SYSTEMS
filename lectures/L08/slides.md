@@ -12,7 +12,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
   # Data Intensive Systems
-  ## L.05 | EDA IV Searching Text
+  ## L.08 | EDA IV Searching Text
 
   </div>
   </div>
@@ -199,7 +199,7 @@ Live regular expression practice: https://regex101.com/
 
 <!--s-->
 
-## L.07 | Q.01
+## L.08 | Q.01
 
 Which regular expression would match any word that starts with "con" (e.g. captures "conman" but not "icon")?
 
@@ -212,13 +212,13 @@ C. <span class='code-span'> \bcon\w{3} </span>
 
 </div>
 <div class='c2' style = 'width: 50%;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.01' width = '100%' height = '100%'></iframe>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.08 | Q.01' width = '100%' height = '100%'></iframe>
 </div>
 </div>
 
 <!--s-->
 
-## L.07 | Q.02
+## L.08 | Q.02
 
 Which regular expression would match any word that ends with "ing" (e.g. captures "running" but not "ring")?
 
@@ -231,7 +231,7 @@ C. <span class='code-span'> \w+ing </span>
 
 </div>
 <div class='c2' style = 'width: 50%;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.02' width = '100%' height = '100%'></iframe>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.08 | Q.02' width = '100%' height = '100%'></iframe>
 </div>
 </div>
 
@@ -320,7 +320,7 @@ The static embeddings they generated were very useful, but they have limitations
 
 <!--s-->
 
-## L.07 | Q.03
+## L.08 | Q.03
 
 Which of the following statements is true?
 
@@ -331,7 +331,7 @@ A. CBOW models predict the context given a word, Skip-gram models predict a word
 B. Skip-gram models predict the context given a word, CBOW models predict a word given its context.<br><br>
 </div>
 <div class='c2' style = 'width: 50%;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.03' width = '100%' height = '100%'></iframe>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.08 | Q.03' width = '100%' height = '100%'></iframe>
 </div>
 </div>
 
@@ -384,7 +384,7 @@ Autoregressive models generate text one token at a time by conditioning on the p
 
 <!--s-->
 
-## L.07 | Q.04
+## L.08 | Q.04
 
 Which of the following architectures provides a word embedding as the **output**?
 
@@ -397,7 +397,7 @@ C. Decoder-Only<br><br>
 
 </div>
 <div class='c2' style = 'width: 50%;'>
-<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.07 | Q.04' width = '100%' height = '100%'></iframe>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.08 | Q.04' width = '100%' height = '100%'></iframe>
 </div>
 </div>
 
