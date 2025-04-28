@@ -47,7 +47,7 @@ revealOptions:
 
 ### Enhance Material Accessibility
 
-I'll provide downloadable PDF versions of slides for easy reference and annotation. I created a [folder on Canvas](https://canvas.northwestern.edu/courses/231041/files) for this, and I'll upload PDFs prior to class.
+I'll provide downloadable PDF versions of slides for easy reference and annotation. Click on the [printable] link in the README, and this will produce a PDF version of the slides that you can download / print.
 
 ### Increase / Continue Interactive and Applied Learning
 
