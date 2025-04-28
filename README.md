@@ -17,7 +17,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | 3   | 04.17.2025 @ 3:30 PM | [OLAP + EDA II](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L06/#/) | Covariance, Correlation, Association Analysis | H.02  | Describing numerical patterns with online analytics. | Ford ITW Auditorium 1350 |
 | 4   | 04.21.2025 @ 3:30 PM | [OLAP + EDA III](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L07/#/) | Hypothesis Testing & A/B Testing | ---  | Describing numerical patterns with hypothesis testing. | Ford ITW Auditorium 1350 |
 | 4   | 04.24.2025 @ 3:30 PM | [OLAP + EDA IV](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L08/#/) | Modern Text Mining (NLP) | ---  | Describing text patterns with online analytics. | Ford ITW Auditorium 1350 |
-| 5   | 04.28.2025 @ 3:30 PM | Distributed Preprocessing I | Distributed Data Processing | --- | Leveraging cloud resources for data preprocessing. | Ford ITW Auditorium 1350 |
+| 5   | 04.28.2025 @ 3:30 PM | [Distributed Preprocessing I](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L09/#/) | Distributed Data Processing | --- | Leveraging cloud resources for data preprocessing. | Ford ITW Auditorium 1350 |
 | 5    | 04.30.2025  @ 3:30 PM | Exam Review & Distributed Processing II | Exam Review and Feature Selection | ---  | Leveraging cloud resources for data preprocessing. | Ford ITW Auditorium 1350 |
 | 6    | 05.05.2025  @ 3:30 PM | Exam Part I  | Assessment | H.03 | --- | Ford ITW Auditorium 1350 |
 | 6    | 05.08.2025  @ 3:30 PM | Containerization | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. | Ford ITW Auditorium 1350 |
