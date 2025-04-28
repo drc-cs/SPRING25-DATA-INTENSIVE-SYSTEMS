@@ -61,7 +61,7 @@ def minmax_scale_with_numpy(x: np.ndarray) -> np.ndarray:
     Without using sklearn, we can scale the data using numpy by 
     subtracting the min and dividing by the max minus min.
 
-    NOTE: Numpy has a built-in function to calculate the min and max,
+    NOTE: Numpy has built-in functions to calculate the min and max,
     which can be accessed through x.min() and x.max() respectively.
 
     Args:
@@ -77,7 +77,8 @@ def minmax_scale_with_numpy(x: np.ndarray) -> np.ndarray:
 def binarize_islands(islands: list[str]) -> list[int]:
     """Convert a list of island names to binary values.
 
-    NOTE: Please us 1 for 'Biscoe', 0 for 'Adelie'.
+    NOTE: Please use 1 for 'Biscoe', 0 for 'Adelie'. 
+    Return a list of ints, not a numpy array.
 
     Args:
         islands (list[str]): List of islands names.
@@ -89,7 +90,7 @@ def binarize_islands(islands: list[str]) -> list[int]:
 
 
 
-def generate_one_hot_encoding(df):
+def generate_one_hot_encoding(df: pd.DataFrame) -> pd.DataFrame:
     """
     Generate one-hot encoding for the 'species' column in the DataFrame.
 
