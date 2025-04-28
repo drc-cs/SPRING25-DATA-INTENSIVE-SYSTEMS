@@ -486,7 +486,7 @@ data.head()
 
 ## Categorical Data | Feature Hashing
 
-Compress categorical features into hash vectors -- in other words, this method reduces the dimensionality of the feature space. Hashing is using a function that maps categorical values to fixed-length vectors.
+Feature hashing reduces the dimensionality of the feature space. Hashing is using a function that maps categorical values to fixed-length vectors.
 
 Compared to one-hot encoding, feature hashing is more memory-efficient and can handle high-dimensional data. It is typically used when some categories are unknown ahead of time, or when the number of categories is very large.
 
@@ -719,7 +719,7 @@ data.dropna()
 
 ## Missing Data | Imputation
 
-We covered imputation in more detail in [L.0X]().
+We covered imputation in more detail in L.03.
 
 <div style = "font-size: 0.85em;">
 
@@ -792,21 +792,21 @@ X_new = SelectFromModel(RandomForestClassifier()).fit_transform(X, y)
 
 <!--s-->
 
+## A Note on OLAP / SnowFlake
+
+You don't need to run these data preprocessing steps in your local environment. You can use OLAP / SnowFlake to run these steps in the cloud! 
+
+Specifically, SnowFlake has something called a [Stored Procedure](https://docs.snowflake.com/en/developer-guide/stored-procedure/stored-procedures-overview), which is one way to run your Python preprocessing scripts in the cloud. Here is [example](https://docs.snowflake.com/en/developer-guide/stored-procedure/python/procedure-python-tabular-data) that uses Python.
+
+A standard workflow may be to polish your preprocessing code in your local environment, and then run it in SnowFlake's scaled environment before your modeling exercises.
+
+<!--s-->
+
 <div class="header-slide">
 
 # H.03 | preprocessing.py
 
 </div>
-
-<!--s-->
-
-## A Note on OLAP / SnowFlake
-
-You don't need to run these data preprocessing steps in your local environment. You can use SnowFlake to run these steps in the cloud! 
-
-Specifically, SnowFlake has something called a [Stored Procedure](https://docs.snowflake.com/en/developer-guide/stored-procedure/stored-procedures-overview), which is one way to run your Python preprocessing scripts in the cloud.
-
-A standard workflow may be to polish your preprocessing code in your local environment, and then run it in SnowFlake's scaled environment before your modeling exercises.
 
 <!--s-->
 
