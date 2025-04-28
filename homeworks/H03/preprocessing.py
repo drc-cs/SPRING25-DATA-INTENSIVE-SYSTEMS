@@ -19,22 +19,20 @@ def impute_numerical_values(X: np.ndarray) -> np.ndarray:
         numpy.ndarray: Imputed data with missing values filled in.
     """
 
-    # 1. Create a RandomForestRegressor for the imputer. 
-    # Use 10 estimators and set the random state to 0.
+    # 1. Init a RandomForestRegressor for the imputer. 
+    # Make sure you use 10 estimators and set the random state to 0.
  
 
-    # 2. Create the imputer with the estimator. Use max_iter=10.
-
+    # 2. Init the imputer with the estimator. Use max_iter=10.
 
 
     # 3. Fit the imputer on the dataset.
 
 
-
     # 4. Transform the dataset to impute missing values.
 
 
-    raise NotImplementedError("Please implement the impute_numerical_values function.")
+    raise NotImplementedError("Please implement the impute_numerical_values function in preprocessing.py.")
 
 
 
@@ -42,9 +40,9 @@ def standard_scale_with_numpy(x: np.ndarray) -> np.ndarray:
     """Scale data using numpy.
 
     Without using sklearn, we can scale the data using numpy by 
-    subtracting the mean and dividing by the standard deviation.
+    subtracting the mean of the array and dividing by the standard deviation.
 
-    NOTE: Numpy has a built-in function to calculate the mean and standard deviation,
+    NOTE: Numpy has built-in functions to calculate the mean and standard deviation,
     which can be accessed through x.mean() and x.std() respectively.
 
     Args:
@@ -53,7 +51,7 @@ def standard_scale_with_numpy(x: np.ndarray) -> np.ndarray:
     Returns:
         numpy.ndarray: Scaled data.
     """
-    raise NotImplementedError("Please implement the standard_scale_with_numpy function.")
+    raise NotImplementedError("Please implement the standard_scale_with_numpy function in preprocessing.py.")
 
 
 
@@ -72,7 +70,7 @@ def minmax_scale_with_numpy(x: np.ndarray) -> np.ndarray:
     Returns:
         numpy.ndarray: Scaled data.
     """
-    raise NotImplementedError("Please implement the minmax_scale_with_numpy function.")
+    raise NotImplementedError("Please implement the minmax_scale_with_numpy function in preprocessing.py.")
 
 
 
@@ -87,7 +85,7 @@ def binarize_islands(islands: list[str]) -> list[int]:
     Returns:
         list[int]: List of binary values.
     """
-    raise NotImplementedError("Please implement the binarize_islands function.")
+    raise NotImplementedError("Please implement the binarize_islands function in preprocessing.py.")
 
 
 
@@ -97,7 +95,7 @@ def generate_one_hot_encoding(df):
 
     NOTE: Use the `pd.get_dummies` function to create one-hot encoded columns 
     for the 'species' column. Please ensure you use the `dtype` parameter to set the data 
-    type of the new columns to 'int'. The end result should be a DataFrame columns with:
+    type of the new columns to 'int'. The end result should be a DataFrame like this:
 
     | species_Adelie | species_Chinstrap | species_Gentoo |
     |----------------|-------------------|----------------|
@@ -110,7 +108,7 @@ def generate_one_hot_encoding(df):
     Returns:
         pd.DataFrame: A new DataFrame with one-hot encoded columns for each species.
     """
-    raise NotImplementedError("Please implement the generate_one_hot_encoding function.")
+    raise NotImplementedError("Please implement the generate_one_hot_encoding function in preprocessing.py.")
 
 
 
@@ -142,4 +140,4 @@ def reorder_columns(df: pd.DataFrame) -> pd.DataFrame:
 
     # Reorder the columns of the DataFrame to match the new column order.
     
-    raise NotImplementedError("Please implement the reorder_columns function.")
+    raise NotImplementedError("Please implement the reorder_columns function in preprocessing.py.")
