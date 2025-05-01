@@ -198,16 +198,28 @@ tsne.fit_transform(data)
 
 <!--s-->
 
-## High-Dimensional Data | T-distributed Stochastic Neighbor Embedding (t-SNE)
+## High-Dimensional Data Example
 
-<iframe width = "100%" height = "100%" src="https://storage.googleapis.com/slide_assets/iris_3d_plot.html" title="scatter_plot" padding=2em;></iframe>
+Here you can see the Iris dataset visualized in 3D. The dataset contains 3 features: sepal length, sepal width, and petal length. The data points are colored by their species. Our goal is to represent the data in 2D while preserving the relationships between the data points.
 
+<iframe width= "100%" height = "100%" src="https://storage.googleapis.com/slide_assets/iris_3d_scatter_plot.html" title="scatter_plot"></iframe>
 
 <!--s-->
 
-## High-Dimensional Data | T-distributed Stochastic Neighbor Embedding (t-SNE)
+## High-Dimensional Data Example | PCA vs t-SNE
 
-<iframe width = "100%" height = "100%" src="https://storage.googleapis.com/slide_assets/iris_2d_plot.html" title="scatter_plot" padding=2em;></iframe>
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%; margin-bottom: -20em;">
+
+<iframe width = "100%" height = "80%" src="https://storage.googleapis.com/slide_assets/iris_pca_2d_scatter_plot.html" title="scatter_plot" ></iframe>
+
+</div>
+<div class="c2" style = "width: 50%; margin-bottom: -20em;">
+
+<iframe width = "100%" height = "80%" src="https://storage.googleapis.com/slide_assets/iris_tsne_2d_scatter_plot.html" title="scatter_plot" ></iframe>
+
+</div>
+</div>
 
 <!--s-->
 
@@ -216,7 +228,7 @@ tsne.fit_transform(data)
 Autoencoders are neural networks that learn to compress and reconstruct data. They consist of an encoder that compresses the data into a lower-dimensional representation and a decoder that reconstructs the data from this representation.
 
 <div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+<div class="c1" style = "width: 50%; ">
 
 ```python
 
