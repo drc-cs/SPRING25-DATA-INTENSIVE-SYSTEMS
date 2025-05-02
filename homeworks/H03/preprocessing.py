@@ -51,7 +51,7 @@ def standard_scale_with_numpy(x: np.ndarray) -> np.ndarray:
     Returns:
         numpy.ndarray: Scaled data.
     """
-    raise NotImplementedError("Please implement the standard_scale_with_numpy function in preprocessing.py.")
+    return (x - x.mean()) / x.std()
 
 
 
@@ -96,11 +96,11 @@ def generate_one_hot_encoding(df: pd.DataFrame) -> pd.DataFrame:
 
     NOTE: Use the `pd.get_dummies` function to create one-hot encoded columns 
     for the 'species' column. Please ensure you use the `dtype` parameter to set the data 
-    type of the new columns to 'int'. The end result should be a DataFrame like this:
+    type of the new columns to 'int'. The end result should be a DataFrame columns with:
 
-    | species_Adelie | species_Chinstrap | species_Gentoo |
-    |----------------|-------------------|----------------|
-    | 0              | 1                 | 0              |
+   | ... | species_Adelie | species_Chinstrap | species_Gentoo |
+   | --- |----------------|-------------------|----------------|
+   | ... | 0              | 1                 | 0              |
 
     
     Args:

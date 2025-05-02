@@ -43,6 +43,7 @@ revealOptions:
 ## Announcements
 
 - H.03 will be due on Monday, 05.05.2025 @ 11:59PM. 
+  - A couple of errors in the tests noted.
 - Office hours tomorrow (Friday) from 3:00PM - 4:00PM.
 - Exam Part I will be on Monday, 05.05.2025 @ 3:30PM - 4:50PM.
 
