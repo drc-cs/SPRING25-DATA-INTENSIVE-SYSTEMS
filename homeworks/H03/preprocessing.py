@@ -79,7 +79,7 @@ def minmax_scale_with_numpy(x: np.ndarray) -> np.ndarray:
 def binarize_islands(islands: list[str]) -> list[int]:
     """Convert a list of island names to binary values.
 
-    NOTE: Please use 1 for 'Biscoe', 0 for 'Adelie'. 
+    NOTE: Please use 1 for 'Biscoe', 0 for 'Dream'.
     Return a list of ints, not a numpy array.
 
     Args:
