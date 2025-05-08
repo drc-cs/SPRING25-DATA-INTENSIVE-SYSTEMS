@@ -363,7 +363,7 @@ Docker uses Linux namespaces to provide isolation for containers and control gro
 ### Union File System
 Layers are used to create Docker images. Each layer is a modification over the previous one, which allows efficient storage and reduced bandwidth usage when distributing an image. A Union File System (UFS) combines these layers into a single view (union) of the file system.
 
-<div class = "col-wrapper">
+<div class = "col-wrapper" style = "font-size: 0.8em;">
 <div class="c1" style = "width: 50%">
 
 > <span style="font-style: normal;"> **Namespaces**: Isolate containers from each other and the host system. </span>
