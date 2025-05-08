@@ -40,9 +40,19 @@ revealOptions:
 
 <!--s-->
 
-## Announcements
+# DIS Case | Onboarding
 
-- 
+**Overview**: Currently, onboarding new employees at a data science company is taking several days. You hear several reports of new employees having difficulty installing the company's programming environment, but it's okay because they "found a workaround" or "hacked something together that works for now". The environment is mostly programming in Python, and the company has a lot of dependencies that are difficult to install. The company is also using a lot of different tools with conflicting versions, and the new employees are having trouble keeping track of everything.
+
+**Problem Statement**: You need to set up an environment that is easy to install and use by new employees. What can you do? How would you set up your environment?
+
+<!--s-->
+
+# DIS Case | Deployment
+
+**Overview**: You just trained the hottest and latest regression model on the market for predicting house prices. This model was trained locally on your laptop, but you need to deploy it so that others can use it. 
+
+**Problem Statement**: You need to find a way to deploy the model so that it can be used by anyone, anywhere. How would you do this? What tools would you use to deploy your model?
 
 <!--s-->
 
@@ -455,7 +465,15 @@ Here are some common Docker CLI commands.
 
 <!--s-->
 
-## Docker Demo | Course Environment
+<div class="header-slide">
+
+# Case 1 | Onboarding
+
+</div>
+
+<!--s-->
+
+## Case 1 | Onboarding
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
@@ -500,11 +518,11 @@ CMD ["code-server", "--auth", "none", "--bind-addr", "0.0.0.0:8080", "."]
 
 <!--s-->
 
-## Docker Demo | Running the Course Environment
+## Case 1 | Running the Environment
 
 Since we run the <span class="code-span">code-server</span> on port 8080, we need to map the container's port to the host machine. We can do this using the <span class="code-span">-p</span> flag. Here we mapped the container's port 8080 to the host machine's port 8080. Since code-server is already running within the docker container, we can access it by visiting <span class="code-span">localhost:8080</span> in your browser.
 
-As long as the container is running, you can access the course environment by visiting <span class="code-span">localhost:8080</span> in your browser at any time. It will even work offline!
+As long as the container is running, you can access the course environment by visiting <span class="code-span">localhost:8080</span> in your browser at any time. In practice, we can host a code-server instance on a remote server with many more resources and access it from anywhere.
 
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%">
@@ -523,6 +541,14 @@ docker run -p 8080:8080 dis
 <img src="https://user-images.githubusercontent.com/35271042/118224532-3842c400-b438-11eb-923d-a5f66fa6785a.png" width="100%">
 
 </div>
+</div>
+
+<!--s-->
+
+<div class="header-slide">
+
+# Case 2 | Deployment
+
 </div>
 
 <!--s-->
