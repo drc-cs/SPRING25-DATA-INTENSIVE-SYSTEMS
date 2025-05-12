@@ -34,7 +34,7 @@ revealOptions:
   </div>
   </div>
   <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
-    <iframe src = "https://drc-cs-9a3f6.web.app?label=Check In" width = "100%" height = "100%"></iframe>
+    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Check In" width = "100%" height = "100%"></iframe>
   </div>
 </div>
 
