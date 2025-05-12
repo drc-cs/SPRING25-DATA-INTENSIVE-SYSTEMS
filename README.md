@@ -21,10 +21,10 @@ Assessments include two exams covering all material covered in the lectures and 
 | 5    | 04.31.2025  @ 3:30 PM | [Exam Review & Distributed Processing II](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L10/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L10.pdf) | Exam Review and Feature Selection | ---  | Leveraging cloud resources for data preprocessing. | Ford ITW Auditorium 1350 |
 | 6    | 05.05.2025  @ 3:30 PM | Exam Part I  | | Assessment | H.03 | --- | Ford ITW Auditorium 1350 |
 | 6    | 05.08.2025  @ 3:30 PM | [Containerization](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L11/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L11.pdf) | Creating, Managing, and Registering Containers | ---  | Utilizing containers in your workflow. | Ford ITW Auditorium 1350 |
-| 7    | 05.12.2025 @ 3:30 PM | Scalable Machine Learning I | | Regression and Classification Modeling | ---  | Regression modeling in practice. | Ford ITW Auditorium 1350 |
+| 7    | 05.12.2025 @ 3:30 PM | [Scalable Machine Learning I](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L12/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L12.pdf) | Regression and Classification Modeling | ---  | Regression modeling in practice. | Ford ITW Auditorium 1350 |
 | 7    | 05.15.2025 @ 3:30 PM | Scalable Machine Learning II | | Decision Trees, XGBoost | ---  | Non-linear modeling in practice. | Kellogg Global Hub 2130 |
-| 8    | 05.19.2025 @ 3:30 PM | Scalable Machine Learning III | | Time Series Modeling (SARIMAX, TiDE) | H.04 | Generating forecasts from your database. | Ford ITW Auditorium 1350 |
-| 8    | 05.21.2025 @ 10:30 AM | Modern NLP Applications | |  RAG Model & Text Generation | ---  | Generating company-specific text with RAG. | Kellogg Global Hub L110 |
+| 8    | 05.19.2025 @ 3:30 PM | Scalable Machine Learning III | | Time Series Modeling (SARIMAX, TiDE) | --- | Generating forecasts from your database. | Ford ITW Auditorium 1350 |
+| 8    | 05.21.2025 @ 10:30 AM | Modern NLP Applications | |  RAG Model & Text Generation | H.04 | Generating company-specific text with RAG. | Kellogg Global Hub L110 |
 | 8    | 05.22.2025 @ 3:30 PM | Unsupervised Machine Learning | | Clustering Methods | ---  | Clustering unlabeled data. | Ford ITW Auditorium 1350 |
 | 9    | 05.29.2025 @ 3:30 PM | MLOps | | Hyperparameter Tuning Strategies & Distributed Training |  ---  | Training the best possible model. | Ford ITW Auditorium 1350 |
 | 10    | 06.02.2025 @ 3:30 PM | Exam Review & Model Deployment | | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. | Ford ITW Auditorium 1350 |
