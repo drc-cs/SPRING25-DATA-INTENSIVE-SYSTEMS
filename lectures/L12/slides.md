@@ -198,7 +198,7 @@ In these cases, the model does not have prior exposure to the patients in the te
 ## Key Takeaways for Group-Based Splitting
 
 <div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+<div class="c1" style = "width: 50%; margin-right: 2em;">
 
 ### Avoiding Data Leakage
 
