@@ -97,8 +97,6 @@ To learn the mapping from $X$ to $y$, we need to define a model that can capture
   - Fundamental regression algorithm.
 - Logistic Regression
   - Extension of linear regression for classification.
-- k-Nearest Neighbors (KNN)
-  - Fundamental classification algorithm.
 
 <!--s-->
 
@@ -199,9 +197,22 @@ In these cases, the model does not have prior exposure to the patients in the te
 
 ## Key Takeaways for Group-Based Splitting
 
-- **Independence:** Keeping data separate between training and testing sets maintains the independence necessary for unbiased model evaluation.
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
 
-- **Generalization:** This approach ensures that the model can generalize its learning from one set of data to another, which is crucial for effective predictions.
+### Avoiding Data Leakage
+
+By ensuring that the model does not see any data from the testing set during training, we prevent data leakage, which can lead to overly optimistic performance metrics.
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Real-World Applicability
+
+This method simulates real-world scenarios where the model will encounter new groups (in the example before, patients) or data points that it has never seen before.
+
+</div>
+</div>
 
 <!--s-->
 
@@ -326,7 +337,9 @@ $$ J(\beta) = J(\beta) + \lambda \sum_{j=1}^n \beta_j^2 $$
 
 ## Linear Regression | A Brief Note on P-Values
 
-P-values are used to test the null hypothesis that the coefficient is equal to zero. A small p-value (typically < 0.05) indicates strong evidence against the null hypothesis, so you reject the null hypothesis. In linear regression, this is used to determine which features are significant (i.e., have a non-zero coefficient). The null hypothesis is that the feature is not significant.
+P-values are used to test the null hypothesis that the coefficient is equal to zero. A small p-value (typically < 0.05) indicates strong evidence against the null hypothesis, so you reject the null hypothesis. 
+
+In linear regression, the null hypothesis is that the coefficient is equal to zero, meaning that the feature does not have a significant effect on the target variable. The alternative hypothesis is that the coefficient is not equal to zero, meaning that the feature does have a significant effect on the target variable.
 
 <!--s-->
 
@@ -403,7 +416,7 @@ Instead, we use gradient descent to minimize the cost function. Gradient descent
 
 ## Logistic Regression | Cost Function
 
-The cost function used in logistic regression is the cross-entropy loss:
+The cost function used in logistic regression is the binary cross-entropy loss:
 
 $$ J(\beta) = -\frac{1}{m} \sum_{i=1}^m [y_i \log(\widehat{y}_i) + (1 - y_i) \log(1 - \widehat{y}_i)] $$
 
@@ -545,7 +558,7 @@ To evaluate a binary classification model like this, we can use metrics such as 
 ## Summary
 
 - We discussed the importance of splitting data into training, validation, and test sets.
-- We delved Linear Regression and Logistic Regression with Gradient Descent, exploring practical implementations and theoretical foundations.
+- We delved into Linear Regression and Logistic Regression with Gradient Descent, exploring practical implementations and theoretical foundations.
 - Understanding these foundational concepts is crucial for advanced machine learning and model fine-tuning! 
 
 <!--s-->
