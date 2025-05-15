@@ -40,6 +40,31 @@ revealOptions:
 
 <!--s-->
 
+## Annoucements
+
+- **H.04** will be released today at the end of class.
+    - H.04 is due on Wednesday, May 21 at 11:59 PM.
+
+- **Week 8** (next week) has three lectures:
+    - Monday (May 19): Ford ITW
+    - Wednesday (May 21): Kellogg L110
+    - Thursday (May 22): Ford ITW
+
+<!--s-->
+
+## DIS Decision Making
+
+You're a technical product manager at a large atheltic apparel company. Your team is working on a new app feature to predict the best time to run based on the user's location, weather conditions, and various biometric data. In short, this is a complex classification task based on many features with complex interactions.
+
+Your lead scientist tells you that they are exploring two different modeling approaches.
+
+1. **Decision-Tree Based Approach**: Using Random Forest or XGBoost.
+2. **Deep Learning Approach**: Using a deep neural network with many layers.
+
+Try to name at least one pro and one con for each approach. Which one do you want to start with? Why?
+
+<!--s-->
+
 <div class="header-slide">
 
 # L.13 | Decision Trees & Ensemble Models
@@ -137,7 +162,6 @@ Where:
 <br><br>
 <img src="https://miro.medium.com/max/954/0*EfweHd4gB5j6tbsS.png" width="50%" style="margin: 0 auto; display: block;">
 <p style="text-align: center; font-size: 0.6em; color: grey;">KDNuggets</p>
-
 
 <!--s-->
 
