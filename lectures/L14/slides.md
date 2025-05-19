@@ -7,8 +7,6 @@ revealOptions:
   transition: 'none'
 ---
 
-<!--s-->
-
 <div class = "col-wrapper">
   <div class="c1 col-centered">
   <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
@@ -39,6 +37,19 @@ revealOptions:
     <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Check In" width = "100%" height = "100%"></iframe>
   </div>
 </div>
+
+<!--s-->
+
+## Announcements
+
+- H.04 is due Wednesday at 11:59PM.
+
+- This week has three lectures:
+    - Monday (May 19): Ford ITW
+    - Wednesday (May 21): Kellogg L110
+    - Thursday (May 22): Ford ITW
+
+- H.05 will be released next Thursday.
 
 <!--s-->
 
@@ -99,7 +110,7 @@ Today we're going to talk about time series analysis, specifically building an i
 <div class="c2 col-centered" style = "width: 50%">
 
 <div>
-<img src="https://www.lokad.com/images/learn/figure-6-a-probabilistic-forecast_hu9740097346829539813.webp" style="margin: 0 auto; display: block;">
+<img src="https://storage.googleapis.com/slide_assets/forecast_lokad.png" width="400" style="margin: 0 auto; display: block;">
 <span style="font-size: 0.6em; padding-top: 0.5em; text-align: center; display: block; color: grey;">Lokad 2016</span>
 </div>
 </div>
