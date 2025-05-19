@@ -31,7 +31,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
 
   # Welcome to Data Intensive Systems.
-  ## Please check in by creating an account and entering the provided code.
+  ## Please check in by entering the provided code.
 
   </div>
   </div>
