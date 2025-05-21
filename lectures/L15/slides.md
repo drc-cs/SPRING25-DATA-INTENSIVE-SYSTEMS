@@ -280,14 +280,6 @@ For example, the word "bank" can have different meanings depending on the contex
 
 <img src="https://storage.googleapis.com/cs326-bucket/lecture_14/leaderboard.png" style="margin: 0 auto; display: block; width: 50%;">
 <span style="font-size: 0.6em; padding-top: 0.5em; text-align: center; display: block; color: grey;">HuggingFace, 2024</span>
-
-<!--s-->
-<div class="header-slide">
-
-# Embed | BERT Demo
-
-</div>
-
 <!--s-->
 
 ## Embed | OpenAI's Embedding Model
