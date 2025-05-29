@@ -355,15 +355,8 @@ Where:
 <div class="c2" style = "width: 50%">
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/hyperband_example.png' style='border-radius: 10px;'>
+   <img src='https://storage.googleapis.com/slide_assets/hyperband_from_pseudo.png' style='border-radius: 10px;'>
 </div>
-
-<span style="font-size: 0.7em; text-align: center;">
-
-\**Different implementation than the pseudocode shown on the left.*
-
-</span>
-
 
 </div>
 </div>
