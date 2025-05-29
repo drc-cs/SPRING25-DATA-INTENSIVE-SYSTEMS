@@ -354,7 +354,7 @@ Where:
 </div>
 <div class="c2" style = "width: 50%">
 
-<div style='text-align: center;'>
+<div style='text-align: center; width: 70%'>
    <img src='https://storage.googleapis.com/slide_assets/hyperband_from_pseudo.png' style='border-radius: 10px;'>
 </div>
 
