@@ -40,6 +40,16 @@ revealOptions:
 
 <!--s-->
 
+## Announcements
+
+- **Final Exam**: The final exam will be held on **June 5th**. It will cover all topics discussed in the course.
+
+- **Office Hours**: No office hours on June 5th. Please reach out if you want to meet earlier on June 5th! 
+
+- **CTEC**: We use CTEC to collect feedback, and these are now open. Your feedback is important to me! Please fill out the [CTEC](https://canvas.northwestern.edu/courses/231041/external_tools/8871) here.
+
+<!--s-->
+
 <div class = "col-wrapper">
   <div class="c1 col-centered">
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
@@ -67,9 +77,9 @@ revealOptions:
 
 ## DIS (~ 5 minutes)
 
-Very few industry teams are actually *creating* their own machine learning models. Most teams are using existing models, and focusing on the data and the pipeline that feeds into the model. The differentiator is often how well you use existing tools and how fast you can iterate.
+Most industry teams are not researching new machine learning models. Instead, they leverage existing models and focus on optimizing the data and pipelines that feed into those models. The key differentiator is often how effectively you use available tools and how quickly you can iterate.
 
-With that in mind, what are some things you can do / have to speed up your ML pipeline?
+**With that in mind, what strategies can you use to speed up your ML pipeline?**
 
 <!--s-->
 
