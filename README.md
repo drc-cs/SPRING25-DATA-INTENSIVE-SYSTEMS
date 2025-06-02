@@ -27,7 +27,7 @@ Assessments include two exams covering all material covered in the lectures and 
 | 8    | 05.21.2025 @ 10:30 AM | [Modern NLP Applications](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L15/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L15.pdf) | RAG Model & Text Generation w/ MCP | H.04 | Generating company-specific text with RAG. | Kellogg Global Hub L110 |
 | 8    | 05.22.2025 @ 3:30 PM | [Unsupervised Machine Learning](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L16/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L16.pdf) | Clustering Methods. | ---  | Clustering unlabeled data. | Ford ITW Auditorium 1350 |
 | 9    | 05.29.2025 @ 3:30 PM | [Training the Best Model](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L17/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L17.pdf) | Hyperparameter Tuning Strategies |  ---  | Training the best possible model. | Ford ITW Auditorium 1350 |
-| 10    | 06.02.2025 @ 3:30 PM | Exam Review & Model Deployment | | Model Serving & Real-Time Inference | H.05  | Deploying your model to production. | Ford ITW Auditorium 1350 |
+| 10    | 06.02.2025 @ 3:30 PM | [Exam Review & Model Deployment](https://drc-cs.github.io/SPRING25-DATA-INTENSIVE-SYSTEMS/lectures/L18/#/) | [[printable_link]](https://storage.googleapis.com/slide_assets/Lectures/L18.pdf) | Model Serving & Real-Time Inference | -- | Deploying your model to production. | Ford ITW Auditorium 1350 |
 | 10   | 06.05.2025 @ 3:30 PM | Exam Part II  | | Assessment  |  ---  |  ---  | Ford ITW Auditorium 1350 |
 
 ## Homework Assignments
